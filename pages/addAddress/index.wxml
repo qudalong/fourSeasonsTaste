@@ -1,0 +1,27 @@
+<!--pages/addAddress/index.wxml-->
+<view class='addAddress'>
+  <view class='line'>
+    <view class="label">收货人</view>
+    <view class='value'>李先生</view>
+  </view>
+  <view class='line'>
+    <view class="label">手机号码</view>
+    <view class='value'>13333333333</view>
+  </view>
+  <view class='line'>
+    <view class="label">所在地区</view>
+    <view class='value'>李先生</view>
+    <view> <image src='../../Images/icon/icon_sign.png'></image> 定位</view>
+  </view>
+  <view class='line'>
+    <view class="label">详细地址</view>
+    <view class='value'>山东省济南市槐荫区振兴西街街 10号</view>
+  </view>
+  <view class='line last'>
+    <view class="label">设置默认地址</view>
+    <view class='value'>
+       <switch checked="true" bindchange="switch1Change"/>
+    </view>
+  </view>
+  <view class='submit'>保存</view>
+</view>

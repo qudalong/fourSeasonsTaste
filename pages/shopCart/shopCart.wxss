@@ -1,0 +1,109 @@
+.card-wrap {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20rpx;
+}
+
+.card-wrap .title {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 30rpx 0;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.card-list .item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30rpx 0;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.card-list .item:last-child {
+  border: 0;
+}
+
+.card-list .cover-food {
+  width: 180rpx;
+  height: 184rpx;
+  border-radius: 10px;
+  margin: 0 10rpx;
+}
+
+.card-list .food-info {
+  flex: 1;
+  line-height: 1.6;
+}
+
+.food-info .details {
+  line-height: 1.4;
+  font-weight: 600;
+  color: rgba(51, 51, 51, 1);
+}
+
+.food-info .type {
+  background: rgba(239, 239, 239, 1);
+  border-radius: 5px;
+  display: inline-block;
+  padding: 0 4px;
+  margin: 5px 0;
+  font-weight: 400;
+  color: rgba(119, 118, 118, 1);
+}
+
+.food-info .price {
+  font-weight: 600;
+  color: rgba(248, 59, 29, 1);
+}
+
+.food-info .price .txt {
+  font-size: 16px;
+}
+
+.food-info .count {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(167, 167, 167, 1);
+}
+
+.food-info .count {
+  text-align: right;
+}
+
+/* 結算 */
+
+.result-wrap {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 112rpx;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10px;
+}
+
+.result-wrap .accounts {
+  height: 112rpx;
+  line-height: 112rpx;
+  width: 100px;
+  text-align: center;
+  background: #4cb981;
+  color: #fff;
+}
+
+.totalMoney {
+  color: #f83b1d;
+  font-size: 18px;
+}
+
+.hook {
+  color: #999;font-family:PingFangSC-Semibold,PingFang SC;
+}
+
+.product-list {
+  padding-bottom: 120rpx;
+}

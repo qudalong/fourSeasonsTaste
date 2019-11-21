@@ -1,0 +1,45 @@
+/* pages/addAddress/index.wxss */
+.addAddress{
+  min-height: 100%;
+  background: #F3F6F8;
+  font-size: 32rpx;
+  overflow: hidden;
+}
+.line{
+  display: flex;
+  background: #FFF;
+  min-height: 122rpx;
+  align-items: center;
+  margin: 20rpx 30rpx;
+  border-radius: 20rpx;
+  padding: 0 36rpx;
+}
+.line image{
+  width: 26rpx;
+  height: 32rpx;
+}
+.value{
+  flex: 1;
+}
+.label{
+  color: #7D7D7D;
+  width:160rpx;
+}
+.last .label{
+  width: 200rpx;
+}
+.last .value{
+  text-align: right;
+}
+.submit{
+  position: absolute;
+  bottom: 30rpx;
+  left: 30rpx;
+  background: #4CB981;
+  color: #fff;
+  text-align: center;
+  line-height: 100rpx;
+  height: 100rpx;
+  width: 690rpx;
+  border-radius: 10rpx;
+}

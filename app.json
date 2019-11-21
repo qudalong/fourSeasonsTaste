@@ -1,0 +1,45 @@
+{
+  "pages": [
+    "pages/pay/payFail/index",
+    "pages/pay/paySuccess/index",
+    "pages/order/index",
+    "pages/shoppingCar/index",
+    "pages/addressList/index",
+    "pages/addAddress/index",
+    "pages/home/index",
+    "pages/shopCart/shopCart",
+    "pages/details/index",
+    
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "四季滋味",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "iconPath": "Images/icon/icon_index.png",
+        "selectedIconPath":"Images/icon/icon_indexActive.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/shopCart/shopCart",
+        "iconPath": "Images/icon/icon_shoppingCar.png",
+        "selectedIconPath": "Images/icon/icon_shoppingCarActive.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "iconPath": "Images/icon/icon_my.png",
+        "selectedIconPath": "Images/icon/icon_myActive.png",
+        "text": "我的"
+      }
+    ]
+  }
+}

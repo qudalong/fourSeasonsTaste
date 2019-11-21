@@ -1,0 +1,34 @@
+/* pages/pay/payFail/index.wxss */
+.top{
+  text-align: center;
+  margin-top: 32rpx;
+}
+.top image{
+  width: 251rpx;
+  height: 220rpx;
+}
+.title{
+  color: #303133;
+  text-align: center;
+  margin: 31rpx auto 100rpx;
+  font-weight: 600;
+  font-size: 42rpx;
+}
+.button{
+  width: 458rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 32rpx;
+  border-radius: 25rpx;
+}
+.toOrder{
+  color: #4CB981;
+  border: 1rpx solid #4CB981;
+  margin: 0 auto 30rpx; 
+}
+.lookAgain{
+  color: #FFF;
+  background: #4CB981;
+}

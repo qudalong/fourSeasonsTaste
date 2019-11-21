@@ -1,0 +1,135 @@
+/* pages/details/index.wxss */
+.details{
+  height: 100%;
+}
+.main{
+  background: #fff;
+  border-radius: 0 0 20rpx 20rpx;
+}
+.swiper-item,.page-section,.swiper{
+  width: 100%;
+  height: 550rpx;
+}
+.detail{
+  padding: 0 30rpx;
+  display: flex;
+}
+.page-body{
+  margin-bottom: 20rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+.price{
+  display: flex;
+  color: #F83B1D;
+  font-size: 28rpx;
+  height: 45rpx;
+  line-height: 45rpx;
+  justify-content: space-between;
+  margin: 10rpx 0;
+}
+.priceNum{
+  display: flex;
+}
+.oldPrice{
+  color: #999999;
+  text-decoration: line-through;
+}
+.small{
+  font-size: 42rpx;
+  margin-right: 16rpx;
+  margin-left: 1rpx;
+}
+.detail .left{
+  width: 578rpx;
+}
+.detail .left .title{
+  font-size: 34rpx;
+  color: #333;
+  font-weight: 600;
+}
+.share {
+  width: 112rpx;
+}
+.share button{
+  background: #FFF;
+  padding: 0;
+  line-height: 44rpx;
+}
+.share button::after{display:none}
+.share button view{
+  font-size: 24rpx;
+  color: #999;
+}
+.share image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.specifications{
+  margin: 20rpx 0;
+  background: #FFF;
+  padding: 20rpx 30rpx;
+  border-radius: 20rpx;
+}
+.specifications .title{
+  height: 45rpx;
+  line-height: 45rpx;
+  font-size: 28rpx;
+  color: #333333;
+  font-weight: 600;
+}
+.specifications .list{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20rpx;
+}
+.specifications .list .item{
+  border: 1px solid #333;
+  border-radius: 2px;
+  padding: 10rpx 20rpx;
+  margin-right: 18rpx;
+  font-size: 28rpx;
+}
+.specifications .list .itemActive{
+  border: none;
+  background: #F83B1D;
+  color: #fff;
+}
+.bottom{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  height: 100rpx;
+  width: 100%;
+  background: #fff;
+}
+.bottom image{
+  width: 34rpx;
+  height: 34rpx;
+  margin-top: 16rpx;
+}
+.bottom .button{
+  width: 276rpx;
+  line-height: 100rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 32rpx;
+}
+.bottom .yellow{
+  background: #FDA837;
+}
+.bottom .green{
+  background: #4CB981;
+}
+.bottom .wrap{
+  flex: 1;
+  text-align: center;
+  font-size: 24rpx;
+  color: #6A6969;
+}
+.item-img{
+  height: 550px;
+  width: 100%;
+  
+}

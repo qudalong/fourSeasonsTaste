@@ -1,0 +1,65 @@
+/* pages/shoppingCar/index.wxss */
+.top{
+  text-align: center;
+  margin-top: 32rpx;
+}
+.top image{
+  width: 374rpx;
+  height: 288rpx;
+}
+.text{
+  font-size: 30rpx;
+  color: #A7A7A7;
+  text-align: center;
+}
+.title{
+  color: #9BA1A5;
+  font-size: 30rpx;
+  text-align: center;
+  margin:70rpx auto 36rpx;
+  font-weight: 600
+}
+.list{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0 30rpx;
+  padding-bottom: 10rpx;
+}
+.list .item{
+  width: 336rpx;
+  background: #FFF;
+}
+.commodity image{
+  width: 336rpx;
+  height: 336rpx;
+}
+.price{
+  display: flex;
+  color: #F83B1D;
+  font-size: 24rpx;
+  height: 45rpx;
+  line-height: 45rpx;
+  justify-content: space-between;
+}
+.priceNum{
+  display: flex;
+}
+.oldPrice{
+  color: #999999;
+  text-decoration: line-through;
+}
+.small{
+  font-size: 32rpx;
+  margin-right: 16rpx;
+  margin-left: 1rpx;
+}
+.shoppingIcon{
+  margin-right: 14rpx;
+
+}
+
+.shoppingIcon image{
+  width: 33rpx;
+  height: 34rpx;
+}

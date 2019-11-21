@@ -1,0 +1,25 @@
+<view class="top-main">
+<!-- <image class="icon-fail center" src="/Images/icon/icon_fail.png" mode="aspectFit"></image> -->
+<!-- <image class="icon-empty center" src="/Images/icon/icon_empty.png" mode="aspectFit"></image> -->
+<image class="icon-success center" src="/Images/icon/icon_success.png" mode="aspectFit"></image>
+</view>
+<view class="btn btn-hollow mb10 hover">查看订单</view>
+<view class="btn btn-solid hover">再逛一逛</view>
+<view class='title'>更多精选商品</view>
+  <!-- 商品列表 -->
+  <view class='product-list'>
+    <view wx:for="{{imgs}}" class='item hover'>
+      <image class="cover" src='/images/2.jpg'></image>
+      <view class="product-info">
+        <view class="row2">齐峰奇异果陕西眉县徐香绿心弥猴桃当季水果齐峰奇异果陕西眉县徐香绿心弥猴桃当季水果</view>
+        <view class='row'>
+          <view class='price'>
+            <view class="small">
+            <text>¥</text>69.00</view>
+            <view class='oldPrice'>¥35</view>
+          </view>
+            <image class="icon-cart" src='/Images/icon/icon_shoppingred.png'></image>
+        </view>
+      </view>
+    </view>
+  </view>

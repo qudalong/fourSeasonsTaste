@@ -1,0 +1,140 @@
+/**app.wxss**/
+
+page {
+  padding: 30rpx;
+  width: auto;
+  font-size: 30rpx;
+  background: #f0f0f0;
+}
+
+.icon-cart {
+  width: 34rpx;
+  height: 34rpx;
+}
+
+.row1 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.row2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.hover:hover {
+  opacity: 0.7;
+}
+
+.more {
+  font-weight: 600;
+  color: rgba(155, 161, 165, 1);
+  letter-spacing: 3px;
+  text-align: center;
+  margin: 20px;
+}
+
+/* 按鈕 */
+
+.btn {
+  width: 70%;
+  border-radius: 40rpx;
+  padding: 20rpx 0;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.btn-solid {
+  background: #4cb981;
+  color: #fff;
+}
+
+.btn-hollow {
+  border: 1px solid #4cb981;
+  color: #4cb981;
+}
+
+.icon-success, .icon-fail {
+  width: 140px;
+  height: 140px;
+}
+
+.icon-empty {
+  width: 188px;
+  height: 160px;
+}
+
+.mb10 {
+  margin-bottom: 10px;
+}
+
+.center {
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+/* 商品列表 */
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-list .item {
+  width: 48%;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 1px 1px 8px -3px #dedede;
+  border-radius: 4px;
+  margin-bottom: 24rpx;
+}
+
+.product-list .item .cover {
+  height: 350rpx;
+  width: 100%;
+  border-radius: 10rpx;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10rpx;
+}
+
+.product-info {
+  padding: 20rpx 10rpx;
+  line-height: 1.4;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  font-size: 26rpx;
+  border-top: 1rpx solid #f0f0f0;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+}
+
+.small {
+  font-size: 24rpx;
+  font-weight: 600;
+  color: rgba(248, 59, 29, 1);
+}
+
+.small text {
+  font-size: 24rpx;
+}
+
+.oldPrice {
+  padding-left: 20rpx;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  font-size: 22rpx;
+  text-decoration: line-through;
+}

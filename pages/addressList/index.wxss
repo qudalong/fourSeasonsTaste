@@ -1,0 +1,93 @@
+/* pages/addressList/index.wxss */
+.addressList{
+  background: #F3F6F8;
+  min-height: 100%;
+}
+.wxaddress{
+  height: 87rpx;
+  background: #FBFBFB;
+  line-height: 87rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+.wxaddress view{
+  display: flex;
+  align-items: center;
+}
+.wxaddress view image{
+  margin-right: 14rpx;
+}
+.wxaddress view image{
+  width: 40rpx;
+  height: 41rpx;
+}
+.wxaddress image{
+  width: 14rpx;
+  height: 24rpx;
+}
+.list{
+  padding: 0 30rpx;
+}
+.item{
+  margin: 20rpx 0;
+  border-radius: 20rpx;
+  background: #FFF;
+  position: relative;
+  padding: 34rpx 36rpx;
+}
+.line{
+  display: flex;
+  height: 54rpx;
+  align-items: center;
+}
+.line image {
+  width: 32rpx;
+  height: 32rpx;
+}
+.line .default{
+  background: #4CB981;
+  color: #fff;
+  font-size: 24rpx;
+  border-radius: 10rpx;
+  width: 64rpx;
+  height: 32rpx;
+  text-align: center;
+  line-height: 32rpx;
+}
+.line .mobile{
+  margin: 0 16rpx 0 28rpx;
+}
+.address{
+  justify-content: space-between;
+}
+.choose{
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 55rpx;
+  height: 48rpx;
+  border-radius: 0 15rpx 0 30rpx;
+  overflow: hidden;
+}
+.choose image{
+  width: 55rpx;
+  height: 48rpx;
+}
+.active{
+  border: 4rpx solid #4CB981;
+}
+.addBtn{
+  margin: 30rpx;
+  background: #4CB981;
+  font-size: 32rpx;
+  color: #FFF;
+  border-radius: 15rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-weight: 700;
+}

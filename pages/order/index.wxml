@@ -1,0 +1,75 @@
+<!--pages/order/index.wxml-->
+<view class='order'>
+  <view class='address'>
+    <view class='left'>
+      <view class='name'>
+        <view>刘乐乐 </view>
+        <view class='mobile'> 12299999999</view>
+      </view>
+      <view class='addressName'>经十路23237号振兴花园1号楼商铺一层， 联通营业厅旁边</view>
+    </view>
+    <view class='right'>
+      <image src='../../Images/icon/icon_right.png'></image>
+    </view>
+  </view>
+  <view class="commodity">
+    <view class="top">
+      <view>
+        <image></image>
+      </view>
+      <view class='right'>
+        <view>佳沛 新西兰阳光金奇异果 特大 单果重量22-25克</view>
+        <view class='price'>
+          ¥<view class='priceNum'>69.00</view>
+        </view>
+      </view>
+    </view>
+    <view class='line'>
+      <view>购买数量</view>
+      <view class='num'>
+        <view class='add'><image src='../../Images/icon/icon_del.png'></image></view>
+        <view class='payNum'>10</view>
+        <view class='del'><image src='../../Images/icon/icon_add.png'></image></view>
+      </view>
+    </view>
+    <view class='line'>
+      <view>配送方式</view>
+      <view class='num'>
+        <view>韵达快递包邮</view>
+        <view class='right'><image src='../../Images/icon/icon_right.png'></image></view>
+      </view>
+    </view>
+  </view>
+  <view class='total'>
+    <view class='line'>
+      <view>商品金额</view>
+      <view class='right'> <view class='symbol'>¥</view><view>85.00</view></view>
+    </view>
+    <view class='line'>
+      <view>运费</view>
+      <view class='right'>+ <view class="symbol">¥</view><view> 10.00</view></view>
+    </view>
+    <view class='bottom'>
+      <view>实付款:</view>
+      <view class='orange'>¥</view>
+      <view class='totalNum orange'>89.00</view>
+    </view>
+  </view>
+  <view class='payType'>
+    <view class="title">选择支付方式</view>
+    <view class='line'>
+      <image src="../../Images/icon/weixin.png"></image>
+      <view>微信支付</view>
+    </view>
+  </view>
+
+  <view class='none'></view>
+  <view class='payBtn'>
+    <view class='bottom'>
+      <view>实付款:</view>
+      <view class='orange'>¥</view>
+      <view class='totalNum orange'>89.00</view>
+    </view>
+    <view class='payBt'>确认支付</view>
+  </view>
+</view>

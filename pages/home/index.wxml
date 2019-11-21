@@ -1,0 +1,35 @@
+<!--pages/home/index.wxml-->
+<view class="home">
+  <view class="page-body">
+    <view class="page-section page-section-spacing swiper">
+      <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="#ccc" indicator-active-color="green" class="swiper">
+        <block wx:for="{{imgs}}" wx:key="*this">
+          <swiper-item>
+            <image class="item-img" src="{{item}}"></image>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+  <view class="tab-group">
+    <view>招牌水果</view>
+    <view>应季精选</view>
+    <view>试吃专区</view>
+  </view>
+  <!-- 商品列表 -->
+  <view class='product-list'>
+    <view wx:for="{{imgs}}" class='item hover'>
+      <image class="cover" src='/images/2.jpg'></image>
+      <view class="product-info">
+        <view class="row2">齐峰奇异果陕西眉县徐香绿心弥猴桃当季水果齐峰奇异果陕西眉县徐香绿心弥猴桃当季水果</view>
+        <view class='row'>
+          <view class='price'>
+            <view class="small"><text>¥</text>69.00</view>
+            <view class='oldPrice'>¥35</view>
+          </view>
+            <image class="icon-cart" src='/Images/icon/icon_shoppingred.png'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

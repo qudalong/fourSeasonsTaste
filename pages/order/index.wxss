@@ -1,0 +1,187 @@
+/* pages/order/index.wxss */
+.order{
+  background: #F3F6F8;
+  padding: 20rpx 30rpx 0;
+  height: 100%;
+  font-size: 32rpx;
+}
+.address{
+  border-radius: 20rpx;
+  background: #FFF;
+  display: flex;
+  padding: 40rpx;
+}
+.address .left{
+  width: 588rpx;
+  color: #333;
+}
+.address .left .name{
+  font-size: 30rpx;
+  display: flex;
+  margin-bottom: 10rpx;
+}
+.address .left .name .mobile{
+  margin-left: 50rpx;
+}
+.address .left .addressName{
+  font-size: 32rpx;
+  font-weight: 500;
+}
+.address .right{
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.address .right image{
+  width: 16rpx;
+  height: 28rpx;
+}
+.commodity{
+  background: #FFF;
+  margin: 20rpx 0;
+  border-radius: 20rpx;
+  padding: 34rpx 36rpx;
+}
+.commodity .top{
+  display: flex;
+}
+.commodity .top .right{
+  font-size: 32rpx;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 20rpx;
+} 
+.commodity .top .right .price{
+  color: #F83B1D;
+  font-size: 24rpx;
+  display: flex;
+  align-items: center;
+}
+.commodity .top .right .priceNum{
+  font-size: 32rpx;
+  margin-left: 5rpx;
+}
+.commodity .top image{
+  width: 159rpx;
+  height: 163rpx;
+}
+.commodity .line,.total .line{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70rpx;
+  font-size: 32rpx;
+}
+.commodity .line .num{
+  display: flex;
+  align-items: center;
+}
+.commodity .line .num .payNum{
+  color: #F83B1D;
+  font-size: 30rpx;
+  margin: 0 20rpx;
+}
+.commodity .line .num image{
+  width: 42rpx;
+  height: 42rpx;
+}
+.commodity .line .right image{
+  width: 16rpx;
+  height: 28rpx;
+  margin-left: 20rpx;
+}
+.total{
+  background: #FFF;
+  margin: 20rpx 0;
+  border-radius: 20rpx;
+  padding-top: 34rpx;
+
+}
+.total .line{
+  margin: 0 36rpx;
+}
+.total .line .right{
+  display: flex;
+}
+.total .bottom,.payBtn .bottom{
+  height: 105rpx;
+  display: flex;
+  padding: 0 36rpx;
+  margin-top: 10rpx;
+  justify-content: flex-end;
+  border-top: 1px solid #EEEEEE;
+  align-items: center;
+  font-size: 30rpx;
+  color: #333;
+}
+.total .orange,.payBtn .orange{
+  color: #F83B1D;
+  font-size: 28rpx;
+  margin-left: 15rpx;
+}
+.total .totalNum,.payBtn .totalNum{
+  font-size: 42rpx;
+  margin-left: 5rpx;
+}
+.total .symbol{
+  margin: 0 5rpx;
+}
+.payType{
+  background: #FFF;
+  border-radius: 20rpx;
+  margin: 20rpx 0;
+}
+.payType .title{
+  height: 98rpx;
+  border-bottom: 1px solid #EEEEEE;
+  line-height: 98rpx;
+  padding-left: 36rpx;
+  font-size: 28rpx;
+  color: #333;
+  font-weight: 600;
+}
+.payType .line{
+  margin: 0 36rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  display: flex;
+  align-items: center;
+}
+.payType .line image{
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 20rpx;
+}
+
+.payBtn{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  justify-content: space-between;
+  background: #FFF;
+}
+.payBtn .bottom{
+  border: none;
+  margin: 0;
+  padding: 0;
+  height: 100rpx;
+  line-height: 100rpx;
+  justify-content: center;
+  flex: 1;
+}
+.payBt{
+  width: 288rpx;
+  background: #4CB981;
+  font-size: 32rpx;
+  color: #FFF;
+  line-height: 100rpx;
+  text-align: center;
+}
+.order .none{
+  height: 100rpx;
+}
