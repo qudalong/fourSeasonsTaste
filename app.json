@@ -1,12 +1,12 @@
 {
   "pages": [
+    "pages/home/index",
     "pages/pay/payFail/index",
     "pages/pay/paySuccess/index",
     "pages/order/index",
     "pages/shoppingCar/index",
     "pages/addressList/index",
     "pages/addAddress/index",
-    "pages/home/index",
     "pages/shopCart/shopCart",
     "pages/details/index",
     
