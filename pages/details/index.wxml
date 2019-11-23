@@ -1,12 +1,12 @@
-<!--pages/details/index.wxml-->
+<!-- pages/details/index.wxml -->
 <view class='details'>
   <view class='main'>
     <view class="page-body">
       <view class="page-section page-section-spacing swiper">
-        <swiper class='swiper' indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}"  indicator-color="#ccc" indicator-active-color="green"  duration="{{duration}}">
+        <swiper class='swiper' indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" indicator-color="#ccc" indicator-active-color="#4CB981" duration="{{duration}}">
           <block wx:for="{{imgs}}" wx:key="*this">
             <swiper-item>
-            <image class="item-img" src="{{item}}"></image>
+              <image class="item-img" src="{{item}}"></image>
               <!-- <view class="swiper-item">{{item}}</view> -->
             </swiper-item>
           </block>
@@ -26,8 +26,8 @@
       </view>
       <view class='share'>
         <button bindtap='sh' open-type='share'>
-          <image src='../../Images/icon/icon_share.png'></image>
-          <view>分享好友</view>  
+          <image src='../../images/icon/icon_share.png'></image>
+          <view>分享好友</view>
         </button>
       </view>
     </view>
@@ -39,17 +39,16 @@
       <view class='item'>大果猕猴桃10斤装</view>
     </view>
   </view>
-
   <view class='bottom'>
     <view class='wrap'>
-      <image src='../../Images/icon/icon_kefu.png'></image>
+      <image src='../../images/icon/icon_kefu.png'></image>
       <view>客服</view>
     </view>
     <view class='wrap'>
-      <image src='../../Images/icon/icon_shoppingblack.png'></image>
+      <image src='../../images/icon/icon_shoppingblack.png'></image>
       <view>客服</view>
     </view>
     <view class='button yellow'>加入购物车</view>
-    <view class='button green'>立即购买</view>
+    <view class='button #4CB981'>立即购买</view>
   </view>
 </view>

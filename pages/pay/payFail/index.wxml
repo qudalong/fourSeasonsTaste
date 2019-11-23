@@ -1,6 +1,6 @@
-<!--pages/pay/payFail/index.wxml-->
+<!-- pages/pay/payFail/index.wxml -->
 <view class='top'>
-  <image src='../../../Images/payFail.png'></image>
+  <image src='../../../images/payFail.png'></image>
 </view>
 <view class='title'>支付失败</view>
 <view class='button toOrder'>重新支付</view>

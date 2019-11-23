@@ -1,13 +1,14 @@
 {
   "pages": [
+    "pages/shopCart/shopCart",
     "pages/home/index",
-    "pages/pay/payFail/index",
-    "pages/pay/paySuccess/index",
+		"pages/my/my",
     "pages/order/index",
     "pages/shoppingCar/index",
+    "pages/pay/payFail/index",
+    "pages/pay/paySuccess/index",
     "pages/addressList/index",
     "pages/addAddress/index",
-    "pages/shopCart/shopCart",
     "pages/details/index",
     
     "pages/index/index",
@@ -24,20 +25,20 @@
     "list": [
       {
         "pagePath": "pages/home/index",
-        "iconPath": "Images/icon/icon_index.png",
-        "selectedIconPath":"Images/icon/icon_indexActive.png",
+        "iconPath": "images/icon/icon_index.png",
+        "selectedIconPath":"images/icon/icon_indexActive.png",
         "text": "首页"
       },
       {
         "pagePath": "pages/shopCart/shopCart",
-        "iconPath": "Images/icon/icon_shoppingCar.png",
-        "selectedIconPath": "Images/icon/icon_shoppingCarActive.png",
+        "iconPath": "images/icon/icon_shoppingCar.png",
+        "selectedIconPath": "images/icon/icon_shoppingCarActive.png",
         "text": "购物车"
       },
       {
-        "pagePath": "pages/logs/logs",
-        "iconPath": "Images/icon/icon_my.png",
-        "selectedIconPath": "Images/icon/icon_myActive.png",
+        "pagePath": "pages/my/my",
+        "iconPath": "images/icon/icon_my.png",
+        "selectedIconPath": "images/icon/icon_myActive.png",
         "text": "我的"
       }
     ]

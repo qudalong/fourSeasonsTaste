@@ -1,6 +1,6 @@
-<!--pages/pay/paySuccess/index.wxml-->
+<!-- pages/pay/paySuccess/index.wxml -->
 <view class='top'>
-  <image src='../../../Images/paySuccess.png'></image>
+  <image src='../../../images/paySuccess.png'></image>
 </view>
 <view class='btn toOrder'>查看订单</view>
 <view class="btn lookAgain">再逛一逛</view>
@@ -10,9 +10,7 @@
     <view class='commodity'>
       <image src=''></image>
     </view>
-    <view>
-      齐峰奇异果陕西眉县徐香绿心弥猴桃当季水果
-    </view>
+    <view>齐峰奇异果陕西眉县徐香绿心弥猴桃当季水果</view>
     <view class='price'>
       <view class='priceNum'>
         ¥
@@ -20,9 +18,8 @@
         <view class='oldPrice'>¥35</view>
       </view>
       <view class="shoppingIcon">
-        <image src='../../../Images/icon/icon_shoppingred.png'></image>
+        <image src='../../../images/icon/icon_shoppingred.png'></image>
       </view>
     </view>
   </view>
-  
 </view>

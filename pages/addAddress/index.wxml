@@ -11,7 +11,7 @@
   <view class='line'>
     <view class="label">所在地区</view>
     <view class='value'>李先生</view>
-    <view> <image src='../../Images/icon/icon_sign.png'></image> 定位</view>
+    <view> <image src='../../images/icon/icon_sign.png'></image> 定位</view>
   </view>
   <view class='line'>
     <view class="label">详细地址</view>

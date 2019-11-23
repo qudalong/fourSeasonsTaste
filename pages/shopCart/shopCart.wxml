@@ -1,47 +1,60 @@
 <view class='card-wrap'>
-  <view class="title">
-    <radio></radio>
-    <text>四季滋味</text>
-  </view>
-  <view class="card-list">
-    <view wx:for="{{list}}" wx:key="unique" class="item">
-      <radio></radio>
-      <image class="cover-food" src='/images/2.jpg'></image>
-      <view class="food-info">
-        <view class="row2 details">佳沛新西兰阳光金奇异果 特大单果重量22-26克</view>
-        <view class="type">5斤装</view>
-        <view class="price">
-          <text>￥</text>
-          <text class="txt">69.00</text>
-        </view>
-        <view class="count">x1</view>
-      </view>
-    </view>
-  </view>
+	<view class="title">
+		<radio></radio>
+		<image class="logo" src='/images/logo.jpeg'></image>
+		<text>四季滋味</text>
+	</view>
+	<view class="card-list">
+		<view wx:for="{{list}}" wx:key="unique" class="item hover">
+			<radio></radio>
+			<view class="food-infos">
+				<image class="cover-food" src='{{item.img}}'></image>
+				<view class="food-info">
+					<view class="row2 details">{{item.title}}</view>
+					<view class="type">{{item.type}}</view>
+					<view class="price">
+						<view>
+							<text>￥</text>
+							<text class="txt">{{item.price}}</text>
+						</view>
+						<view class="count">x1</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
 </view>
-<view class="more">更多精选商品</view>
+<view class="more">
+	<view class="flex">
+		<view class="line"></view>
+		<view class="txt">更多精选商品</view>
+		<view class="line"></view>
+	</view>
+</view>
 <!-- 商品列表 -->
 <view class='product-list'>
-  <view wx:for="{{list}}" class='item hover'>
-    <image class="cover" src='/images/2.jpg'></image>
-    <view class="product-info">
-      <view class="row2">齐峰奇异果陕西眉县徐香绿心弥猴桃当季水果齐峰奇异果陕西眉县徐香绿心弥猴桃当季水果</view>
-      <view class='row'>
-        <view class='price'>
-          <view class="small">
-            <text>¥</text>69.00</view>
-          <view class='oldPrice'>¥35</view>
-        </view>
-        <image class="icon-cart" src='/Images/icon/icon_shoppingred.png'></image>
-      </view>
-    </view>
-  </view>
+	<view wx:for="{{list}}" wx:key="unique" class='item hover'>
+		<image class="cover" src='{{item.img}}'></image>
+		<view class="product-info">
+			<view class="row2">{{item.title}}</view>
+			<view class='row'>
+				<view class='price'>
+					<view class="small">
+						<text>¥</text> 69.00
+					</view>
+					<!-- <view class='oldPrice'>¥35</view> -->
+				</view>
+				<!-- <image class="icon-cart" src='/images/icon/icon_shoppingred.png'></image> -->
+			</view>
+		</view>
+	</view>
 </view>
 <!-- 结算 -->
 <view class="result-wrap">
-  <radio>全选</radio>
-  <view class="hook">不含运费 合计
-    <text class="totalMoney">￥89.00</text>
-  </view>
-  <view class="accounts hover">结算(2)</view>
+	<radio>全选</radio>
+	<view class="hook">
+		不含运费 合计
+		<text class="totalMoney">￥89.00</text>
+	</view>
+	<view class="accounts hover">结算(2)</view>
 </view>

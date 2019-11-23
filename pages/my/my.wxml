@@ -1,0 +1,59 @@
+<view class="block user-info">
+	<image class="head" src="/images/1.jpg"></image>
+	<view class="user">
+		<view class="name">苏淼先生</view>
+		<view class="compare">合伙人</view>
+	</view>
+</view>
+<!-- 我的订单 -->
+<view class="block">
+	<view class="row hover">
+		<view class="title">我的订单</view>
+		<view class="right">
+			<text>查看全部订单</text>
+			<image class="icon-right" src="/images/icon/icon_right.png"></image>
+		</view>
+	</view>
+	<view class="type-list">
+		<view class="item hover">
+			<image class="icon-type" src="/images/icon/icon_dfk.png"></image>
+			<view class="txt">待付款</view>
+		</view>
+		<view class="item hover">
+			<image class="icon-type" src="/images/icon/icon_dfh.png"></image>
+			<view class="txt">待发货</view>
+		</view>
+		<view class="item hover">
+			<image class="icon-type" src="/images/icon/icon_yfh.png"></image>
+			<view class="txt">已发货</view>
+		</view>
+		<view class="item hover">
+			<image class="icon-type" src="/images/icon/icon_ywc.png"></image>
+			<view class="txt">已完成</view>
+		</view>
+	</view>
+</view>
+<!-- 分销中心 -->
+<view class="block">
+	<view class="row hover">
+		<view class="title">分销中心</view>
+		<view class="right">
+			<text>进入分销中心</text>
+			<image class="icon-right" src="/images/icon/icon_right.png"></image>
+		</view>
+	</view>
+	<view class="type-list">
+		<view class="item hover">
+			<view class="number">￥39.00</view>
+			<view class="txt">今日收益</view>
+		</view>
+		<view class="item hover">
+			<view class="number">￥39.00</view>
+			<view class="txt">本月收益</view>
+		</view>
+		<view class="item hover">
+			<view class="number">￥39.00</view>
+			<view class="txt">上月收益</view>
+		</view>
+	</view>
+</view>

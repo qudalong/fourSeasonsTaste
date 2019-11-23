@@ -1,10 +1,11 @@
-<!--pages/addressList/index.wxml-->
+<!-- pages/addressList/index.wxml -->
 <view class='addressList'>
   <view class='wxaddress'>
     <view>
-      <image src='../../Images/icon/weixin.png'></image>获取微信收获地址
+      <image src='../../images/icon/weixin.png'></image>
+      获取微信收获地址
     </view>
-    <image src='../../Images/icon/icon_right.png'></image>
+    <image src='../../images/icon/icon_right.png'></image>
   </view>
   <view class='list'>
     <view class='item active'>
@@ -14,11 +15,13 @@
         <view class="default">默认</view>
       </view>
       <view class='line address'>
-        <view>山东省济南市槐荫区经十路2323</view> 
-        <view><image src='../../Images/icon/icon_change.png'></image> </view>
+        <view>山东省济南市槐荫区经十路2323</view>
+        <view>
+          <image src='../../images/icon/icon_change.png'></image>
+        </view>
       </view>
       <view class='choose'>
-        <image src='../../Images/icon/icon_choose.jpeg'></image>
+        <image src='../../images/icon/icon_choose.jpeg'></image>
       </view>
     </view>
     <view class='item'>
@@ -28,11 +31,13 @@
         <!-- <view class="default">默认</view> -->
       </view>
       <view class='line address'>
-        <view>山东省济南市槐荫区经十路2323</view> 
-        <view><image src='../../Images/icon/icon_change.png'></image> </view>
+        <view>山东省济南市槐荫区经十路2323</view>
+        <view>
+          <image src='../../images/icon/icon_change.png'></image>
+        </view>
       </view>
       <!-- <view class='choose'>
-        <image src='../../Images/icon/icon_choose.png'></image>
+        <image src='../../images/icon/icon_choose.png'></image>
       </view> -->
     </view>
   </view>
