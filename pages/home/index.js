@@ -43,6 +43,11 @@ Page({
       index: e.currentTarget.dataset.index
     })
   },
+	toDesc(){
+		wx.navigateTo({
+			url:'/pages/details/index'
+		})
+	},
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

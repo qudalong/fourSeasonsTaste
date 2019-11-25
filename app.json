@@ -1,15 +1,16 @@
 {
   "pages": [
-    "pages/shopCart/shopCart",
     "pages/home/index",
-		"pages/my/my",
-    "pages/order/index",
-    "pages/shoppingCar/index",
-    "pages/pay/payFail/index",
-    "pages/pay/paySuccess/index",
+    "pages/adressEdit/adressEdit",
     "pages/addressList/index",
     "pages/addAddress/index",
+    "pages/shoppingCar/index",
+    "pages/order/index",
     "pages/details/index",
+    "pages/shopCart/shopCart",
+		"pages/my/my",
+    "pages/pay/payFail/index",
+    "pages/pay/paySuccess/index",
     
     "pages/index/index",
     "pages/logs/logs"

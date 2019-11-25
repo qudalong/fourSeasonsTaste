@@ -1,168 +1,157 @@
 page {
-    padding: 10rpx;
-    width: auto;
-    font-size: 30rpx;
-}
+		background: #EDF2F7;
+	}
 
-.logo {
-    width: 50rpx;
-    height: 50rpx;
-    margin-right: 10rpx;
-}
+	.swiper {
+		height: 750rpx;
+	}
 
-.icon-cart {
-    width: 34rpx;
-    height: 34rpx;
-}
+	.item-img {
+		height: 750rpx;
+		width: 100%;
+	}
 
-.icon-right {
-    display: inline-block;
-    width: 20rpx;
-    height: 24rpx;
-    padding-left: 10rpx;
-}
+	.food-info {
+		padding: 20rpx 0;
+	}
 
-.row1 {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
+	.food-info .row {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+	}
 
-.row2 {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    overflow: hidden;
-}
+	/* 分享按钮 */
+	.share-box {
+		text-align: center;
+		font-size: 24rpx;
+		padding-right: 4rpx;
+		position: relative;
+		width: 109rpx;
+		height: 76rpx;
+	}
 
-.hover:hover {
-    opacity: 0.9;
-}
+	.share-box .abs {
+		position: absolute;
+		left: 10rpx;
+		top: 4rpx;
+		z-index: 1;
+	}
 
-.more {
-    display: flex;
-    align-items: center;
-    letter-spacing: 2px;
-    text-align: center;
-    justify-content: space-around;
-    margin: 20px auto;
-}
+	.share-btn {
+		width: 109rpx;
+		height: 76rpx;
+		margin: 0;
+		padding: 0;
+		position: absolute;
+		left: 10rpx;
+		top: 4rpx;
+		z-index: 2;
+	}
 
-.more .flex {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    margin: 20px auto;
-}
+	button {
+		border: none;
+		background: #fff;
+		opacity: 0;
+	}
 
-.more .line {
-    width: 80rpx;
-    height: 4rpx;
-    background: #4CB981;
-}
+	button::after {
+		border: none;
+		background: #fff;
+		opacity: 0;
+	}
 
-.more .txt {
-    margin: 0 10rpx;
-}
-
-
-/* 按鈕 */
-
-.btn {
-    width: 70%;
-    border-radius: 40rpx;
-    padding: 20rpx 0;
-    margin-left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-}
-
-.btn-solid {
-    background: #4cb981;
-    color: #fff;
-}
-
-.btn-hollow {
-    border: 1px solid #4cb981;
-    color: #4cb981;
-}
-
-.icon-success,
-.icon-fail {
-    width: 140px;
-    height: 140px;
-}
-
-.icon-empty {
-    width: 188px;
-    height: 160px;
-}
-
-.mb10 {
-    margin-bottom: 10px;
-}
-
-.center {
-    margin-left: 50%;
-    transform: translateX(-50%);
-}
+	.button-hover {
+		border: none;
+		background: none;
+		opacity: 0;
+	}
 
 
-/* 商品列表 */
+	/* 规格 */
+	.type-warp {
+		margin: 20rpx 0;
+		padding: 20rpx;
+	}
 
-.product-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
+	.type-warp .title {
+		font-size: 32rpx;
+		font-weight: bold;
+	}
 
-.product-list .item {
-    width: 49%;
-    background: rgba(255, 255, 255, 1);
-    box-shadow: 1px 1px 8px -3px #dedede;
-    border-radius: 4px;
-    margin-bottom: 20rpx;
-}
+	.flex1 {
+		flex: 1;
+		font-weight: bold;
+		line-height: 1.4;
+	}
 
-.product-list .item .cover {
-    height: 350rpx;
-    width: 100%;
-    border-radius: 2rpx;
-}
+	.btn-grounp {
+		margin: 30rpx 0;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+	}
 
-.row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 8rpx 14rpx 0;
-}
+	.btn-grounp .btn-item {
+		color: #333;
+		background: #fff;
+		border: 1rpx solid #666;
+		padding: 20rpx;
+		border-radius: 8rpx;
+	}
 
-.product-info {
-    padding: 6rpx 10rpx 16rpx;
-    line-height: 1.6;
-    font-weight: 400;
-    font-size: 28rpx;
-}
+	.btn-grounp .btn-item.active {
+		color: #fff;
+		background: #F83B1D;
+		border: 1rpx solid #F83B1D;
+	}
 
-.price {
-    display: flex;
-    align-items: center;
-}
+	/* 详情 */
+	.desc-wrap {
+		margin-bottom: 70px;
+	}
 
-.small {
-    font-size: 24rpx;
-    font-weight: 600;
-    color: rgba(248, 59, 29, 1);
-}
+	.desc-wrap image {
+		width: 100%;
+	}
 
-.small text {
-    font-size: 24rpx;
-}
+	/* 购物车 */
+	.fiexd-control {
+		position: fixed;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		height: 120rpx;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		background: #fff;
+	}
 
-.oldPrice {
-    padding-left: 20rpx;
-    font-weight: 400;
-    color: rgba(153, 153, 153, 1);
-    font-size: 22rpx;
-    text-decoration: line-through;
-}
+	.icon_shoppingblack,
+	.icon_kefu {
+		width: 50rpx;
+		height: 50rpx;
+		margin-bottom: 4rpx;
+	}
+
+	.fiexd-control .item {
+		flex: 2;
+		text-align: center;
+		color: #6A6969;
+	}
+
+	.fiexd-control .cartin,
+	.fiexd-control .buy {
+		flex: 3;
+		background: #FDA837;
+		color: #fff;
+		height: 100%;
+		line-height: 120rpx;
+		font-weight: bold;
+		font-size: 32rpx;
+	}
+
+	.fiexd-control .buy {
+		background: #4CB981;
+	}

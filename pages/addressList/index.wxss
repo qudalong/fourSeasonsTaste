@@ -1,8 +1,5 @@
 /* pages/addressList/index.wxss */
-.addressList{
-  background: #F3F6F8;
-  min-height: 100%;
-}
+
 .wxaddress{
   height: 87rpx;
   background: #FBFBFB;
@@ -29,9 +26,7 @@
   width: 14rpx;
   height: 24rpx;
 }
-.list{
-  padding: 0 30rpx;
-}
+
 .item{
   margin: 20rpx 0;
   border-radius: 20rpx;

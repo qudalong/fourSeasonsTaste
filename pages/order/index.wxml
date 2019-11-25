@@ -1,12 +1,12 @@
 <!-- pages/order/index.wxml -->
 <view class='order'>
-  <view class='address'>
+  <view bindtap='toAddress' class='address'>
     <view class='left'>
       <view class='name'>
         <view>刘乐乐</view>
         <view class='mobile'>12299999999</view>
       </view>
-      <view class='addressName'>经十路23237号振兴花园1号楼商铺一层， 联通营业厅旁边</view>
+      <view class='addressName row2'>经十路23237号振兴花园1号楼商铺一层， 联通营业厅旁边号楼商铺一层号楼商铺一层</view>
     </view>
     <view class='right'>
       <image src='../../images/icon/icon_right.png'></image>
@@ -15,10 +15,10 @@
   <view class="commodity">
     <view class="top">
       <view>
-        <image></image>
+        <image class="cover-food"  src="../../images/2.jpg"></image>
       </view>
       <view class='right'>
-        <view>佳沛 新西兰阳光金奇异果 特大 单果重量22-25克</view>
+        <view class="row2">佳沛 新西兰阳光金奇异果 特大 单果重量22-25克新西兰阳光金奇异果</view>
         <view class='price'>
           ¥
           <view class='priceNum'>69.00</view>
@@ -83,6 +83,6 @@
       <view class='orange'>¥</view>
       <view class='totalNum orange'>89.00</view>
     </view>
-    <view class='payBt'>确认支付</view>
+    <view class='payBt hover'>确认支付</view>
   </view>
 </view>

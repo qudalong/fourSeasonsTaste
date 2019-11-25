@@ -1,0 +1,33 @@
+<!-- pages/addressList/index.wxml -->
+<view class='addressList'>
+	<view class='wxaddress'>
+		<view>
+			<image src='../../images/icon/weixin.png'></image>
+			获取微信收获地址
+		</view>
+		<image src='../../images/icon/icon_right.png'></image>
+	</view>
+	<view class='list'>
+		<view class='item'>
+			<view class="lable">收货人</view>
+			<input type="text" placeholder="收货人姓名" />
+		</view>
+		<view class='item'>
+			<view class="lable">收货人</view>
+			<input type="text" placeholder="收货人姓名" />
+		</view>
+		<view class='item'>
+			<view class="lable">电话</view>
+			<input type="text" placeholder="收货人手机号" />
+		</view>
+		<view class='item'>
+			<view class="lable">所在地区</view>
+			<input type="text" placeholder="选择省/市/区" />
+		</view>
+		<view class='item'>
+			<view class="lable">详细地址</view>
+			<input type="text" placeholder='街道门牌,楼层房间号等信息' />
+		</view>
+	</view>
+	<view class="addBtn">添加新地址</view>
+</view>

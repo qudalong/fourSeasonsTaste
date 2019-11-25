@@ -14,7 +14,11 @@ Page({
   onLoad: function (options) {
 
   },
-
+toEditAddress(){
+	wx.navigateTo({
+		url:'/pages/adressEdit/adressEdit'
+	})
+},
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

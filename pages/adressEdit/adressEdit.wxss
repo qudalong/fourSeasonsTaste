@@ -1,0 +1,19 @@
+@import '../addressList/index.wxss';
+
+page {
+	background: #F3F6F8;
+}
+
+.list .item {
+	display: flex;
+	align-items: center;
+}
+
+.list .item .lable {
+	width: 136rpx;
+	color: #666;
+}
+
+.list .item .inpt {
+	flex: 1;
+}

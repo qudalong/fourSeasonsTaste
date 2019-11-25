@@ -1,4 +1,4 @@
-// pages/order/index.js
+// pages/adressEdit/adressEdit.js
 Page({
 
   /**
@@ -14,11 +14,7 @@ Page({
   onLoad: function (options) {
 
   },
-	toAddress(){
-		wx.navigateTo({
-			url:'/pages/addressList/index'
-		})
-	},
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
