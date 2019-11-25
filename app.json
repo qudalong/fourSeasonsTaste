@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/my/my",
+    "pages/orderStatus/orderStatus",
     "pages/home/index",
     "pages/adressEdit/adressEdit",
     "pages/addressList/index",
@@ -8,10 +10,8 @@
     "pages/order/index",
     "pages/details/index",
     "pages/shopCart/shopCart",
-		"pages/my/my",
     "pages/pay/payFail/index",
     "pages/pay/paySuccess/index",
-    
     "pages/index/index",
     "pages/logs/logs"
   ],
@@ -27,7 +27,7 @@
       {
         "pagePath": "pages/home/index",
         "iconPath": "images/icon/icon_index.png",
-        "selectedIconPath":"images/icon/icon_indexActive.png",
+        "selectedIconPath": "images/icon/icon_indexActive.png",
         "text": "首页"
       },
       {

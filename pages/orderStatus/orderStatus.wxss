@@ -1,17 +1,3 @@
-page {
-	background: #fff;
-}
-
-.swiper {
-	width: 100%;
-	background: #ccc;
-	overflow: hidden;
-	border-radius: 2rpx;
-}
-
-.item-img {
-	width: 100%;
-}
 /* tab */
 .tab-group {
 	display: flex;
@@ -19,6 +5,7 @@ page {
 	justify-content: space-around;
 	border-bottom: 1rpx solid #f0f0f0;
 	margin-bottom: 10rpx;
+	background: #fff;
 }
 
 .tab-group .item {

@@ -15,19 +15,19 @@
 		</view>
 	</view>
 	<view class="type-list">
-		<view class="item hover">
+		<view bindtap='toOrderList' data-index='2' class="item hover">
 			<image class="icon-type" src="/images/icon/icon_dfk.png"></image>
 			<view class="txt">待付款</view>
 		</view>
-		<view class="item hover">
+		<view bindtap='toOrderList' data-index='3' class="item hover">
 			<image class="icon-type" src="/images/icon/icon_dfh.png"></image>
 			<view class="txt">待发货</view>
 		</view>
-		<view class="item hover">
+		<view bindtap='toOrderList' data-index='4' class="item hover">
 			<image class="icon-type" src="/images/icon/icon_yfh.png"></image>
 			<view class="txt">已发货</view>
 		</view>
-		<view class="item hover">
+		<view bindtap='toOrderList' data-index='5' class="item hover">
 			<image class="icon-type" src="/images/icon/icon_ywc.png"></image>
 			<view class="txt">已完成</view>
 		</view>

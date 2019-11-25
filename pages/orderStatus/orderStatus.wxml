@@ -1,0 +1,36 @@
+<view class="tab-group">
+	<view bindtap="tap" data-index='1' class="item {{index==1?'active':''}}">全部</view>
+	<view bindtap="tap" data-index='2' class="item {{index==2?'active':''}}">待付款</view>
+	<view bindtap="tap" data-index='3' class="item {{index==3?'active':''}}">待发货</view>
+	<view bindtap="tap" data-index='4' class="item {{index==4?'active':''}}">已发货</view>
+	<view bindtap="tap" data-index='5' class="item {{index==5?'active':''}}">已完成</view>
+</view>
+<!-- 商品列表 -->
+<view class="order-list">
+	<view class="empty">暂无商品</view>
+</view>
+<!-- 更多精选商品 -->
+<view class="more">
+	<view class="flex">
+		<view class="line"></view>
+		<view class="txt">更多精选商品</view>
+		<view class="line"></view>
+	</view>
+</view>
+<view class='product-list'>
+	<view wx:for="{{list}}" wx:key="unique" class='item hover'>
+		<image class="cover" src='{{item.img}}'></image>
+		<view class="product-info">
+			<view class="row2">{{item.title}}</view>
+			<view class='row'>
+				<view class='price'>
+					<view class="small">
+						<text>¥</text> 69.00
+					</view>
+					<view class='oldPrice'>¥35</view>
+				</view>
+				<image class="icon-cart" src='/images/icon/icon_shoppingred.png'></image>
+			</view>
+		</view>
+	</view>
+</view>
