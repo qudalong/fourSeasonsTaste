@@ -10,7 +10,7 @@ page {
 }
 
 .list .item .lable {
-	width: 136rpx;
+	width: 160rpx;
 	color: #666;
 }
 

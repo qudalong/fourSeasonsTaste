@@ -7,7 +7,7 @@
 </view>
 <!-- 我的订单 -->
 <view class="block">
-	<view class="row hover">
+	<view bindtap='toOrderList' data-index='1' class="row hover">
 		<view class="title">我的订单</view>
 		<view class="right">
 			<text>查看全部订单</text>

@@ -1,36 +1,120 @@
 <view class="tab-group">
-	<view bindtap="tap" data-index='1' class="item {{index==1?'active':''}}">全部</view>
-	<view bindtap="tap" data-index='2' class="item {{index==2?'active':''}}">待付款</view>
-	<view bindtap="tap" data-index='3' class="item {{index==3?'active':''}}">待发货</view>
-	<view bindtap="tap" data-index='4' class="item {{index==4?'active':''}}">已发货</view>
-	<view bindtap="tap" data-index='5' class="item {{index==5?'active':''}}">已完成</view>
+  <view bindtap="tap" data-index='1' class="items {{index==1?'act':''}}">全部</view>
+  <view bindtap="tap" data-index='2' class="items {{index==2?'act':''}}">待付款</view>
+  <view bindtap="tap" data-index='3' class="items {{index==3?'act':''}}">待发货</view>
+  <view bindtap="tap" data-index='4' class="items {{index==4?'act':''}}">已发货</view>
+  <view bindtap="tap" data-index='5' class="items {{index==5?'act':''}}">已完成</view>
 </view>
 <!-- 商品列表 -->
 <view class="order-list">
-	<view class="empty">暂无商品</view>
+  <!-- 订单详情s -->
+  <!-- pages/order/index.wxml -->
+  <view class='order'>
+    <view bindtap='toAddress' class='address'>
+      <view class='left'>
+        <view class='name'>
+          <view>刘乐乐</view>
+          <view class='mobile'>18768871893</view>
+        </view>
+        <view class='addressName row2'>经十路23237号振兴花园1号楼商铺一层， 联通营业厅旁边号楼商铺一层号楼商铺一层</view>
+      </view>
+      <view class='right'>
+        <image src='../../images/icon/icon_right.png'></image>
+      </view>
+    </view>
+    <view class="commodity">
+      <view class="top">
+        <view>
+          <image class="cover-food" src="../../images/2.jpg"></image>
+        </view>
+        <view class='right'>
+          <view class="row2">佳沛 新西兰阳光金奇异果 特大 单果重量22-25克新西兰阳光金奇异果</view>
+          <view class='price flex'>
+            <view class='priceNum'>¥69.00</view>
+            <view class="count">x1</view>
+          </view>
+        </view>
+      </view>
+        <view class="btns">
+          <view class="comm-btn hover">取消</view>
+          <view class="comm-btn btn-pay hover">付款</view>
+        </view>
+    </view>
+    <view class='total'>
+      <view class='line'>
+        <view>商品金额</view>
+        <view class='right'>
+          <view class='symbol'>¥</view>
+          <view>85.00</view>
+        </view>
+      </view>
+      <view class='line'>
+        <view>运费</view>
+        <view class='right'>
+          +
+          <view class="symbol">¥</view>
+          <view>10.00</view>
+        </view>
+      </view>
+      <view class='bottom'>
+        <view>实付款:</view>
+        <view class='orange'>¥</view>
+        <view class='totalNum orange'>89.00</view>
+      </view>
+    </view>
+    <view class='total orderInfo'>
+      <view class='line'>
+        <view>订单编号：</view>
+        <view class='right'>
+          1827327h2312
+        </view>
+      </view>
+      <view class='line'>
+        <view>下单时间：</view>
+        <view class='right'>
+          2019-1107 18:46:11
+        </view>
+      </view>
+      <view class='line'>
+        <view>支付方式：</view>
+        <view class='right'>
+          微信支付
+        </view>
+      </view>
+      <view class='line'>
+        <view>配送方式：</view>
+        <view class='right'>
+          韵达快递
+        </view>
+      </view>
+    </view>
+    <view class='none'></view>
+  </view>
+  <!-- 订单详情e -->
+  <!-- <view class="empty">暂无商品</view> -->
 </view>
 <!-- 更多精选商品 -->
 <view class="more">
-	<view class="flex">
-		<view class="line"></view>
-		<view class="txt">更多精选商品</view>
-		<view class="line"></view>
-	</view>
+  <view class="flex">
+    <view class="line"></view>
+    <view class="txt">更多精选商品</view>
+    <view class="line"></view>
+  </view>
 </view>
 <view class='product-list'>
-	<view wx:for="{{list}}" wx:key="unique" class='item hover'>
-		<image class="cover" src='{{item.img}}'></image>
-		<view class="product-info">
-			<view class="row2">{{item.title}}</view>
-			<view class='row'>
-				<view class='price'>
-					<view class="small">
-						<text>¥</text> 69.00
-					</view>
-					<view class='oldPrice'>¥35</view>
-				</view>
-				<image class="icon-cart" src='/images/icon/icon_shoppingred.png'></image>
-			</view>
-		</view>
-	</view>
+  <view wx:for="{{list}}" wx:key="unique" class='item hover'>
+    <image class="cover" src='{{item.img}}'></image>
+    <view class="product-info">
+      <view class="row2">{{item.title}}</view>
+      <view class='row'>
+        <view class='price'>
+          <view class="small">
+            <text>¥</text> 69.00
+          </view>
+          <view class='oldPrice'>¥35</view>
+        </view>
+        <image class="icon-cart" src='/images/icon/icon_shoppingred.png'></image>
+      </view>
+    </view>
+  </view>
 </view>

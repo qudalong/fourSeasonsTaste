@@ -1,5 +1,5 @@
 /* pages/order/index.wxss */
-
+@import '../addressList/index.wxss';
 .order {
 	height: 100%;
 	font-size: 32rpx;
@@ -25,12 +25,11 @@
 }
 
 .address .left .name .mobile {
-	margin-left: 50rpx;
+	margin-left: 30rpx;
 }
 
 .address .left .addressName {
-	font-size: 32rpx;
-	font-weight: 500;
+	font-size: 30rpx;
 }
 
 .address .right {
@@ -87,7 +86,7 @@
 	align-items: center;
 	justify-content: space-between;
 	height: 70rpx;
-	font-size: 32rpx;
+	font-size: 30rpx;
 }
 
 .commodity .line .num {
@@ -102,8 +101,8 @@
 }
 
 .commodity .line .num image {
-	width: 42rpx;
-	height: 42rpx;
+	width: 50rpx;
+	height: 50rpx;
 }
 
 .commodity .line .right image {

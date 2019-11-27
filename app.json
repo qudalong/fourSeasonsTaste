@@ -1,11 +1,11 @@
 {
   "pages": [
-    "pages/my/my",
-    "pages/orderStatus/orderStatus",
     "pages/home/index",
-    "pages/adressEdit/adressEdit",
     "pages/addressList/index",
     "pages/addAddress/index",
+    "pages/orderStatus/orderStatus",
+    "pages/my/my",
+    "pages/adressEdit/adressEdit",
     "pages/shoppingCar/index",
     "pages/order/index",
     "pages/details/index",

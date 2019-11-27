@@ -1,6 +1,6 @@
 <!-- pages/addressList/index.wxml -->
 <view class='addressList'>
-	<view class='wxaddress'>
+	<view  bindtap="getLocation"  class='wxaddress' >
 		<view>
 			<image src='../../images/icon/weixin.png'></image>
 			获取微信收获地址
@@ -8,37 +8,21 @@
 		<image src='../../images/icon/icon_right.png'></image>
 	</view>
 	<view class='list'>
-		<view bindtap='toEditAddress' class='item active'>
+		<view bindtap="tap" data-index='{{index}}' wx:for="{{list}}" wx:key="*this" class="item {{activeIndex==index?'active':''}}">
 			<view class='line'>
-				<view>刘了声</view>
-				<view class='mobile'>18988888888</view>
-				<view class="default">默认</view>
+				<view>{{item.name}}</view>
+				<view class='mobile'>{{item.tel}}</view>
+				<view wx:if="{{item.type==1}}" class="default">默认</view>
 			</view>
 			<view class='line address'>
-				<view>山东省济南市槐荫区经十路2323</view>
-				<view>
+				<view>{{item.address}}</view>
+				<view bindtap='toEditAddress'>
 					<image src='../../images/icon/icon_change.png'></image>
 				</view>
 			</view>
 			<view class='choose'>
-				<image src='../../images/icon/icon_choose.jpeg'></image>
+				<image wx:if="{{activeIndex==index}}" src='../../images/icon/icon_choose.jpeg'></image>
 			</view>
-		</view>
-		<view bindtap='toEditAddress' class='item'>
-			<view class='line'>
-				<view>刘了声</view>
-				<view class='mobile'>18988888888</view>
-				<!-- <view class="default">默认</view> -->
-			</view>
-			<view class='line address'>
-				<view>山东省济南市槐荫区经十路2323</view>
-				<view>
-					<image src='../../images/icon/icon_change.png'></image>
-				</view>
-			</view>
-			<!-- <view class='choose'>
-        <image src='../../images/icon/icon_choose.png'></image>
-      </view> -->
 		</view>
 	</view>
 	<view bindtap='toEditAddress' class="addBtn">添加新地址</view>

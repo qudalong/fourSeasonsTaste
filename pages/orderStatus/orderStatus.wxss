@@ -1,4 +1,4 @@
-/* tab */
+@import '../order/index.wxss';
 .tab-group {
 	display: flex;
 	align-items: center;
@@ -8,14 +8,49 @@
 	background: #fff;
 }
 
-.tab-group .item {
+.tab-group .items {
 	font-weight: bold;
 	color: #333;
 	padding: 30rpx 20rpx;
 	border-bottom: 2px solid #fff;
 }
 
-.tab-group .item.active {
+.tab-group .items.act {
 	color: green;
+  border: 0;
 	border-bottom: 2px solid green;
+}
+.orderInfo .line view{
+  color: #666;
+}
+.orderInfo .line .right{
+  flex: 1;
+  padding-left: 10rpx;
+  color: #000;
+}
+.flex{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.count{
+  color: #000;
+}
+.btns{
+  text-align: right;
+  margin-top: 20rpx;
+}
+.comm-btn{
+  display: inline-block;
+  padding: 20rpx 30rpx;
+  border-radius: 8rpx;
+  border: 1rpx solid #f0f0f0;
+  margin-right:20rpx;
+  text-align: center;
+  font-size: 30rpx;
+}
+.btn-pay{
+   border: 1rpx solid #F83B1D;
+   color: #fff;
+   background: #F83B1D;
 }
