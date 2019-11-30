@@ -85,7 +85,9 @@ page {
 	border-radius: 100%;
 	margin-right: 0;
 }
-
+.head1{
+  margin-right:20rpx;
+}
 
 /* 进度 */
 .properss {

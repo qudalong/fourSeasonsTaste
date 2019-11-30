@@ -1,5 +1,5 @@
 <view class="block user-info">
-	<image class="head" src="/images/1.jpg"></image>
+	<image class="head head1" src="/images/1.jpg"></image>
 	<view class="user">
 		<view class="name">苏淼先生</view>
 		<view class="compare">四季滋味合伙人</view>

@@ -18,11 +18,11 @@ const drawImage = (coverPath_canvas = '', codePath_canvas = '') => {
 	console.log('coverPath=' + coverPath_canvas);
 	console.log('codePath=' + codePath_canvas);
 	const context = wx.createCanvasContext('myCanvas');
-	context.rect(30, 0, 320, 900);
+	context.rect(30, 0, 700, 900);
 	context.setFillStyle('#fff');
 	context.fill();
-	context.drawImage(coverPath_canvas, 30, 0, 280, 250);
-	context.drawImage(codePath_canvas, 226, 305, 50, 50);
+	context.drawImage(coverPath_canvas, 30, 0, 345, 250);
+	context.drawImage(codePath_canvas, 260, 305, 50, 50);
 	context.setFontSize(14);
 	context.setFillStyle('#333');
 	drawText(context, '齐峰奇异果陕西眉县徐香绿心弥猴桃齐峰奇异果陕西眉县徐香绿心弥猴桃', 40, 270, 100, 260);//字体换行

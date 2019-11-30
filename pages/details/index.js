@@ -17,7 +17,8 @@ Page({
 		imgs: ['/images/1.jpg', '/images/2.jpg', '/images/1.jpg', '/images/2.jpg'],
 		index: 1,
 		showPicker: false,
-		hbDialog: false
+		hbDialog: false,
+		pmWidth: 0
 
 	},
 
@@ -25,22 +26,35 @@ Page({
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function(options) {
+		let myCanvasWidth;
+		let myCanvasHeight;
+		wx.getSystemInfo({
+			success: function(res) {
+				myCanvasWidth = res.windowWidth-30
+				myCanvasHeight = res.windowHeight - 200
+			},
+		})
+		this.setData({
+			canvasWidth: myCanvasWidth,
+			canvasHeight: myCanvasHeight
+		})
+
 		drawImage('/images/3.jpg', '/images/xcx.jpg');
 	},
-	
-	showHb(){
+
+	showHb() {
 		this.setData({
 			hbDialog: true
 		});
 	},
-	
-	
+
+
 	close() {
 		this.setData({
 			hbDialog: false
 		});
 	},
-	
+
 	saveToAlbum() {
 		savePicToAlbum();
 	},
@@ -50,13 +64,13 @@ Page({
 			showPicker: true
 		})
 	},
-	
+
 	closePicker() {
 		this.setData({
 			showPicker: false
 		})
 	},
-	
+
 	toShopCart() {
 		wx.switchTab({
 			url: '/pages/shopCart/shopCart',

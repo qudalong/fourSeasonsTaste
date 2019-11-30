@@ -81,7 +81,7 @@
 <view wx:if='{{hbDialog}}' class='global-cover shadow' catchtouchmove="true">
 	<view class='generate-poster'>
 		<view bindtap='close' class="close hover">x</view>
-		<canvas class='myCanvas' canvas-id="myCanvas" />
+		<canvas class='myCanvas' canvas-id="myCanvas" style="width:{{canvasWidth}}px" />
 		<view class="btn-group">
 			<button class="btn-code share hover" open-type="share">分享给朋友</button>
 			<view bindtap='saveToAlbum' class="btn-code hover">保存图片</view>
