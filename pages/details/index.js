@@ -1,4 +1,7 @@
-// pages/details/index.js
+import {
+	savePicToAlbum,
+	drawImage
+} from '../../utils/util.js'
 Page({
 
 	/**
@@ -12,7 +15,9 @@ Page({
 		interval: 2000,
 		duration: 500,
 		imgs: ['/images/1.jpg', '/images/2.jpg', '/images/1.jpg', '/images/2.jpg'],
-		index: 1
+		index: 1,
+		showPicker: false,
+		hbDialog: false
 
 	},
 
@@ -20,8 +25,38 @@ Page({
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function(options) {
-
+		drawImage('/images/3.jpg', '/images/xcx.jpg');
 	},
+	
+	showHb(){
+		this.setData({
+			hbDialog: true
+		});
+	},
+	
+	
+	close() {
+		this.setData({
+			hbDialog: false
+		});
+	},
+	
+	saveToAlbum() {
+		savePicToAlbum();
+	},
+
+	showPicker() {
+		this.setData({
+			showPicker: true
+		})
+	},
+	
+	closePicker() {
+		this.setData({
+			showPicker: false
+		})
+	},
+	
 	toShopCart() {
 		wx.switchTab({
 			url: '/pages/shopCart/shopCart',
@@ -82,17 +117,5 @@ Page({
 	/**
 	 * 用户点击右上角分享
 	 */
-	onShareAppMessage: function() {
-		if (res.from === 'button') {
-
-		}
-		return {
-			title: '转发',
-			// path: '/pages/index/community/topic/topic?jsonStr=' + this.data.list,
-			path: '/pages/details/index',
-			success: function(res) {
-				console.log('成功', res)
-			}
-		}
-	}
+	onShareAppMessage: function() {}
 })

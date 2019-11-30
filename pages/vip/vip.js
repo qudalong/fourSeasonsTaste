@@ -1,11 +1,12 @@
-// pages/my/my.js
+// pages/vip/vip.js
 Page({
 
 	/**
 	 * 页面的初始数据
 	 */
 	data: {
-
+		index: 1,
+		list:[1,1,1,1,1,]
 	},
 
 	/**
@@ -14,15 +15,9 @@ Page({
 	onLoad: function(options) {
 
 	},
-	toCenter() {
-		wx.navigateTo({
-			url: `/pages/distributionCenter/distributionCenter`
-		})
-	},
-	toOrderList(e) {
-		let index = e.currentTarget.dataset.index;
-		wx.navigateTo({
-			url: `/pages/orderStatus/orderStatus?index=${index}`
+	tap(e) {
+		this.setData({
+			index: e.currentTarget.dataset.index
 		})
 	},
 	/**

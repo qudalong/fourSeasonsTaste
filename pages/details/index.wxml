@@ -14,9 +14,7 @@
 	<view class="food-info">
 		<view class="row">
 			<view class="row2 flex1">齐峰奇异果陕西眉县徐香绿心弥猴桃当 季水备份齐峰奇异果陕西眉县徐香绿心弥猴桃当 季水备份齐峰奇异果陕西眉县徐香绿心弥猴桃当 季水备份齐峰奇异果陕西眉县徐香绿心弥猴桃当 季水备份</view>
-			<view class="share-box">
-				<button class="share-btn" open-type="share">
-				</button>
+			<view bindtap='showPicker' class="share-box">
 				<view class="abs hover">
 					<image class="icon-share" src="/images/icon/icon_share.png"></image>
 					<view>分享好友</view>
@@ -55,4 +53,38 @@
 	</view>
 	<view bindtap="toShopCart" class="item cartin hover">加入购物车</view>
 	<view bindtap="orderSure" class="item buy hover">立即购买</view>
+</view>
+<!-- 自定义选择器 -->
+<view wx:if="{{showPicker}}" bindtap='closePicker' class="dialog" touchmove="true">
+	<view class="fixed-power">
+		<!-- <view class="item">推荐好物</view>
+		<view class="item">
+			<button class="share-btn" open-type="share">
+			</button>
+		</view>
+		<view class="item" style="padding-top: 51rpx;">生成海报</view> -->
+		<view class="row">
+			<view class="wx hover">
+				<button class="share-power" open-type="share">
+					<image class="icon_shoppingblack wx-icon" src="/images/icon/weixin.png"></image>
+				</button>
+			</view>
+			<view bindtap='showHb' class="wx hover">
+				<image class="icon_shoppingblack" src="/images/icon/icon_2.png"></image>
+				<view>生成海报</view>
+			</view>
+		</view>
+		<view bindtap='closePicker' class="item hover">取消</view>
+	</view>
+</view>
+<!-- 海报 -->
+<view wx:if='{{hbDialog}}' class='global-cover shadow' catchtouchmove="true">
+	<view class='generate-poster'>
+		<view bindtap='close' class="close hover">x</view>
+		<canvas class='myCanvas' canvas-id="myCanvas" />
+		<view class="btn-group">
+			<button class="btn-code share hover" open-type="share">分享给朋友</button>
+			<view bindtap='saveToAlbum' class="btn-code hover">保存图片</view>
+		</view>
+	</view>
 </view>

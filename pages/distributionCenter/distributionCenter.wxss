@@ -1,0 +1,32 @@
+@import '../my/my.wxss';
+
+.tx-btn {
+	background: #4CB981;
+	color: #fff;
+	border-radius: 6rpx;
+	padding: 16rpx 30rpx;
+}
+
+.getMoney {
+	margin-bottom: 6rpx;
+}
+
+.tx-label {
+	color: #666;
+	font-size: 24rpx;
+}
+
+.money {
+	font-size: 36rpx;
+	color: #4CB981;
+	font-weight: bold;
+}
+
+.row {
+	border: none;
+}
+
+.row-sy {
+	justify-content: space-around;
+	padding: 10rpx 0 0 0;
+}

@@ -1,0 +1,23 @@
+@import '../orderStatus/orderStatus.wxss';
+.commodity{
+	padding: 20rpx;
+}
+.cover-food{
+	height: 80rpx;
+	width: 80rpx;
+	border-radius: 50%;
+}
+.r-info{
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-left: 10rpx;
+	color: #666;
+}
+.info .name{
+	padding-bottom: 40rpx;
+}
+ .count{
+	color:#4CB981 ;
+}

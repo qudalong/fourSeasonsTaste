@@ -36,7 +36,7 @@ Page({
 				wx.setStorageSync('address', address);
 				let hook = list.find(item => item.address == address); //地址去重
 				if (!hook) {
-					list.unshift({// 添加地址
+					list.unshift({ // 添加地址
 						name: res.userName,
 						tel: res.telNumber,
 						address: address,

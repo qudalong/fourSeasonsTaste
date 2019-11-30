@@ -1,0 +1,188 @@
+page {
+	background: #111111;
+}
+
+.block {
+	padding: 20rpx;
+	border-radius: 10rpx;
+	background: #111111;
+	margin-bottom: 20rpx;
+}
+
+.user-info {
+	display: flex;
+	align-items: center;
+	color: #fff
+}
+
+.user-info .compare {
+	padding: 4rpx 10rpx;
+	border-radius: 10rpx;
+	border: 1rpx solid #CFB079;
+	color: #CFB079;
+	margin-top: 10rpx;
+	font-size: 22rpx;
+	text-align: center;
+}
+
+.head {
+	width: 140rpx;
+	height: 140rpx;
+	border-radius: 100%;
+	margin-right: 10px;
+}
+
+/* 特权 */
+.tab {
+	display: flex;
+	align-items: center;
+
+}
+
+.tab .item {
+	flex: 1;
+	text-align: center;
+	color: #CFB079;
+	padding: 20rpx 0;
+}
+
+.tab .item.act {
+	background: #393939;
+	border-radius: 6rpx 6rpx 0 0;
+}
+
+.vip-desc {
+	min-height: 300rpx;
+	padding: 50rpx;
+	line-height: 1.6;
+	background: #393939;
+	color: #fff;
+	text-align: center;
+	margin-bottom: 20rpx;
+}
+
+.tuzhang {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.tuzhang image {
+	display: inline-block;
+}
+
+.tuzhang .item {
+	box-sizing: border-box;
+	width: 50%;
+	padding: 0 40rpx;
+	text-align: center;
+	margin-bottom: 30rpx;
+}
+
+.head {
+	width: 120rpx;
+	height: 120rpx;
+	border-radius: 100%;
+	margin-right: 0;
+}
+
+
+/* 进度 */
+.properss {
+	padding: 30rpx;
+	border-radius: 8rpx;
+	background: linear-gradient(to right, #FCF1D3, #F9DE8F);
+}
+
+.properss .title {
+	width: 70%;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.properss .title .txt {
+	width: 90px;
+	text-align: center;
+}
+
+.properss .title .line {
+	height: 2rpx;
+	width: 200rpx;
+	background: #ccc;
+}
+
+.properss .item {
+	padding-top: 20rpx;
+}
+
+.properss .item .row {
+	display: flex;
+	align-content: center;
+	justify-content: space-between;
+	padding-bottom: 10rpx;
+}
+
+.pro {
+	position: relative;
+	height: 20rpx;
+	background: #fff;
+	border-radius: 10rpx;
+}
+
+
+.pro .total {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 20rpx;
+	line-height: 20rpx;
+	text-align: center;
+	width: 100%;
+	background: #fff;
+	border-radius: 10rpx;
+	z-index: 1;
+}
+
+.pro .now {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 20rpx;
+	line-height: 20rpx;
+	width: 50rpx;
+	background: green;
+	border-radius: 10rpx;
+	z-index: 2;
+	color: #fff;
+}
+
+.up-btn {
+	margin: 30rpx 0 0;
+	margin-left: 50%;
+	transform: translateX(-50%);
+	padding: 20rpx 30rpx;
+	border: 1rpx solid #ccc;
+	border-radius: 8rpx;
+	display: inline-block;
+	background: #fff;
+}
+
+/* 通知 */
+
+.notic {
+	display: flex;
+	align-items: center;
+	background: #393939;
+	color: #F9E097;
+	border-radius: 8rpx;
+	margin-top: 20rpx;
+	padding: 20rpx;
+}
+
+.laba {
+	height: 40rpx;
+	width: 40rpx;
+	padding-right: 20rpx;
+}

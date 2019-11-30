@@ -1,0 +1,7 @@
+@import '../toMyteam/toMyteam.wxss';
+.info .name {
+padding-bottom: 20rpx;
+}
+.minus{
+	color: red;
+	}

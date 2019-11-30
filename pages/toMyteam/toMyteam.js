@@ -1,28 +1,27 @@
-// pages/my/my.js
+// pages/toMyteam/toMyteam.js
 Page({
 
 	/**
 	 * 页面的初始数据
 	 */
 	data: {
-
+		index: 1,
+		list: [1, 1, 1, 1, 1]
 	},
 
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function(options) {
-
+		if (options.index) {
+			this.setData({
+				index: options.index
+			});
+		}
 	},
-	toCenter() {
-		wx.navigateTo({
-			url: `/pages/distributionCenter/distributionCenter`
-		})
-	},
-	toOrderList(e) {
-		let index = e.currentTarget.dataset.index;
-		wx.navigateTo({
-			url: `/pages/orderStatus/orderStatus?index=${index}`
+	tap(e) {
+		this.setData({
+			index: e.currentTarget.dataset.index
 		})
 	},
 	/**

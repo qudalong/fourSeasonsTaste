@@ -1,75 +1,95 @@
 page {
-    background: #f0f0f0;
+	background: #f0f0f0;
 }
 
 .block {
-    padding: 20rpx;
-    border-radius: 10rpx;
-    background: #fff;
-    margin-bottom: 20rpx;
+	padding: 20rpx;
+	border-radius: 10rpx;
+	background: #fff;
+	margin-bottom: 20rpx;
 }
 
 .user-info {
-    display: flex;
-    align-items: center;
+	display: flex;
+	align-items: center;
 }
 
 .user-info .compare {
-    padding: 4rpx 10rpx;
-    border-radius: 10rpx;
-    border: 1rpx solid green;
-    color: green;
-    margin-top: 10rpx;
-    font-size: 22rpx;
-    text-align: center;
+	padding: 4rpx 10rpx;
+	border-radius: 10rpx;
+	border: 1rpx solid green;
+	color: green;
+	margin-top: 10rpx;
+	font-size: 22rpx;
+	text-align: center;
 }
 
 .head {
-    width: 140rpx;
-    height: 140rpx;
-    border-radius: 100%;
-    margin-right: 10px;
+	width: 140rpx;
+	height: 140rpx;
+	border-radius: 100%;
+	margin-right: 10px;
 }
 
 .row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-bottom: 30rpx;
-    border-bottom: 1rpx solid #f0f0f0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-bottom: 30rpx;
+	border-bottom: 1rpx solid #f0f0f0;
 }
 
 .row .title {
-    font-weight: bold;
+	font-weight: bold;
 }
 
 .row .right {
-    display: flex;
-    align-items: center;
+	display: flex;
+	align-items: center;
 }
 
 .type-list {
-    padding: 30rpx 0 10rpx;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+	padding: 30rpx 0 10rpx;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
 .type-list .item {
-    flex: 1;
-    text-align: center;
+	flex: 1;
+	text-align: center;
 }
 
 .type-list .item .icon-type {
-    display: inline-block;
-    width: 50rpx;
-    height: 50rpx;
+	display: inline-block;
+	width: 50rpx;
+	height: 50rpx;
 }
 
 .type-list .item .number {
-    color: green;
+	color: #4CB981;
+	font-size: 32rpx;
 }
 
 .type-list .item .txt {
-    padding-top: 20rpx;
+	padding-top: 20rpx;
+}
+
+/* vip */
+.vip {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 30rpx;
+	background: linear-gradient(to right, #393939, #000000);
+	color: #CFB079;
+	border-radius: 8rpx;
+	margin-bottom: 20rpx;
+	font-size: 30rpx;
+}
+
+.vip .all {
+	border-radius: 30rpx;
+	padding: 6rpx 20rpx;
+	border: 1rpx solid #CFB079;
 }

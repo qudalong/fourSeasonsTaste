@@ -2,7 +2,7 @@
 	<image class="head" src="/images/1.jpg"></image>
 	<view class="user">
 		<view class="name">苏淼先生</view>
-		<view class="compare">合伙人</view>
+		<view class="compare">四季滋味合伙人</view>
 	</view>
 </view>
 <!-- 我的订单 -->
@@ -33,9 +33,10 @@
 		</view>
 	</view>
 </view>
-<!-- 分销中心 -->
+
+<!-- 我的团队 -->
 <view class="block">
-	<view class="row hover">
+	<view bindtap='toCenter' class="row hover">
 		<view class="title">分销中心</view>
 		<view class="right">
 			<text>进入分销中心</text>
@@ -44,15 +45,15 @@
 	</view>
 	<view class="type-list">
 		<view class="item hover">
-			<view class="number">￥39.00</view>
+			<view class="number">￥100</view>
 			<view class="txt">今日收益</view>
 		</view>
 		<view class="item hover">
-			<view class="number">￥39.00</view>
+			<view class="number">￥100</view>
 			<view class="txt">本月收益</view>
 		</view>
 		<view class="item hover">
-			<view class="number">￥39.00</view>
+			<view class="number">￥100</view>
 			<view class="txt">上月收益</view>
 		</view>
 	</view>

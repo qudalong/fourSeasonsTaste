@@ -1,0 +1,61 @@
+<view class="block user-info">
+	<image class="head" src="/images/1.jpg"></image>
+	<view class="user">
+		<view class="name">苏淼先生</view>
+		<view class="compare">四季滋味合伙人</view>
+	</view>
+</view>
+<!-- 特权 -->
+<view class="tab">
+	<view bindtap="tap" data-index='1' class="item {{index==1?'act':''}}">当前特权</view>
+	<view bindtap="tap" data-index='2' class="item {{index==2?'act':''}}">合伙人特权</view>
+</view>
+<view wx:if='{{index==1}}' class="vip-desc">
+	<view>当前无特权，努力升级成合伙人后</view>
+	<view>可以享受诸多特权哦。</view>
+</view>
+<view wx:if='{{index==2}}' class="vip-desc tuzhang">
+	<view class="item">
+		<image class="head" src="/images/icon/icon_4.png"></image>
+		<view class="txt">自购佣金150%佣金奖励</view>
+	</view>
+	<view class="item">
+		<image class="head" src="/images/icon/icon_1.png"></image>
+		<view class="txt">分享佣金150%佣金奖励</view>
+	</view>
+	<view class="item">
+		<image class="head" src="/images/icon/icon_3.png"></image>
+		<view class="txt">直接会员出单40%佣金奖励</view>
+	</view>
+	<view class="item">
+		<image class="head" src="/images/icon/icon_2.png"></image>
+		<view class="txt">团队会员出单 整个团队 20%佣金奖励</view>
+	</view>
+</view>
+<!-- 升级进度 -->
+<view class="properss">
+	<view class="title">
+		<view class="line"></view>
+		<view class="txt">升级进度</view>
+		<view class="line"></view>
+	</view>
+	<view wx:for="{{list}}" wx:key="unique" class="item">
+		<view class="row">
+			<view class="lable">自购单数?</view>
+			<view class="count">0单/目标15单</view>
+		</view>
+		<view class="pro">
+			<view class="now"></view>
+			<view class="total">5%</view>
+		</view>
+	</view>
+	<view class="up-btn hover">升级合伙人</view>
+</view>
+<!-- 通知 -->
+<view class="notic">
+	<image class="laba" src="/images/icon/laba.png"></image>
+	<view class="txt">
+		三个条件任意达成其一，即可申请成为四季
+		滋味分销合伙人，享受合伙人特权！
+	</view>
+</view>

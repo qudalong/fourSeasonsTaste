@@ -1,157 +1,282 @@
 page {
-		background: #EDF2F7;
-	}
+	background: #EDF2F7;
+}
 
-	.swiper {
-		height: 750rpx;
-	}
+.swiper {
+	height: 750rpx;
+}
 
-	.item-img {
-		height: 750rpx;
-		width: 100%;
-	}
+.item-img {
+	height: 750rpx;
+	width: 100%;
+}
 
-	.food-info {
-		padding: 20rpx 0;
-	}
+.food-info {
+	padding: 20rpx 0;
+}
 
-	.food-info .row {
-		display: flex;
-		align-items: center;
-		justify-content: flex-start;
-	}
+.food-info .row {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
 
-	/* 分享按钮 */
-	.share-box {
-		text-align: center;
-		font-size: 24rpx;
-		padding-right: 4rpx;
-		position: relative;
-		width: 109rpx;
-		height: 76rpx;
-	}
+/* 分享按钮 */
+.share-box {
+	text-align: center;
+	font-size: 24rpx;
+	padding-right: 4rpx;
+	position: relative;
+	width: 109rpx;
+	height: 76rpx;
+}
 
-	.share-box .abs {
-		position: absolute;
-		left: 10rpx;
-		top: 4rpx;
-		z-index: 1;
-	}
-
-	.share-btn {
-		width: 109rpx;
-		height: 76rpx;
-		margin: 0;
-		padding: 0;
-		position: absolute;
-		left: 10rpx;
-		top: 4rpx;
-		z-index: 2;
-	}
-
-	button {
-		border: none;
-		background: #fff;
-		opacity: 0;
-	}
-
-	button::after {
-		border: none;
-		background: #fff;
-		opacity: 0;
-	}
-
-	.button-hover {
-		border: none;
-		background: none;
-		opacity: 0;
-	}
+.share-box .abs {
+	position: absolute;
+	left: 10rpx;
+	top: 4rpx;
+	z-index: 1;
+}
 
 
-	/* 规格 */
-	.type-warp {
-		margin: 20rpx 0;
-		padding: 20rpx;
-	}
 
-	.type-warp .title {
-		font-size: 32rpx;
-		font-weight: bold;
-	}
 
-	.flex1 {
-		flex: 1;
-		font-weight: bold;
-		line-height: 1.4;
-	}
+.button-hover {
+	border: none;
+	background: none;
+	opacity: 0;
+}
 
-	.btn-grounp {
-		margin: 30rpx 0;
-		display: flex;
-		align-items: center;
-		justify-content: space-around;
-	}
 
-	.btn-grounp .btn-item {
-		color: #333;
-		background: #fff;
-		border: 1rpx solid #666;
-		padding: 20rpx;
-		border-radius: 8rpx;
-	}
+/* 规格 */
+.type-warp {
+	margin: 20rpx 0;
+	padding: 20rpx;
+}
 
-	.btn-grounp .btn-item.active {
-		color: #fff;
-		background: #F83B1D;
-		border: 1rpx solid #F83B1D;
-	}
+.type-warp .title {
+	font-size: 32rpx;
+	font-weight: bold;
+}
 
-	/* 详情 */
-	.desc-wrap {
-		margin-bottom: 70px;
-	}
+.flex1 {
+	flex: 1;
+	font-weight: bold;
+	line-height: 1.4;
+}
 
-	.desc-wrap image {
-		width: 100%;
-	}
+.btn-grounp {
+	margin: 30rpx 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
 
-	/* 购物车 */
-	.fiexd-control {
-		position: fixed;
-		left: 0;
-		bottom: 0;
-		width: 100%;
-		height: 120rpx;
-		display: flex;
-		align-items: center;
-		justify-content: space-around;
-		background: #fff;
-	}
+.btn-grounp .btn-item {
+	color: #333;
+	background: #fff;
+	border: 1rpx solid #666;
+	padding: 20rpx;
+	border-radius: 8rpx;
+}
 
-	.icon_shoppingblack,
-	.icon_kefu {
-		width: 50rpx;
-		height: 50rpx;
-		margin-bottom: 4rpx;
-	}
+.btn-grounp .btn-item.active {
+	color: #fff;
+	background: #F83B1D;
+	border: 1rpx solid #F83B1D;
+}
 
-	.fiexd-control .item {
-		flex: 2;
-		text-align: center;
-		color: #6A6969;
-	}
+/* 详情 */
+.desc-wrap {
+	margin-bottom: 70px;
+}
 
-	.fiexd-control .cartin,
-	.fiexd-control .buy {
-		flex: 3;
-		background: #FDA837;
-		color: #fff;
-		height: 100%;
-		line-height: 120rpx;
-		font-weight: bold;
-		font-size: 32rpx;
-	}
+.desc-wrap image {
+	width: 100%;
+}
 
-	.fiexd-control .buy {
-		background: #4CB981;
-	}
+/* 购物车 */
+.fiexd-control {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 120rpx;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	background: #fff;
+}
+
+.icon_shoppingblack,
+.icon_kefu {
+	width: 50rpx;
+	height: 50rpx;
+	margin-bottom: 4rpx;
+}
+
+.fiexd-control .item {
+	flex: 2;
+	text-align: center;
+	color: #6A6969;
+}
+
+.fiexd-control .cartin,
+.fiexd-control .buy {
+	flex: 3;
+	background: #FDA837;
+	color: #fff;
+	height: 100%;
+	line-height: 120rpx;
+	font-weight: bold;
+	font-size: 32rpx;
+}
+
+.fiexd-control .buy {
+	background: #4CB981;
+}
+
+/* 定义power */
+.fixed-power {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background: #f0f0f0;
+	border-radius: 40rpx 40rpx 0 0;
+	overflow: hidden;
+}
+
+.fixed-power .item {
+	position: relative;
+	text-align: center;
+	background: #fff;
+	padding: 20rpx;
+	border-bottom: 1rpx solid #f0f0f0;
+}
+
+.fixed-power .item:last-of-type {
+	margin-top: 20rpx;
+	padding: 30rpx;
+}
+
+.share-btn {
+	width: 100%;
+	height: 80rpx;
+	line-height: 122rpx;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	left: 10rpx;
+	top: 4rpx;
+	z-index: 2;
+	border-bottom: 1rpx solid #f0f0f0;
+}
+
+button {
+	border: none;
+	background: none;
+}
+
+.share-power::after {
+	content: '微信好友';
+	border: none;
+	background: none;
+	font-size: 24px;
+	padding: 10rpx 0;
+	position: absolute;
+	left: 0;
+	top: 19px !important;
+}
+
+/* 最终版 */
+.fixed-power .row {
+	background: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	text-align: center;
+}
+
+.fixed-power .row .wx {
+	padding: 30rpx;
+	font-size: 26rpx;
+}
+
+.wx-icon {
+	height: 60rpx;
+	width: 60rpx;
+	margin-bottom: 5px;
+}
+
+.icon_shoppingblack,
+.icon_kefu {
+	width: 60rpx;
+	height: 60rpx;
+	margin-bottom: 4rpx;
+
+}
+
+/* 海报 */
+.global-cover {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 9999;
+	background-color: rgba(0, 0, 0, 0.85);
+}
+
+.generate-poster {
+	margin: 40px 0;
+	position: relative;
+}
+.generate-poster .close{
+	position: absolute;
+	top: -16rpx;
+	right: 20rpx;
+	height: 60rpx;
+	width: 60rpx;
+	text-align: center;
+	line-height: 60rpx;
+	background: #fff;
+	border-radius: 50%;
+	z-index: 9;
+	font-size: 34rpx;
+}
+
+.myCanvas {
+	height: 900rpx;
+}
+
+.btn-group {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	width: 280px;
+	margin-left: 50%;
+	transform: translateX(-50%);
+	margin-top: 20rpx;
+}
+
+.btn-code {
+	width: 270rpx;
+	height: 100rpx;
+	line-height: 100rpx;
+	text-align: center;
+	background: #FDA837;
+	color: #fff;
+	border-radius: 8rpx;
+	font-size: 30rpx;
+}
+
+.share {
+	background: #4CB981;
+}
+
+.share::after {
+	content: '';
+	padding: 0;
+	margin: 0;
+}
