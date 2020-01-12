@@ -94,6 +94,7 @@ page {
 .empty {
 	text-align: center;
 	margin: 100px auto;
+	color: #666;
 }
 
 /* 商品封面 */
