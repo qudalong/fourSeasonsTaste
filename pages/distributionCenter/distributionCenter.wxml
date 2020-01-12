@@ -95,8 +95,8 @@
 				<view class='item'>商品佣金(元)</view>
 			</view>
 			<view wx:for="{{yjList}}" wx:key="{{index}}" class="l-con flex">
-				<view class='item' style='border-left: 1rpx solid #f0f0f0;'>{{item.order.name}}</view>
-				<view class='item'>{{item.order.pay_amount}}</view>
+				<view class='item' style='border-left: 1rpx solid #f0f0f0;'>{{item.product_name}}</view>
+				<view class='item'>{{item.product_price}}</view>
 				<view class='item'>{{item.money}}</view>
 			</view>
 		</view>

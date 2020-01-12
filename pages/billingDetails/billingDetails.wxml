@@ -10,7 +10,7 @@
 				<view class='r-info'>
 					<view class='info'>
 						
-						<view class='name'>下级用户<text style='color: #58B15F;'>{{item.message}}</text>唐农猕猴桃</view>
+						<view class='name'>{{item.message}}</view>
 						<view class="time">{{item.created_at}}</view>
 					</view>
 					<view class="count">+{{item.money}}</view>

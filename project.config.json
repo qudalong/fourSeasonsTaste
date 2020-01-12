@@ -30,15 +30,13 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.10.0",
 	"appid": "wxb3312825df8bb955",
-	"projectname": "miniprogram-1",
+	"projectname": "siji",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
 	"isGameTourist": false,
 	"simulatorType": "wechat",
-	"simulatorPluginLibVersion": {
-		"qywx_simulator_plugin": "1.2.0"
-	},
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,
