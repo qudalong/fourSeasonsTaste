@@ -26,7 +26,7 @@ Page({
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
-	onLoad: function(options) {
+	onLoad: function (options) {
 		if (options.index) {
 			this.setData({
 				active: options.index - 1
@@ -56,7 +56,7 @@ Page({
 			showTk: false
 		});
 	},
-	
+
 	// //退款弹窗
 	// tuikuan(e) {
 	// 	let no = e.currentTarget.dataset.id;
@@ -68,7 +68,7 @@ Page({
 	//确定退款
 	// sure() {
 	// 	request({
-token: app.globalData.token.prefix + app.globalData.token.token,
+	// token: app.globalData.token.prefix + app.globalData.token.token,
 	// 		url: `/orders/${this.data.no}/refund`,
 	// 		method: 'put',
 	// 		data: {
@@ -84,7 +84,7 @@ token: app.globalData.token.prefix + app.globalData.token.token,
 	//订单列表
 	getOrdersList() {
 		request({
-token: app.globalData.token.prefix + app.globalData.token.token,
+			token: app.globalData.token.prefix + app.globalData.token.token,
 			url: `orders`,
 			data: {
 				per_page: this.data.pageSize, // 默认10
@@ -112,7 +112,7 @@ token: app.globalData.token.prefix + app.globalData.token.token,
 	payTargetOrder(e) {
 		let id = e.currentTarget.dataset.id;
 		request({
-token: app.globalData.token.prefix + app.globalData.token.token,
+			token: app.globalData.token.prefix + app.globalData.token.token,
 			url: `orders/${id}/pay`,
 			method: 'put',
 			data: {}
@@ -153,7 +153,7 @@ token: app.globalData.token.prefix + app.globalData.token.token,
 			message: '确定要删除该订单吗?'
 		}).then(() => {
 			request({
-token: app.globalData.token.prefix + app.globalData.token.token,
+				token: app.globalData.token.prefix + app.globalData.token.token,
 				url: `orders/${id}`,
 				method: 'delete',
 				data: {}
@@ -181,35 +181,35 @@ token: app.globalData.token.prefix + app.globalData.token.token,
 	/**
 	 * 生命周期函数--监听页面初次渲染完成
 	 */
-	onReady: function() {
+	onReady: function () {
 
 	},
 
 	/**
 	 * 生命周期函数--监听页面显示
 	 */
-	onShow: function() {
+	onShow: function () {
 
 	},
 
 	/**
 	 * 生命周期函数--监听页面隐藏
 	 */
-	onHide: function() {
+	onHide: function () {
 
 	},
 
 	/**
 	 * 生命周期函数--监听页面卸载
 	 */
-	onUnload: function() {
+	onUnload: function () {
 
 	},
 
 	/**
 	 * 页面相关事件处理函数--监听用户下拉动作
 	 */
-	onPullDownRefresh: function() {
+	onPullDownRefresh: function () {
 		wx.showLoading({
 			title: '刷新中...',
 		});
@@ -219,13 +219,13 @@ token: app.globalData.token.prefix + app.globalData.token.token,
 	/**
 	 * 页面上拉触底事件的处理函数
 	 */
-	onReachBottom: function() {
+	onReachBottom: function () {
 		if (this.data.more) {
 			wx.showLoading({
 				title: '加载更多...'
 			});
 			request({
-token: app.globalData.token.prefix + app.globalData.token.token,
+				token: app.globalData.token.prefix + app.globalData.token.token,
 				url: 'orders',
 				data: {
 					page: this.data.page + 1, // 默认1
@@ -259,7 +259,7 @@ token: app.globalData.token.prefix + app.globalData.token.token,
 	/**
 	 * 用户点击右上角分享
 	 */
-	onShareAppMessage: function() {
+	onShareAppMessage: function () {
 
 	}
 })
