@@ -1,0 +1,14 @@
+<view class="tab-bar">
+	<view class="item {{act==1?'active':''}} " bindtap='tab' data-index='1'>
+		<image class="icon-tab " src="/images/icon/nav-icon-index{{act==1?'.active':''}}.png"></image>
+		<view class="txt">首页</view>
+	</view>
+	<view class="item {{act==2?'active':''}}" bindtap='tab' data-index='2'>
+		<image class="icon-tab" src="/images/icon/nav-icon-cart{{act==2?'.active':''}}.png"></image>
+		<view class="txt">购物车</view>
+	</view>
+	<view class="item {{act==3?'active':''}}" bindtap='tab' data-index='3'>
+		<image class="icon-tab" src="/images/icon/nav-icon-user{{act==3?'.active':''}}.png"></image>
+		<view class="txt">我的</view>
+	</view>
+</view>

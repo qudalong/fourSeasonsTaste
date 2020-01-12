@@ -1,23 +1,24 @@
 <view class="tab-group">
 	<view bindtap="tap" data-index='1' class="items {{index==1?'act':''}}">收入</view>
-	<view bindtap="tap" data-index='2' class="items {{index==2?'act':''}}">提现记录</view>
+	<view bindtap="tap" data-index='0' class="items {{index==0?'act':''}}">提现记录</view>
 </view>
 <!-- 商品列表 -->
 <view class="order-list">
 	<view wx:if="{{index==1}}" class='order'>
-		<view wx:for="{{list}}" wx:key="unique" class="commodity">
+		<view wx:for="{{yjList}}" wx:key="unique" class="commodity">
 			<view class="top">
 				<view class='r-info'>
 					<view class='info'>
-						<view class='name'>下级用户李逍遥购买了唐农猕猴桃</view>
-						<view class="time">2019-10-10 13:04:3{{index}}</view>
+						
+						<view class='name'>下级用户<text style='color: #58B15F;'>{{item.message}}</text>唐农猕猴桃</view>
+						<view class="time">{{item.created_at}}</view>
 					</view>
-					<view class="count">+1{{index}}.00</view>
+					<view class="count">+{{item.money}}</view>
 				</view>
 			</view>
 		</view>
 	</view>
-	<view wx:if="{{index==2}}" class='order'>
+	<view wx:if="{{index==0}}" class='order'>
 		<view wx:for="{{list}}" wx:key="unique" class="commodity">
 			<view class="top">
 				<view class='r-info'>

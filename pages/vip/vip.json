@@ -1,5 +1,8 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+		 "van-progress": "../../miniprogram_npm/vant-weapp/progress/index",
+     "van-tab": "../../miniprogram_npm/vant-weapp/tab/index"
+	},
   "navigationBarTitleText": "用户特权",
   "navigationBarBackgroundColor": "#020001",
   "navigationBarTextStyle": "white"

@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+		"van-card": "../../miniprogram_npm/vant-weapp/card/index",
+		"van-button": "../../miniprogram_npm/vant-weapp/button/index",
+		"van-icon": "../../miniprogram_npm/vant-weapp/icon/index"
+	},
+  "navigationBarTitleText": "订单详情",
+  "navigationBarBackgroundColor": "#58B15F",
+  "navigationBarTextStyle": "white"
+}

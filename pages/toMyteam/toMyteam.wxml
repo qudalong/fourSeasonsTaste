@@ -1,28 +1,26 @@
-<view class="tab-group">
-	<view bindtap="tap" data-index='1' class="items {{index==1?'act':''}}">直属合伙人</view>
-	<view bindtap="tap" data-index='2' class="items {{index==2?'act':''}}">直属客户</view>
-	<view bindtap="tap" data-index='3' class="items {{index==3?'act':''}}">间接合伙人</view>
-	<view bindtap="tap" data-index='4' class="items {{index==4?'act':''}}">间接客户</view>
-</view>
-<!-- 商品列表 -->
+<van-tabs active="{{ active }}" color="#58B15F" swipeable sticky swipe-threshold='3'  bind:change="onChange">
+  <van-tab wx:for="{{tablist}}" wx:key="unique" title="{{item}}">
+  <!-- 商品列表 -->
 <view class="order-list">
 	<view class='order'>
-		<view wx:for="{{list}}" wx:key="unique" class="commodity">
+		<view wx:for="{{itemList}}" wx:key="unique" class="commodity">
 			<view class="top">
 				<view>
-					<image class="cover-food" src="../../images/2.jpg"></image>
+					<image class="cover-food" src="{{item.user.avatar}}"></image>
 				</view>
 				<view class='r-info'>
 					<view class='info'>
-						<view class='name'>李晓燕</view>
-						<view class="time">2019-10-1{{index}}</view>
+						<view class='name'>{{item.user.name}}</view>
+						<view class="time">{{item.user.created_at}}</view>
 					</view>
-					<view class="count">已购买1{{index}}单</view>
+					<view class="count">已购买{{item.user.orders.length}}单</view>
 				</view>
 			</view>
 		</view>
-		
 	</view>
 	<!-- 订单详情e -->
 	<!-- <view class="empty">暂无商品</view> -->
 </view>
+  </van-tab>
+</van-tabs>
+

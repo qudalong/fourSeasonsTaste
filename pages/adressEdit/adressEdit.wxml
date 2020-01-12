@@ -1,6 +1,6 @@
 <!-- pages/addressList/index.wxml -->
 <view class='addressList'>
-	<view class='wxaddress'>
+	<view class='wxaddress'  bindtap="getLocation">
 		<view>
 			<image src='../../images/icon/weixin.png'></image>
 			获取微信收获地址
@@ -10,24 +10,32 @@
 	<view class='list'>
 		<view class='item'>
 			<view class="lable">收货人</view>
-			<input type="text" placeholder="收货人姓名" />
-		</view>
-		<view class='item'>
-			<view class="lable">收货人</view>
-			<input type="text" placeholder="收货人姓名" />
+			<input class="inpt" bindinput='bname' value="{{itemDesc.name}}" type="text" placeholder="收货人姓名" />
 		</view>
 		<view class='item'>
 			<view class="lable">电话</view>
-			<input type="text" placeholder="收货人手机号" />
+			<input class="inpt" bindinput='btel' value="{{itemDesc.phone}}" type="number" maxlength="11" placeholder="收货人手机号" />
 		</view>
 		<view class='item'>
 			<view class="lable">所在地区</view>
-			<input type="text" placeholder="选择省/市/区" />
+			<!-- <van-picker class='inpt' columns="{{ columns }}" bind:change="onChange" /> -->
+			<picker class="inpt" mode="region" bindchange="bindRegionChange" value="{{address}}">
+				<view wx:if='{{address.length}}' class="picker">
+					{{address[0]}} {{address[1]}} {{address[2]}}
+				</view>
+				<input wx:if='{{!address.length}}' value="{{province+city+area}}" disabled="disabled" type="text" placeholder='请选择所在地' />
+			</picker>
 		</view>
 		<view class='item'>
 			<view class="lable">详细地址</view>
-			<input type="text" placeholder='街道门牌,楼层房间号等信息' />
+			<input class="inpt" bindinput='baddressDes' value="{{itemDesc.detail_address}}" type="text" placeholder='街道门牌,楼层房间号等信息' />
 		</view>
 	</view>
-	<view class="addBtn">添加新地址</view>
+	<view class='vanSwitch'>
+		<view class="lable">设为默认地址</view>
+		<van-switch class='switch' active-color="#58B15F" checked="{{ isDefault }}" bind:change="onChange" />
+	</view>
+	<view style='clear:both'></view>
+	<view bindtap='addressFlag' class="addBtn hover">保存并使用</view>
+	<view wx:if="{{flag=='edit'}}" bindtap='delAddress' class="addBtn delBbn hover">删除收货地址</view>
 </view>

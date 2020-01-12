@@ -1,6 +1,8 @@
 {
-  "usingComponents": {},
-  "navigationBarTitleText": "商品详情",
-  "navigationBarBackgroundColor": "#4CB981",
-  "navigationBarTextStyle": "white"
+	"usingComponents": {
+		"painter": "/components/painter/painter"
+	},
+	"navigationBarTitleText": "商品详情",
+	"navigationBarBackgroundColor": "#58B15F",
+	"navigationBarTextStyle": "white"
 }

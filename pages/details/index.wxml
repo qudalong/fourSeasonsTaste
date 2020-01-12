@@ -1,90 +1,145 @@
 <view class="home fff">
-	<view class="page-body">
-		<view class="page-section page-section-spacing swiper">
-			<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}"
-			 indicator-color="#fff" indicator-active-color="#4CB981" class="swiper">
-				<block wx:for="{{imgs}}" wx:key="*this">
-					<swiper-item>
-						<image class="item-img" src="{{item}}"></image>
-					</swiper-item>
-				</block>
-			</swiper>
+	<block wx:if="{{productsDesc.pictures.length}}">
+		<view class="page-body">
+			<view class="page-section page-section-spacing swiper">
+				<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}"
+				 indicator-color="#fff" indicator-active-color="#58B15F" class="swiper">
+					<block wx:for="{{productsDesc.pictures}}" wx:key="unique">
+						<swiper-item>
+							<image class="item-img" src="{{item}}"></image>
+						</swiper-item>
+					</block>
+				</swiper>
+			</view>
 		</view>
-	</view>
+	</block>
 	<view class="food-info">
 		<view class="row">
-			<view class="row2 flex1">齐峰奇异果陕西眉县徐香绿心弥猴桃当 季水备份齐峰奇异果陕西眉县徐香绿心弥猴桃当 季水备份齐峰奇异果陕西眉县徐香绿心弥猴桃当 季水备份齐峰奇异果陕西眉县徐香绿心弥猴桃当 季水备份</view>
+			<view class="row2 flex1">{{productsDesc.title}}</view>
+			<!-- <view class="share-boxOut"> -->
 			<view bindtap='showPicker' class="share-box">
 				<view class="abs hover">
 					<image class="icon-share" src="/images/icon/icon_share.png"></image>
 					<view>分享好友</view>
 				</view>
 			</view>
+			<!-- </view> -->
 		</view>
-		<view class="row">
-			<text class="fh">￥</text>
-			<text class="money">89.00</text>
-			<text class="old">￥35</text>
+		<view class="row fb" style='margin-top:20rpx'>
+			<view>
+				<text>活动价</text>
+				<text class="fh">￥</text>
+				<text class="money">{{productsDesc.price}}</text>
+				<text class="old">￥{{productsDesc.original_price}}</text>
+			</view>
+			<view wx:if='{{productsDesc.brokerage>0}}' class="zrj">赚佣金
+				<text class="fh">￥{{productsDesc.brokerage}}</text></view>
+		</view>
+	</view>
+</view>
+<!-- 运费 -->
+<view class="type-warp fff">
+	<view class="row  fb">
+		<text class="c6">运费：免运费</text>
+		<text class="c6">剩余：{{productsDesc.count-productsDesc.sale_count}}</text>
+	</view>
+	<view class="row" style='margin-top:20rpx'>
+		<view class='flex'>
+			<image class="logo" src='/images/logo.jpeg'></image>
+			<view class="flex">
+				<text class='siji'>四季优选</text>
+				<text class='f12'>坏果包赔，购物无忧</text>
+			</view>
 		</view>
 	</view>
 </view>
 <!-- 规格选择 -->
-<view class="type-warp fff">
+<!-- <view class="type-warp fff">
 	<view class="title">规格选择</view>
 	<view class="btn-grounp">
-		<view bindtap="tap" data-index='1' class="btn-item hover {{index==1?'active':''}}">大果猕猴桃10斤装备份</view>
-		<view bindtap="tap" data-index='2' class="btn-item hover {{index==2?'active':''}}">大果猕猴桃10斤装</view>
+		<view bindtap="tap" data-index='1' class="btn-item hover {{index==1?'active':''}}">10斤装</view>
+		<view bindtap="tap" data-index='2' class="btn-item hover {{index==2?'active':''}}">20斤装</view>
 	</view>
+</view> -->
+<!-- 评价 -->
+<view class="type-warp fff f16">
+	暂时没有评价
 </view>
 <!-- 详情 -->
+<view class="pro-title">商品详情</view>
 <view class="desc-wrap">
-	<image src="../../images/2.jpg"></image>
-	<image src="../../images/3.jpg"></image>
+	<block wx:if="{{productsDesc.content}}">
+		<rich-text nodes="{{productsDesc.content}}"></rich-text>
+	</block>
 </view>
-<!-- 加入购物车 -->
-<view class="fiexd-control">
-	<view class="item hover">
-		<image class="icon_kefu" src="/images/icon/icon_kefu.png"></image>
-		<view class="txt">客服</view>
-	</view>
-	<view bindtap="toShopCart" class="item hover">
-		<image class="icon_shoppingblack" src="/images/icon/icon_shoppingblack.png"></image>
-		<view class="txt">购物车</view>
-	</view>
-	<view bindtap="toShopCart" class="item cartin hover">加入购物车</view>
-	<view bindtap="orderSure" class="item buy hover">立即购买</view>
-</view>
+
 <!-- 自定义选择器 -->
 <view wx:if="{{showPicker}}" bindtap='closePicker' class="dialog" touchmove="true">
 	<view class="fixed-power">
-		<!-- <view class="item">推荐好物</view>
-		<view class="item">
-			<button class="share-btn" open-type="share">
-			</button>
-		</view>
-		<view class="item" style="padding-top: 51rpx;">生成海报</view> -->
 		<view class="row">
 			<view class="wx hover">
-				<button class="share-power" open-type="share">
+				<button class="share-power" open-type="share" style="margin-top:1px">
 					<image class="icon_shoppingblack wx-icon" src="/images/icon/weixin.png"></image>
+					<view class='f12'>微信好友</view>
 				</button>
 			</view>
 			<view bindtap='showHb' class="wx hover">
-				<image class="icon_shoppingblack" src="/images/icon/icon_2.png"></image>
-				<view>生成海报</view>
+				<image class="icon_shoppingblack" src="/images/icon/icon_2.png" style="margin-bottom:1rpx;margin-top:-1px"></image>
+				<view class='f12' style="margin-top:0px">生成海报</view>
 			</view>
 		</view>
 		<view bindtap='closePicker' class="item hover">取消</view>
 	</view>
 </view>
+
+<!-- 控制台 -->
+<view wx:if='{{!showType}}' class="fiexd-control">
+	<van-goods-action>
+		<van-goods-action-icon icon="chat-o" text="客服" bind:click="onClickIcon" />
+		<van-goods-action-icon icon="cart-o" text="购物车" bind:click="showShopCart" info="{{count?count:''}}" />
+		<van-goods-action-button text="加入购物车" type="warning" bind:click="showFoodType" />
+		<van-goods-action-button text="立即购买" bind:click="buy" />
+	</van-goods-action>
+</view>
+<!-- 加入购物车 -->
+<view wx:if='{{showType}}' class="fiexd-control">
+	<van-goods-action>
+		<van-goods-action-button text="加入购物车" type="warning" bind:click="toShopCart" />
+	</van-goods-action>
+</view>
+
+
+
+
 <!-- 海报 -->
 <view wx:if='{{hbDialog}}' class='global-cover shadow' catchtouchmove="true">
-	<view class='generate-poster'>
+	<view style='position: relative;height: 1000rpx' class='generate-poster'>
 		<view bindtap='close' class="close hover">x</view>
-		<canvas class='myCanvas' canvas-id="myCanvas" style="width:{{canvasWidth}}px" />
+		<painter customStyle='position: absolute; left: -9999rpx;' palette="{{template}}" bind:imgOK="onImgOK" widthPixels="1000" />
+		<image bindtap='bindSaveToAlbum' class="haibao" src="{{image}}" style="	width: 690rpx; height: 1000rpx;" />
 		<view class="btn-group">
-			<button class="btn-code share hover" open-type="share">分享给朋友</button>
-			<view bindtap='saveToAlbum' class="btn-code hover">保存图片</view>
+			<!-- <button class="btn-code share hover" open-type="share">分享给朋友</button> -->
+			<view bindtap='bindSaveToAlbum' class="btn-code hover">分享海报</view>
+		</view>
+	</view>
+</view>
+
+<!-- 规格 -->
+<view wx:if='{{showType}}' class="dialog2" catchtouchmove="true">
+	<view class="food-infos">
+		<view class="food">
+			<image class="cover" src="{{productsDesc.thumb}}"></image>
+			<view class="right">
+				<view class="title">{{productsDesc.title}}</view>
+				<view class="money">￥{{productsDesc.price}}</view>
+			</view>
+			<van-icon bindtap='closeType' name="cross" class='cross' />
+		</view>
+		<view class="count-wrap">
+			<view class="label">购买数量</view>
+			<view>
+				<van-stepper value="{{number}}" integer disable-input bind:change="onChange" />
+			</view>
 		</view>
 	</view>
 </view>

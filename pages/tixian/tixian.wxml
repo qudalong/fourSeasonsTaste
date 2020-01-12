@@ -1,0 +1,18 @@
+<view class='page'>
+	<view class='tixian'>提现金额</view>
+	<view class='qian'>￥</view>
+	<input bindinput='qianqian' class="inpt" type="number" placeholder="请输入提现金额" />
+</view>
+<view bindtap="{{click?'bindTixian':''}}" class="tixian-btn {{click?'tixian-btn-a':''}}">申请提现</view>
+
+<!--  -->
+
+<view class="contents">
+    <view class="touch-item {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove" wx:for="{{recordList}}" wx:key="">
+        <view class="content">
+            <view class="content_name">{{item.nickname}}</view>
+            <view class="content_time">{{item.birthday}}</view>
+        </view>
+        <view class="del" data-id="{{item.d_id}}"  data-status="{{item.status}}" catchtap="del" data-index="{{index}}">删除</view>
+    </view>
+</view>

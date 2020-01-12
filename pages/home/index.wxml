@@ -1,38 +1,56 @@
-<!-- pages/home/index.wxml -->
 <view class="home">
-		<view class="page-body">
-				<view class="page-section page-section-spacing swiper">
-						<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="#fff" indicator-active-color="#4CB981" class="swiper">
-								<block wx:for="{{imgs}}" wx:key="*this">
-										<swiper-item>
-												<image class="item-img" src="{{item}}"></image>
-										</swiper-item>
-								</block>
-						</swiper>
-				</view>
+	<view class="page-body">
+		<view class="page-section page-section-spacing swiper">
+			<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}"
+			 indicator-color="#fff" indicator-active-color="#58B15F" class="swiper">
+				<block wx:for="{{carouselList}}" wx:key="*this">
+					<swiper-item>
+						<image bindtap='toNews' class="item-img" data-id='{{item.id}}' src="https://shop.dnote.cn/storage/{{item.cover}}"></image>
+					</swiper-item>
+				</block>
+			</swiper>
 		</view>
-		<view class="tab-group">
-				<view bindtap="tap" data-index='1' class="item {{index==1?'active':''}}">招牌水果</view>
-				<view bindtap="tap" data-index='2' class="item {{index==2?'active':''}}">应季精选</view>
-				<view bindtap="tap" data-index='3' class="item {{index==3?'active':''}}">试吃专区</view>
-		</view>
-		<!-- 商品列表 -->
-		<view class='product-list'>
-				<view bindtap='toDesc' wx:for="{{list}}" wx:key="unique" class='item hover'>
-						<image class="cover" src='{{item.img}}'></image>
-						<view class="product-info">
-								<view class="row2">{{item.title}}</view>
-								<view class='row'>
-										<view class='price'>
-												<view class="small">
-														<text>¥</text>
-														69.00
-												</view>
-												<view class='oldPrice'>¥35</view>
-										</view>
-										<image class="icon-cart" src='/images/icon/icon_shoppingred.png'></image>
+	</view>
+						<!-- <image class="" src="https://shop.dnote.cn/api/v1/acode?is_hyaline=false&auto_color=false&line_color={r: 0,g: 0,b: 0}&width=430&page=pages/home/index&scene=aGVsbG93b3JsZA=="></image> -->
+	<!-- tab -->
+	<van-tabs active="{{active}}" color="#58B15F" swipeable sticky bind:change="onChange" bind:click="onClick">
+		<van-tab wx:for="{{categoriesList}}" wx:key="unique" title="{{item.title}}">
+			<view wx:if="{{productsList.length}}" class='product-list mb50'>
+				<view bindtap='toDesc' wx:for="{{productsList}}" wx:key="unique" data-uuid="{{item.id}}" class='item hover '>
+					<image class="cover" src='{{item.thumb}}'></image>
+					<view class="product-info">
+						<view class="row2">{{item.title}}</view>
+						<view class='row'>
+							<view class='price'>
+								<view class="small">
+									<text>¥</text>
+									{{item.price}}
 								</view>
+								<view class='oldPrice'>¥{{item.original_price}}</view>
+							</view>
+							<!-- <van-icon name="shopping-cart-o" color='red' size='16px' /> -->
 						</view>
+					</view>
 				</view>
-		</view>
+			</view>
+			<view wx:else class="empty">
+				<image class="cover icon_empty"  src='/images/icon/icon_empty.png'></image>
+				<view style="color:#666">暂无商品</view>
+			</view>
+		</van-tab>
+	</van-tabs>
 </view>
+<!-- <view class="tab-bar">
+	<view class="item {{act==1?'active':''}} " bindtap='tab' data-index='1'>
+		<image class="icon-tab " src="/images/icon/nav-icon-index{{act==1?'.active':''}}.png"></image>
+		<view class="txt">首页</view>
+	</view>
+	<view class="item {{act==2?'active':''}}" bindtap='tab' data-index='2'>
+		<image class="icon-tab" src="/images/icon/nav-icon-cart{{act==2?'.active':''}}.png"></image>
+		<view class="txt">购物车</view>
+	</view>
+	<view class="item {{act==3?'active':''}}" bindtap='tab' data-index='3'>
+		<image class="icon-tab" src="/images/icon/nav-icon-user{{act==3?'.active':''}}.png"></image>
+		<view class="txt">我的</view>
+	</view>
+</view> -->

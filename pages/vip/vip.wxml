@@ -1,20 +1,40 @@
+<van-dialog id="van-dialog" />
 <view class="block user-info">
-	<image class="head head1" src="/images/1.jpg"></image>
+	<open-data class="head head1" type="userAvatarUrl"></open-data>
 	<view class="user">
-		<view class="name">苏淼先生</view>
-		<view class="compare">四季滋味合伙人</view>
+		<open-data class="name" type="userNickName"></open-data>
+		<view class="compare">{{seller.level_name}}</view>
 	</view>
 </view>
 <!-- 特权 -->
 <view class="tab">
 	<view bindtap="tap" data-index='1' class="item {{index==1?'act':''}}">当前特权</view>
 	<view bindtap="tap" data-index='2' class="item {{index==2?'act':''}}">合伙人特权</view>
+	<view bindtap="tap" data-index='3' class="item {{index==3?'act':''}}">团长特权</view>
 </view>
 <view wx:if='{{index==1}}' class="vip-desc">
 	<view>当前无特权，努力升级成合伙人后</view>
 	<view>可以享受诸多特权哦。</view>
 </view>
 <view wx:if='{{index==2}}' class="vip-desc tuzhang">
+	<view class="item">
+		<image class="head" src="/images/icon/icon_4.png"></image>
+		<view class="txt">自购佣金100%佣金奖励</view>
+	</view>
+	<view class="item">
+		<image class="head" src="/images/icon/icon_1.png"></image>
+		<view class="txt">分享佣金100%佣金奖励</view>
+	</view>
+	<view class="item">
+		<image class="head" src="/images/icon/icon_3.png"></image>
+		<view class="txt">直接会员出单20%佣金奖励</view>
+	</view>
+	<view class="item">
+		<image class="head" src="/images/icon/icon_2.png"></image>
+		<view class="txt">间接会员出单10%佣金奖励</view>
+	</view>
+</view>
+<view wx:if='{{index==3}}' class="vip-desc tuzhang">
 	<view class="item">
 		<image class="head" src="/images/icon/icon_4.png"></image>
 		<view class="txt">自购佣金150%佣金奖励</view>
@@ -29,7 +49,7 @@
 	</view>
 	<view class="item">
 		<image class="head" src="/images/icon/icon_2.png"></image>
-		<view class="txt">团队会员出单 整个团队 20%佣金奖励</view>
+		<view class="txt">团队会员出单整个团队20%佣金奖励</view>
 	</view>
 </view>
 <!-- 升级进度 -->
@@ -39,17 +59,55 @@
 		<view class="txt">升级进度</view>
 		<view class="line"></view>
 	</view>
-	<view wx:for="{{list}}" wx:key="unique" class="item">
-		<view class="row">
-			<view class="lable">自购单数?</view>
-			<view class="count">0单/目标15单</view>
+	<view wx:if="{{!up}}" class='level1'>
+		<view class="item">
+			<view class="row">
+				<view class="lable">自购单数?</view>
+				<view class="count">{{info.orders}}单/目标15单</view>
+			</view>
+			<van-progress percentage="{{a}}" color="#58B15F" />
 		</view>
-		<view class="pro">
-			<view class="now"></view>
-			<view class="total">5%</view>
+		<view class="item">
+			<view class="row">
+				<view class="lable">有效邀请用户?</view>
+				<view class="count">{{info.invitations}}人/目标10人</view>
+			</view>
+			<van-progress percentage="{{b}}" color="#58B15F" />
+		</view>
+		<view class="item">
+			<view class="row">
+				<view class="lable">缴纳定金?</view>
+				<view class="count">{{info.deposit}}元/199元</view>
+			</view>
+			<van-progress percentage="{{c}}" color="#58B15F" />
 		</view>
 	</view>
-	<view class="up-btn hover">升级合伙人</view>
+	<view wx:if="{{up}}" class='level2'>
+		<view class="item">
+			<view class="row">
+				<view class="lable">直邀有效</view>
+				<view class="count">{{info.orders}}人/目标30人</view>
+			</view>
+			<van-progress percentage="{{a}}" color="#58B15F" />
+		</view>
+		<view class="item">
+			<view class="row">
+				<view class="lable">直邀+间邀有效</view>
+				<view class="count">{{info.invitations}}人/目标100人</view>
+			</view>
+			<van-progress percentage="{{b}}" color="#58B15F" />
+		</view>
+		<view class="item">
+			<view class="row">
+				<view class="lable">近30天确认收货人</view>
+				<view class="count">{{info.deposit}}元/目标1000元</view>
+			</view>
+			<van-progress percentage="{{c}}" color="#58B15F" />
+		</view>
+	</view>
+	<view wx:if="{{!click&&!hhr}}" class="up-btn hover">升级合伙人</view>
+	<view wx:if="{{click&&hhr}}" class="up-btn hover up-btn-a" bindtap='bindUp'>升级合伙人</view>
+	<view wx:if="{{up}}" class="up-btn hover {{up?'up-btn':''}}">升级团长</view>
 </view>
 <!-- 通知 -->
 <view class="notic">

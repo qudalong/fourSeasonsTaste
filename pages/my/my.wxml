@@ -1,8 +1,8 @@
 <view class="block user-info">
-	<image class="head" src="/images/1.jpg"></image>
+	<open-data class="head" type="userAvatarUrl"></open-data>
 	<view class="user">
-		<view class="name">苏淼先生</view>
-		<view class="compare">四季滋味合伙人</view>
+		<open-data class="name" type="userNickName"></open-data>
+		<view class="compare">{{seller.level_name}}</view>
 	</view>
 </view>
 <!-- 我的订单 -->
@@ -16,20 +16,24 @@
 	</view>
 	<view class="type-list">
 		<view bindtap='toOrderList' data-index='2' class="item hover">
-			<image class="icon-type" src="/images/icon/icon_dfk.png"></image>
+			<van-icon name="paid" size='26px' />
 			<view class="txt">待付款</view>
+			<view wx:if="{{a}}" class="tag">{{a}}</view>
 		</view>
 		<view bindtap='toOrderList' data-index='3' class="item hover">
-			<image class="icon-type" src="/images/icon/icon_dfh.png"></image>
+			<van-icon name="clock-o" size='26px' />
 			<view class="txt">待发货</view>
+			<view wx:if="{{b}}" class="tag">{{b}}</view>
 		</view>
 		<view bindtap='toOrderList' data-index='4' class="item hover">
-			<image class="icon-type" src="/images/icon/icon_yfh.png"></image>
+			<van-icon name="logistics" size='26px' />
 			<view class="txt">已发货</view>
+			<view wx:if="{{c}}" class="tag">{{c}}</view>
 		</view>
 		<view bindtap='toOrderList' data-index='5' class="item hover">
-			<image class="icon-type" src="/images/icon/icon_ywc.png"></image>
+			<van-icon name="passed" size='26px' />
 			<view class="txt">已完成</view>
+			<view wx:if="{{d}}" class="tag">{{d}}</view>
 		</view>
 	</view>
 </view>
@@ -45,16 +49,30 @@
 	</view>
 	<view class="type-list">
 		<view class="item hover">
-			<view class="number">￥100</view>
+			<view class="number">￥{{incomes.day}}</view>
 			<view class="txt">今日收益</view>
 		</view>
 		<view class="item hover">
-			<view class="number">￥100</view>
+			<view class="number">￥{{incomes.month}}</view>
 			<view class="txt">本月收益</view>
 		</view>
 		<view class="item hover">
-			<view class="number">￥100</view>
+			<view class="number">￥{{incomes.lastMonth}}</view>
 			<view class="txt">上月收益</view>
 		</view>
 	</view>
 </view>
+<!-- <view class="tab-bar">
+	<view class="item {{act==1?'active':''}} " bindtap='tab' data-index='1'>
+		<image class="icon-tab " src="/images/icon/nav-icon-index{{act==1?'.active':''}}.png"></image>
+		<view class="txt">首页</view>
+	</view>
+	<view class="item {{act==2?'active':''}}" bindtap='tab' data-index='2'>
+		<image class="icon-tab" src="/images/icon/nav-icon-cart{{act==2?'.active':''}}.png"></image>
+		<view class="txt">购物车</view>
+	</view>
+	<view class="item {{act==3?'active':''}}" bindtap='tab' data-index='3'>
+		<image class="icon-tab" src="/images/icon/nav-icon-user{{act==3?'.active':''}}.png"></image>
+		<view class="txt">我的</view>
+	</view>
+</view> -->

@@ -1,0 +1,22 @@
+.detail{
+	line-height: 1.6;
+	padding: 30rpx;
+	background: #fff;
+}
+image{
+	width: 100%;
+	margin: 10rpx 0;
+}
+.detail .title{
+	margin-bottom: 20rpx;
+	font-weight: bold;
+	text-align: center;
+	font-size: 34rpx;
+}
+.detail .time{
+	color: #666;
+	text-align: right;
+}
+page{
+	padding: 0;
+}

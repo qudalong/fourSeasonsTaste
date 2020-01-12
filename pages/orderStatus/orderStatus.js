@@ -1,24 +1,26 @@
-// pages/orderStatus/orderStatus.js
+const app = getApp()
+import {
+	request
+} from '../../utils/request.js'
+import Dialog from '../../miniprogram_npm/vant-weapp/dialog/dialog';
 Page({
 
 	/**
 	 * 页面的初始数据
 	 */
 	data: {
-		index: 1,
-		list: [{
-			img: '/images/2.jpg',
-			title: '齐峰奇异果陕西眉县徐香绿心弥猴桃当季水果齐峰奇异果陕西眉县徐香绿心弥猴桃当季水果'
-		}, {
-			img: '/images/4.jpg',
-			title: '齐峰奇异果陕西眉县徐香绿心弥猴桃当季水果齐峰奇异果陕西眉县徐香绿心弥猴桃当季水果%的珍贵植物油脂油酸'
-		}, {
-			img: '/images/6.jpg',
-			title: '芒果是预防皱纹的最佳水果，因为含有丰富的B一胡萝卜素和独一无二的酶，能激发肌肤细胞活力'
-		}, {
-			img: '/images/5.jpg',
-			title: '葡萄中所含有效成分能提高细胞新陈代谢率，帮助肺部细胞排毒。另外，葡萄还具有祛痰功效'
-		}]
+		orderList: [],
+		productDesc: {
+			img: '/images/5.jpg'
+		},
+		tablist: ['全部', '待付款', '待发货', '已发货', '已完成'],
+		active: 0,
+		more: true,
+		page: 1,
+		pageSize: 10,
+		showTk: false,
+		message: '',
+		no: ''
 	},
 
 	/**
@@ -27,16 +29,155 @@ Page({
 	onLoad: function(options) {
 		if (options.index) {
 			this.setData({
-				index: options.index
+				active: options.index - 1
 			});
 		}
+		this.getOrdersList();
 	},
 
-	tap(e) {
-		this.setData({
-			index: e.currentTarget.dataset.index
+	wuliu(e) {
+		let id = e.currentTarget.dataset.id;
+		wx.navigateTo({
+			url: `/pages/wuliu/wuliu?id=${id}`
 		})
 	},
+	toDesc(e) {
+		let id = e.currentTarget.dataset.id;
+		wx.navigateTo({
+			url: `/pages/orderDesc/orderDesc?id=${id}`
+		})
+	},
+	getUserInfo(event) {
+		console.log(event.detail);
+	},
+
+	onClose() {
+		this.setData({
+			showTk: false
+		});
+	},
+	
+	// //退款弹窗
+	// tuikuan(e) {
+	// 	let no = e.currentTarget.dataset.id;
+	// 	this.setData({
+	// 		showTk: true,
+	// 		no
+	// 	})
+	// },
+	//确定退款
+	// sure() {
+	// 	request({
+token: app.globalData.token.prefix + app.globalData.token.token,
+	// 		url: `/orders/${this.data.no}/refund`,
+	// 		method: 'put',
+	// 		data: {
+	// 			reason: this.data.message
+	// 		},
+	// 	}).then(res => {
+	// 		this.setData({
+	// 			showTk: false
+	// 		})
+	// 	});
+	// },
+
+	//订单列表
+	getOrdersList() {
+		request({
+token: app.globalData.token.prefix + app.globalData.token.token,
+			url: `orders`,
+			data: {
+				per_page: this.data.pageSize, // 默认10
+				page: this.data.page, // 默认1
+				status: this.data.active // 默认1,取值 0所有 1待付款 2 待发货 3待收货 4已完成
+			}
+		}).then(res => {
+			if (res.data.code == 200) {
+				let data = res.data.data;
+				if (data.data.length) {
+					this.setData({
+						orderList: data.data
+					})
+				} else {
+					this.setData({
+						orderList: []
+					})
+				}
+				wx.stopPullDownRefresh();
+			}
+		});
+	},
+
+	//支付指定订单
+	payTargetOrder(e) {
+		let id = e.currentTarget.dataset.id;
+		request({
+token: app.globalData.token.prefix + app.globalData.token.token,
+			url: `orders/${id}/pay`,
+			method: 'put',
+			data: {}
+		}).then(res => {
+			let temp = res;
+			if (res.data.code == 200) {
+				let pay = res.data.data;
+				wx.requestPayment({
+					timeStamp: pay.timeStamp,
+					nonceStr: pay.nonceStr,
+					package: pay.package,
+					signType: pay.signType,
+					paySign: pay.paySign,
+					success(res) {
+						wx.showToast({
+							title: '支付成功'
+						});
+						wx.navigateTo({
+							url: `/pages/orderDesc/orderDesc?id=${id}`
+						})
+					},
+					fail(res) {
+						wx.showToast({
+							// title: temp.data.data.original.msg,
+							title: '支付不成功',
+							icon: 'none'
+						});
+					}
+				})
+			}
+		});
+	},
+
+	//删除订单
+	delOrder(e) {
+		let id = e.currentTarget.dataset.id;
+		Dialog.confirm({
+			message: '确定要删除该订单吗?'
+		}).then(() => {
+			request({
+token: app.globalData.token.prefix + app.globalData.token.token,
+				url: `orders/${id}`,
+				method: 'delete',
+				data: {}
+			}).then(res => {
+				if (res.data.code == 200) {
+					wx.showToast({
+						title: '删除成功',
+						icon: 'none'
+					});
+					this.getOrdersList(); //更新订单
+				}
+			});
+		}).catch(() => {});
+	},
+
+	onChange(event) {
+		console.log(event)
+		let status = event.detail.index
+		this.setData({
+			active: status
+		});
+		this.getOrdersList(status);
+	},
+
 	/**
 	 * 生命周期函数--监听页面初次渲染完成
 	 */
@@ -69,14 +210,50 @@ Page({
 	 * 页面相关事件处理函数--监听用户下拉动作
 	 */
 	onPullDownRefresh: function() {
-
+		wx.showLoading({
+			title: '刷新中...',
+		});
+		this.getOrdersList(this.data.active);
 	},
 
 	/**
 	 * 页面上拉触底事件的处理函数
 	 */
 	onReachBottom: function() {
-
+		if (this.data.more) {
+			wx.showLoading({
+				title: '加载更多...'
+			});
+			request({
+token: app.globalData.token.prefix + app.globalData.token.token,
+				url: 'orders',
+				data: {
+					page: this.data.page + 1, // 默认1
+					per_page: this.data.pageSize, // 默认10
+					status: this.data.active // 默认1,取值 0所有 1待付款 2 待发货 3待收货 4已完成
+				}
+			}).then(res => {
+				if (res.data.code == 200) {
+					let data = res.data.data;
+					if (data.data.length) {
+						this.setData({
+							orderList: this.data.orderList.concat(data.data),
+							page: data.current_page,
+							more: true
+						})
+					} else {
+						this.setData({
+							more: false
+						})
+					}
+				}
+			})
+		} else {
+			wx.showToast({
+				title: '没有更多数据',
+				icon: 'none'
+			});
+		}
 	},
 
 	/**

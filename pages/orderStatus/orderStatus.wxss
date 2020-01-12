@@ -1,4 +1,5 @@
 @import '../order/index.wxss';
+
 .tab-group {
 	display: flex;
 	align-items: center;
@@ -7,18 +8,19 @@
 	margin-bottom: 10rpx;
 	background: #fff;
 }
-
+.textarea{
+	min-height: 100rpx;
+}
 .tab-group .items {
-	font-weight: bold;
 	color: #333;
 	padding: 30rpx 20rpx;
 	border-bottom: 2px solid #fff;
 }
 
 .tab-group .items.act {
-	color: green;
+	color: #58B15F;
   border: 0;
-	border-bottom: 2px solid green;
+	border-bottom: 2px solid #58B15F;
 }
 .orderInfo .line view{
   color: #666;
@@ -53,4 +55,51 @@
    border: 1rpx solid #F83B1D;
    color: #fff;
    background: #F83B1D;
+}
+.item{
+  padding: 0;
+  margin: 0;
+}
+.order{
+	margin-bottom: 20rpx;
+}
+.commodity{
+	position: relative;
+	}
+.commodity .type{
+	position: absolute;
+	left: 20rpx;
+	bottom: 20rpx;
+	padding: 5rpx 10rpx;
+	background: #07C160;
+	color: #fff;
+	font-size: 22rpx;
+	border-radius: 0 8rpx 0 0;
+	}
+.total,.commodity,.address{
+	margin: 0;
+	border-radius: 0;
+}
+.total{
+	border-radius: 0 0 20rpx 20rpx;
+}
+.address{
+	border-radius: 20rpx 20rpx 0 0;
+}
+.van-card__title{
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+	margin-bottom: 50rpx;
+}
+.mt{
+	margin-top: -5px;
+}
+.van-button--danger{
+	border: 1rpx solid #ccc !important;
+}
+.van-button--danger .van-button__text{
+	color: #333 !important;
+
 }

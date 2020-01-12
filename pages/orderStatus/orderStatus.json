@@ -1,6 +1,7 @@
 {
   "usingComponents": {},
-  "navigationBarTitleText": "确认列表",
-  "navigationBarBackgroundColor": "#4CB981",
-  "navigationBarTextStyle": "white"
+  "navigationBarTitleText": "我的订单",
+  "navigationBarBackgroundColor": "#58B15F",
+  "navigationBarTextStyle": "white",
+	 "enablePullDownRefresh": true
 }

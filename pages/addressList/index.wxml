@@ -1,29 +1,29 @@
 <!-- pages/addressList/index.wxml -->
 <view class='addressList'>
-	<view  bindtap="getLocation"  class='wxaddress' >
+<!-- 	<view  bindtap="getLocation"  class='wxaddress' >
 		<view>
 			<image src='../../images/icon/weixin.png'></image>
 			获取微信收获地址
 		</view>
 		<image src='../../images/icon/icon_right.png'></image>
-	</view>
+	</view> -->
 	<view class='list'>
-		<view bindtap="tap" data-index='{{index}}' wx:for="{{list}}" wx:key="*this" class="item {{activeIndex==index?'active':''}}">
+		<view bindtap="tap" data-index='{{index}}' data-item='{{item}}' data-id="{{item.id}}" wx:for="{{addressList}}" wx:key="*this" class="item {{item.is_default==1?'active':''}}">
 			<view class='line'>
 				<view>{{item.name}}</view>
-				<view class='mobile'>{{item.tel}}</view>
-				<view wx:if="{{item.type==1}}" class="default">默认</view>
+				<view class='mobile'>{{item.phone}}</view>
+				<view wx:if="{{item.is_default==1}}" class="default">默认</view>
 			</view>
 			<view class='line address'>
-				<view>{{item.address}}</view>
-				<view bindtap='toEditAddress'>
+				<view>{{item.province+item.city+item.area+item.detail_address}}</view>
+				<view catchtap='toEditAddress' class='edit-icon' data-item='{{item}}'>
 					<image src='../../images/icon/icon_change.png'></image>
 				</view>
 			</view>
 			<view class='choose'>
-				<image wx:if="{{activeIndex==index}}" src='../../images/icon/icon_choose.jpeg'></image>
+				<image wx:if="{{item.is_default==1}}" src='../../images/icon/icon_choose.jpeg'></image>
 			</view>
 		</view>
 	</view>
-	<view bindtap='toEditAddress' class="addBtn">添加新地址</view>
+	<view bindtap='toAddAddress' class="addBtn">添加新地址</view>
 </view>

@@ -1,5 +1,6 @@
 /* pages/order/index.wxss */
 @import '../addressList/index.wxss';
+
 .order {
 	height: 100%;
 	font-size: 32rpx;
@@ -12,10 +13,29 @@
 	padding: 40rpx;
 }
 
+.fnt {
+	font-size: 26rpx;
+	font-weight: bold;
+	line-height: 1.4;
+}
+
 .address .left {
 	flex: 1;
 	color: #333;
 }
+
+.cart-item {
+	padding-bottom: 30rpx;
+	margin-bottom: 30rpx;
+	border-bottom: 1rpx solid #f0f0f0;
+
+}
+
+/* .van-button--square {
+	background: #58B15F !important;
+	border-color: #58B15F !important;
+	color: #fff !important;
+} */
 
 .address .left .name {
 	font-size: 32rpx;
@@ -29,7 +49,7 @@
 }
 
 .address .left .addressName {
-	font-size: 30rpx;
+	font-size: 26rpx;
 }
 
 .address .right {
@@ -47,7 +67,7 @@
 	background: #FFF;
 	margin: 20rpx 0;
 	border-radius: 20rpx;
-	padding: 34rpx 36rpx;
+	padding: 20rpx;
 }
 
 .commodity .top {
@@ -86,7 +106,7 @@
 	align-items: center;
 	justify-content: space-between;
 	height: 70rpx;
-	font-size: 30rpx;
+	font-size: 26rpx;
 }
 
 .commodity .line .num {
@@ -160,7 +180,7 @@
 .payType {
 	background: #FFF;
 	border-radius: 20rpx;
-	margin: 20rpx 0;
+	margin: 20rpx 0 50px;
 }
 
 .payType .title {
@@ -210,7 +230,7 @@
 
 .payBt {
 	width: 288rpx;
-	background: #4CB981;
+	background: #58B15F;
 	font-size: 32rpx;
 	color: #FFF;
 	line-height: 100rpx;
@@ -220,4 +240,23 @@
 
 .order .none {
 	height: 100rpx;
+}
+
+/* button{
+  background: #58B15F !important;
+  border-color: #58B15F !important;
+} */
+/* .van-stepper__minus,.van-stepper__plus{
+  border-radius:50% !important;
+  color: #fff !important;
+  background: #58B15F !important;
+  font-weight: bold !important;
+  font-size: 30rpx !important;
+} */
+.flex{
+	display: flex;
+	align-items: center;
+}
+.flex-b{
+	justify-content: space-between;
 }

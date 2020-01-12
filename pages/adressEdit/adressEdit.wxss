@@ -7,13 +7,39 @@ page {
 .list .item {
 	display: flex;
 	align-items: center;
+  padding: 0 20rpx;
 }
 
 .list .item .lable {
-	width: 160rpx;
+	width: 170rpx;
 	color: #666;
 }
 
 .list .item .inpt {
 	flex: 1;
+	padding: 34rpx 0;
+}
+
+.switch {
+	margin-left: 5px;
+}
+
+.vanSwitch {
+	display: flex;
+	align-items: center;
+	padding: 4px 0;
+	float: right;
+}
+
+.vanSwitch:after {
+	content: "";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+.delBbn{
+	background: #F0F0F0;
+	color: #333;
+	border: 1px solid #ccc;
 }

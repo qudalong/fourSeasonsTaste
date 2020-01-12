@@ -7,14 +7,19 @@ page {
 
 .flex1 {
 	flex: 1;
+	
 }
-
+.c{
+	color: #58B15F !important;
+}
 .logo {
-	width: 50rpx;
-	height: 50rpx;
+	width: 46rpx;
+	height: 46rpx;
 	margin-right: 10rpx;
 }
-
+.mb50{
+	margin-bottom: 50px;
+}
 .fff {
 	background: #fff;
 	border-radius: 8rpx;
@@ -23,8 +28,12 @@ page {
 
 .icon-share {
 	display: inline-block;
-	width: 50rpx;
-	height: 50rpx;
+	width: 40rpx;
+	height: 40rpx;
+
+}
+.abs{
+	color: #58B15F;
 }
 
 .icon-cart {
@@ -34,8 +43,8 @@ page {
 
 .icon-right {
 	display: inline-block;
-	width: 20rpx;
-	height: 24rpx;
+	width: 16rpx;
+	height: 20rpx;
 	padding-left: 10rpx;
 }
 
@@ -74,14 +83,15 @@ page {
 .more .line {
 	width: 80rpx;
 	height: 4rpx;
-	background: #4CB981;
+	background: #58B15F;
 }
 
 .more .txt {
 	margin: 0 10rpx;
 }
+
 /* 空状态 */
-.empty{
+.empty {
 	text-align: center;
 	margin: 100px auto;
 }
@@ -96,7 +106,6 @@ page {
 
 /* money */
 .fh {
-	font-size: 28rpx;
 	color: #F83B1D;
 }
 
@@ -105,14 +114,15 @@ page {
 	color: #F83B1D;
 	font-weight: bold;
 }
+
 .fh-b {
 	font-size: 30rpx;
-	color: #4CB981;
+	color: #58B15F;
 }
 
 .money-b {
 	font-size: 30rpx;
-	color: #4CB981;
+	color: #58B15F;
 }
 
 .old {
@@ -120,9 +130,11 @@ page {
 	color: #666;
 	margin-left: 10rpx;
 }
-.b1{
+
+.b1 {
 	border-bottom: 1rpx solid #f0f0f0 !important;
 }
+
 /* 按鈕 */
 
 .btn {
@@ -135,13 +147,13 @@ page {
 }
 
 .btn-solid {
-	background: #4cb981;
+	background: #58B15F;
 	color: #fff;
 }
 
 .btn-hollow {
-	border: 1px solid #4cb981;
-	color: #4cb981;
+	border: 1px solid #58B15F;
+	color: #58B15F;
 }
 
 .icon-success,
@@ -189,9 +201,8 @@ page {
 
 .row {
 	display: flex;
-	align-items: center;
 	justify-content: space-between;
-	padding: 8rpx 14rpx 0;
+	padding: 12rpx 5rpx 0;
 }
 
 .product-info {
@@ -203,7 +214,7 @@ page {
 
 .price {
 	display: flex;
-	align-items: center;
+	align-items: baseline;
 }
 
 .small {
@@ -223,6 +234,7 @@ page {
 	font-size: 22rpx;
 	text-decoration: line-through;
 }
+
 .dialog {
 	width: 100%;
 	height: 100%;
@@ -231,4 +243,42 @@ page {
 	left: 0;
 	background: rgba(0, 0, 0, 0.5);
 	z-index: 10;
+}
+.empty{
+	text-align: center;
+}
+.icon_empty{
+  width: 160px;
+  height: 160px;
+  display: inline-block;
+  margin-bottom: 30rpx;
+}
+.f16{
+	font-size: 26rpx !important;
+}
+
+/* tabbar */
+.tab-bar{
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background: #fff;
+	font-size: 28rpx;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+.tab-bar .item{
+	padding: 10rpx 0;
+}
+.tab-bar .item .icon-tab{
+	height: 60rpx;
+	width: 60rpx;
+}
+.tab-bar .item .txt{
+	color: #666;
+}
+.tab-bar .item.active .txt{
+	color: #58B15F;
 }

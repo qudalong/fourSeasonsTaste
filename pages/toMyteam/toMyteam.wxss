@@ -3,8 +3,8 @@
 	padding: 20rpx;
 }
 .cover-food{
-	height: 80rpx;
-	width: 80rpx;
+	height: 100rpx !important;
+	width: 100rpx !important;
 	border-radius: 50%;
 }
 .r-info{
@@ -16,8 +16,8 @@
 	color: #666;
 }
 .info .name{
-	padding-bottom: 40rpx;
+	padding-bottom: 20rpx;
 }
  .count{
-	color:#4CB981 ;
+	color:#58B15F ;
 }

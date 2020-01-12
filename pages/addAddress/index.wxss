@@ -35,7 +35,7 @@
   position: absolute;
   bottom: 30rpx;
   left: 30rpx;
-  background: #4CB981;
+  background: #58B15F;
   color: #fff;
   text-align: center;
   line-height: 100rpx;

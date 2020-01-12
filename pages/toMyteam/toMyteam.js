@@ -1,4 +1,7 @@
-// pages/toMyteam/toMyteam.js
+const app = getApp()
+import {
+	request
+} from '../../utils/request.js'
 Page({
 
 	/**
@@ -6,7 +9,10 @@ Page({
 	 */
 	data: {
 		index: 1,
-		list: [1, 1, 1, 1, 1]
+		list: [1, 1, 1, 1, 1],
+    tablist: ['直属合伙人', '直属客户', '间接合伙人', '间接客户'],
+    active: 0,
+		itemList:[]
 	},
 
 	/**
@@ -15,15 +21,35 @@ Page({
 	onLoad: function(options) {
 		if (options.index) {
 			this.setData({
-				index: options.index
+        active: options.index-1
 			});
 		}
+		this.partners();
 	},
-	tap(e) {
+	//获取我的所有团队成员
+	partners() {
+		request({
+token: app.globalData.token.prefix + app.globalData.token.token,
+			url: `users/partners`,
+			data: {
+				status: this.data.active //0直属合伙人，1直属用户，2间接合伙人，3间接用户
+			}
+		}).then(res => {
+				this.setData({
+					itemList: res.data.code.data
+				});
+		});
+	},
+
+	
+	onChange(event) {
+		let active = event.detail.index;
 		this.setData({
-			index: e.currentTarget.dataset.index
-		})
+		active
+		});
+		this.partners();
 	},
+	
 	/**
 	 * 生命周期函数--监听页面初次渲染完成
 	 */

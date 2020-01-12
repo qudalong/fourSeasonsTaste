@@ -1,95 +1,123 @@
 <!-- pages/order/index.wxml -->
 <view class='order'>
-	<view wx:if="{{!userName}}"  bindtap="getLocation"  class='wxaddress' >
+	<!-- <view wx:if="{{!defaultAddress}}" bindtap="getLocation" class='wxaddress'>
 		<view>
 			<image src='../../images/icon/weixin.png'></image>
 			获取微信收获地址
 		</view>
 		<image src='../../images/icon/icon_right.png'></image>
+	</view> -->
+	<view bindtap='toAddress' class='address'>
+		<view wx:if="{{defaultAddress}}" class='left'>
+			<view class='name'>
+				<view>{{defaultAddress.name}}</view>
+				<view class='mobile'>{{defaultAddress.phone}}</view>
+			</view>
+			<view class='addressName row2'>{{defaultAddress.province+defaultAddress.city+defaultAddress.area}}</view>
+		</view>
+		<view wx:if="{{!defaultAddress}}" class='left'>
+			请添加收货地址
+		</view>
+		<view class='right'>
+			<image src='../../images/icon/icon_right.png'></image>
+		</view>
 	</view>
-  <view  wx:if="{{userName}}" bindtap='toAddress' class='address'>
-    <view class='left'>
-      <view class='name'>
-        <view>{{userName}}</view>
-        <view class='mobile'>{{telNumber}}</view>
-      </view>
-      <view class='addressName row2'>{{address}}</view>
-    </view>
-    <view class='right'>
-      <image src='../../images/icon/icon_right.png'></image>
-    </view>
-  </view>
-  <view class="commodity">
-    <view class="top">
-      <view>
-        <image class="cover-food" src="../../images/2.jpg"></image>
-      </view>
-      <view class='right'>
-        <view class="row2">佳沛 新西兰阳光金奇异果 特大 单果重量22-25克新西兰阳光金奇异果</view>
-        <view class='price'>
-          ¥
-          <view class='priceNum'>69.00</view>
-        </view>
-      </view>
-    </view>
-    <view class='line'>
-      <view>购买数量</view>
-      <view class='num'>
-        <view bindtap="minus" class='add hover'>
-          <image src='../../images/icon/icon_del.png'></image>
-        </view>
-        <view class='payNum'>{{count}}</view>
-        <view bindtap="add" class='del hover'>
-          <image src='../../images/icon/icon_add.png'></image>
-        </view>
-      </view>
-    </view>
-    <view class='line'>
-      <view>配送方式</view>
-      <view class='num'>
-        <view>韵达快递包邮</view>
-        <view class='right'>
-          <image src='../../images/icon/icon_right.png'></image>
-        </view>
-      </view>
-    </view>
-  </view>
-  <view class='total'>
-    <view class='line'>
-      <view>商品金额</view>
-      <view class='right'>
-        <view class='symbol'>¥</view>
-        <view>85.00</view>
-      </view>
-    </view>
-    <view class='line'>
-      <view>运费</view>
-      <view class='right'>
-        +
-        <view class="symbol">¥</view>
-        <view>10.00</view>
-      </view>
-    </view>
-    <view class='bottom'>
-      <view>实付款:</view>
-      <view class='orange'>¥</view>
-      <view class='totalNum orange'>89.00</view>
-    </view>
-  </view>
-  <view class='payType'>
-    <view class="title">选择支付方式</view>
-    <view class='line'>
-      <image src="../../images/icon/weixin.png"></image>
-      <view>微信支付</view>
-    </view>
-  </view>
-  <view class='none'></view>
-  <view class='payBtn'>
-    <view class='bottom'>
-      <view>实付款:</view>
-      <view class='orange'>¥</view>
-      <view class='totalNum orange'>89.00</view>
-    </view>
-    <view class='payBt hover'>确认支付</view>
-  </view>
+	<!-- 加入购物车购买 -->
+	<view wx:if="{{cartList.length}}" class="commodity">
+		<view wx:for="{{cartList}}" wx:key="*this" class='cart-item'>
+			<view class="top">
+				<view>
+					<image class="cover-food" src="{{item.product.thumb}}"></image>
+				</view>
+				<view class='right'>
+					<view class="row2 fnt">{{item.product.title}}</view>
+					<view class='price'>
+						¥
+						<view class='priceNum'>{{item.product.price}}</view>
+					</view>
+				</view>
+			</view>
+			<view class='line'>
+				<view>购买数量</view>
+				<view class='num' bindtap='changeCount' data-id='{{item.id}}'>
+					<van-stepper value="{{item.number}}" integer disable-input bind:change="onChange" />
+				</view>
+			</view>
+		</view>
+		<!-- <view class='line'>
+			<view>配送方式</view>
+			<view class='num'>
+				<view>韵达快递包邮</view>
+				<view class='right'>
+					<image src='../../images/icon/icon_right.png'></image>
+				</view>
+			</view>
+		</view> -->
+	</view>
+	<!-- 直接购买 -->
+	<view wx:if="{{!cartList.length}}" class="commodity">
+		<view class="top">
+			<view>
+				<image class="cover-food" src="{{productsDesc.thumb}}"></image>
+			</view>
+			<view class='right'>
+				<view class="row2 fnt">{{productsDesc.title}}</view>
+				<view class='price'>
+					¥
+					<view class='priceNum'>{{productsDesc.price}}</view>
+				</view>
+			</view>
+		</view>
+		<view class='line'>
+			<view>购买数量</view>
+			<view class='num'>
+				<van-stepper value="{{count}}" integer disable-input bind:change="onChange" />
+			</view>
+		</view>
+		<!-- 	<view class='line'>
+			<view>配送方式</view>
+			<view class='num'>
+				<view>韵达快递包邮</view>
+				<view class='right'>
+					<image src='../../images/icon/icon_right.png'></image>
+				</view>
+			</view>
+		</view> -->
+	</view>
+	<view class='total'>
+		<view class='line'>
+			<view>商品金额</view>
+			<view class='right'>
+				<view class='symbol'>¥</view>
+				<view wx:if="{{cartList.length}}">{{totalMoney/100}}</view>
+				<view wx:if="{{!cartList.length}}">{{productsDesc.price*count}}</view>
+			</view>
+		</view>
+		<view class='line'>
+			<view>运费</view>
+			<view class='right'>
+				+
+				<view class="symbol">¥</view>
+				<view>0</view>
+			</view>
+		</view>
+		<view class='bottom'>
+			<view>实付款:</view>
+			<view class='orange'>¥</view>
+			<view wx:if="{{cartList.length}}" class='totalNum orange'>{{totalMoney/100}}</view>
+			<view wx:if="{{!cartList.length}}" class='totalNum orange'>{{productsDesc.price*count}}</view>
+		</view>
+	</view>
+	<view class='payType'>
+		<view class="title">选择支付方式</view>
+		<view class='line flex flex-b'>
+			<view class='flex'>
+				<image src="../../images/icon/weixin.png"></image>
+				<view>微信支付</view>
+			</view>
+			<van-checkbox value="{{ checked }}" checked-color="#58B15F" ></van-checkbox>
+		</view>
+	</view>
+	<van-submit-bar wx:if="{{cartList.length}}" price="{{ totalMoney }}" button-text="确认支付" bind:submit="orders" />
+	<van-submit-bar wx:if="{{!cartList.length}}" price="{{ productsDesc.price*count*100 }}" button-text="确认支付" bind:submit="orders" />
 </view>

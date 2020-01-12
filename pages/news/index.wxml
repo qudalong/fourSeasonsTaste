@@ -1,0 +1,7 @@
+<view class="detail">
+	<view class="title">{{detail.title}}</view>
+	<!-- <view class="time">时间:{{detail.created_at}}</view> -->
+	<block wx:if="{{detail.content}}">
+		<rich-text nodes="{{detail.content}}"></rich-text>
+	</block>
+</view>

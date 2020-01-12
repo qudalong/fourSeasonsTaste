@@ -1,4 +1,7 @@
-// pages/toMyteam/toMyteam.js
+const app = getApp()
+import {
+	request
+} from '../../utils/request.js'
 Page({
 
 	/**
@@ -18,11 +21,30 @@ Page({
 				index: options.index
 			});
 		}
+		this.brokerages(1);
 	},
+
+	brokerages(status) {
+		request({
+			token: app.globalData.token.prefix + app.globalData.token.token,
+			url: 'users/brokerages?status=' + status,
+			data: {}
+		}).then(res => {
+			if (res.data.code == 200) {
+				this.setData({
+					yjList: res.data.data.data
+				})
+			}
+		});
+	},
+
+
+
 	tap(e) {
 		this.setData({
 			index: e.currentTarget.dataset.index
 		})
+		this.brokerages(this.data.index);
 	},
 	/**
 	 * 生命周期函数--监听页面初次渲染完成

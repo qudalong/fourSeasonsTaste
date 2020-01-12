@@ -1,60 +1,52 @@
-<view class='card-wrap'>
-	<view class="title">
-		<radio></radio>
-		<image class="logo" src='/images/logo.jpeg'></image>
-		<text>四季滋味</text>
-	</view>
-	<view class="card-list">
-		<view wx:for="{{list}}" wx:key="unique" class="item hover">
-			<radio></radio>
-			<view class="food-infos">
-				<image class="cover-food" src='{{item.img}}'></image>
-				<view class="food-info">
-					<view class="row2 details">{{item.title}}</view>
-					<view class="type">{{item.type}}</view>
-					<view class="price">
-						<view>
-							<text>￥</text>
-							<text class="txt">{{item.price}}</text>
-						</view>
-						<view class="count">x1</view>
-					</view>
-				</view>
+<van-dialog id="van-dialog" />
+<view wx:if="{{cartList.length}}">
+	<view class='card-wrap fiexd-top' style='margin-bottom: 0;'>
+		<view class="title">
+			<view class='left'>
+				<image class="logo" src='/images/logo.jpeg'></image>
+				<text>四季滋味</text>
 			</view>
+			<view class="edit">温馨提示:左滑可以删除商品哦~~</view>
 		</view>
 	</view>
-</view>
-<view class="more">
-	<view class="flex">
-		<view class="line"></view>
-		<view class="txt">更多精选商品</view>
-		<view class="line"></view>
-	</view>
-</view>
-<!-- 商品列表 -->
-<view class='product-list'>
-	<view wx:for="{{list}}" wx:key="unique" class='item hover'>
-		<image class="cover" src='{{item.img}}'></image>
-		<view class="product-info">
-			<view class="row2">{{item.title}}</view>
-			<view class='row'>
-				<view class='price'>
-					<view class="small">
-						<text>¥</text> 69.00
-					</view>
-					<view class='oldPrice'>¥35</view>
+	<view class='card-wrap cart-list'>
+		<view class="container">
+			<view class="touch-item {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" bindtouchstart="touchstart"
+			 bindtouchmove="touchmove" wx:for="{{cartList}}" wx:key="unique">
+				<view class="content">
+					<van-checkbox-group value="{{ result }}" bind:change="onChange" class='flex relative'>
+						<van-checkbox class="checkboxes checkboxes-{{ index }}" checked-color="#58B15F" name="{{ item.id }}">
+							<van-card class="food-infos" title-class="row2" num="{{item.number}}" price="{{item.product.price}}" title="{{item.product.title}}"
+							 thumb="{{ item.product.thumb }}">
+							</van-card>
+						</van-checkbox>
+					</van-checkbox-group>
 				</view>
-				<image class="icon-cart" src='/images/icon/icon_shoppingred.png'></image>
+				<view class="del" data-id='{{item.id}}' catchtap='delOrder'>删除</view>
 			</view>
 		</view>
+		<!-- 结算 -->
+		<van-submit-bar price="{{ totalMoney }}" color="#58B15F" button-text="提交订单" bind:submit="onClickButton">
+		</van-submit-bar>
 	</view>
 </view>
-<!-- 结算 -->
-<view class="result-wrap">
-	<radio>全选</radio>
-	<view class="hook">
-		不含运费 合计
-		<text class="totalMoney">￥89.00</text>
-	</view>
-	<view class="accounts hover">结算(2)</view>
+<view wx:if="{{!cartList.length}}" class="empty">
+	<image class="cover icon_empty" src='/images/icon/icon_empty.png'></image>
+	<view>购物车快饿瘪了 T.T</view>
+	<view style="margin-top:10px;color:#666">快给我挑点宝贝</view>
 </view>
+<!-- <view class="tab-bar">
+	<view class="item {{act==1?'active':''}} " bindtap='tab' data-index='1'>
+		<image class="icon-tab " src="/images/icon/nav-icon-index{{act==1?'.active':''}}.png"></image>
+		<view class="txt">首页</view>
+	</view>
+	<view class="item {{act==2?'active':''}}" bindtap='tab' data-index='2'>
+		<image class="icon-tab" src="/images/icon/nav-icon-cart{{act==2?'.active':''}}.png"></image>
+		<view class="txt">购物车</view>
+	</view>
+	<view class="item {{act==3?'active':''}}" bindtap='tab' data-index='3'>
+		<image class="icon-tab" src="/images/icon/nav-icon-user{{act==3?'.active':''}}.png"></image>
+		<view class="txt">我的</view>
+	</view>
+</view> -->
+

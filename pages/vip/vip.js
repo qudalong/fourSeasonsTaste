@@ -1,4 +1,8 @@
-// pages/vip/vip.js
+const app = getApp()
+import {
+	request
+} from '../../utils/request.js'
+import Dialog from '../../miniprogram_npm/vant-weapp/dialog/dialog';
 Page({
 
 	/**
@@ -6,15 +10,64 @@ Page({
 	 */
 	data: {
 		index: 1,
-		list:[1,1,1,1,1,]
+		list: [1, 1, 1, 1, 1, ],
+		info: '',
+		a: 0,
+		b: 0,
+		c: 0,
+		click: false,
+		up: false,
+		hhr: false
 	},
 
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function(options) {
-
+		let seller = wx.getStorageSync('seller');
+		this.setData({
+			seller
+		});
+		this.getProgress()
 	},
+	getProgress() {
+		request({
+token: app.globalData.token.prefix + app.globalData.token.token,
+			url: 'users/progress',
+			data: {}
+		}).then(res => {
+			let data = res.data
+			if (data.orders >= 15 && data.invitations >= 10 && data.deposit >= 199) {
+				// if (data.orders >= 1) {
+				this.setData({
+					click: true,
+					hhr: true
+				})
+			}
+			this.setData({
+				info: data,
+				a: (data.orders / 15 * 100).toFixed(2),
+				b: (data.invitations / 10 * 100).toFixed(2),
+				c: (data.deposit / 199 * 100).toFixed(2)
+			})
+		});
+	},
+	bindUp() {
+		Dialog.confirm({
+			message: '确定要升级合伙人吗?'
+		}).then(() => {
+			this.setData({
+				up: true,
+				hhr: false
+			})
+		}).catch(() => {
+			this.setData({
+				up: false
+			})
+		})
+	},
+
+
 	tap(e) {
 		this.setData({
 			index: e.currentTarget.dataset.index

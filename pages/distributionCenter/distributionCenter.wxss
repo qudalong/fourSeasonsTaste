@@ -1,10 +1,14 @@
 @import '../my/my.wxss';
 
 .tx-btn {
-	background: #4CB981;
-	color: #fff;
+	background: #dedede;
+	color: #999;
 	border-radius: 6rpx;
 	padding: 16rpx 30rpx;
+}
+.tx-btn-a{
+	background: #58B15F;
+	color: #fff;
 }
 
 .getMoney {
@@ -13,12 +17,12 @@
 
 .tx-label {
 	color: #666;
-	font-size: 24rpx;
+	font-size: 26rpx;
 }
 
 .money {
 	font-size: 36rpx;
-	color: #4CB981;
+	color: #58B15F;
 	font-weight: bold;
 }
 
@@ -29,4 +33,40 @@
 .row-sy {
 	justify-content: space-around;
 	padding: 10rpx 0 0 0;
+}
+.row-sy .item{
+	text-align: center;
+}
+.block{
+	border-radius: 10rpx;
+}
+.page{
+	padding: 10rpx;
+	width: auto;
+	font-size: 30rpx;
+}
+.user-info{
+	background: #58B15F;
+	color: #fff;
+}
+
+.user-info .compare{
+	border-color:#fff ;
+	color: #fff;
+}
+.flex{
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	text-align: center;
+	font-size: 27rpx;
+}
+.flex .item{
+	flex: 1;
+	border-bottom: 1rpx solid #f0f0f0;
+	border-right: 1rpx solid #f0f0f0;
+	padding: 20rpx;
+}
+.l-title .item{
+	/* font-weight: bold; */
 }

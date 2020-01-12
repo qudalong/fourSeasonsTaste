@@ -21,14 +21,14 @@
   text-align: center;
   margin: 0 auto;
   font-size: 32rpx;
-  border-radius: 25rpx;
+  border-radius: 45rpx;
 }
 .toOrder{
-  color: #4CB981;
-  border: 1rpx solid #4CB981;
+  color: #58B15F;
+  border: 1rpx solid #58B15F;
   margin: 0 auto 30rpx; 
 }
 .lookAgain{
   color: #FFF;
-  background: #4CB981;
+  background: #58B15F;
 }

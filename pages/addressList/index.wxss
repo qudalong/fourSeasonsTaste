@@ -11,6 +11,10 @@
   font-size: 28rpx;
   color: #333;
 }
+.edit-icon{
+	padding: 20rpx 30rpx;
+
+}
 .wxaddress view{
   display: flex;
   align-items: center;
@@ -32,7 +36,7 @@
   border-radius: 20rpx;
   background: #FFF;
   position: relative;
-  padding: 34rpx 36rpx;
+  padding: 20rpx;
 	border: 1px solid #fff;
 }
 .line{
@@ -45,7 +49,7 @@
   height: 32rpx;
 }
 .line .default{
-  background: #4CB981;
+  background: #58B15F;
   color: #fff;
   font-size: 24rpx;
   border-radius: 10rpx;
@@ -74,11 +78,11 @@
   height: 48rpx;
 }
 .active{
-  border: 4rpx solid #4CB981;
+  border: 4rpx solid #58B15F;
 }
 .addBtn{
   margin: 30rpx;
-  background: #4CB981;
+  background: #58B15F;
   font-size: 32rpx;
   color: #FFF;
   border-radius: 15rpx;

@@ -1,115 +1,298 @@
 .card-wrap {
-  background: #fff;
-  border-radius: 10px;
-  padding: 20rpx;
+	background: #fff;
+	padding: 20rpx;
+	margin-bottom: 50px;
+}
+page{
+  background: #f0f0f0;
+}
+.card-wrap .title {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10rpx 0;
 }
 
-.card-wrap .title {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 30rpx 0;
-  border-bottom: 1rpx solid #f0f0f0;
+.card-wrap .title .edit {
+	padding: 10rpx 20rpx;
+	font-size: 24rpx;
+	color: #999;
+}
+
+.deleteAll {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background: #58B15F;
+	color: #fff;
+	padding: 30rpx;
+	text-align: center;
+	font-size: 36rpx;
+	color: #fff;
+}
+
+.left {
+	display: flex;
+	align-items: center;
+}
+
+.logo {
+	margin-left: 10rpx;
+	border-radius: 50%;
 }
 
 .card-list .item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 30rpx 0;
-  border-bottom: 1rpx solid #f0f0f0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 30rpx 0;
+	border-bottom: 1rpx solid #f0f0f0;
 }
 
 .card-list .item:last-child {
-  border: 0;
+	border: 0;
 }
 
 .card-list .cover-food {
-  width: 190rpx;
-  height: 190rpx;
-  border-radius: 2px;
-  margin: 0 10rpx;
+	width: 190rpx;
+	height: 190rpx;
+	border-radius: 2px;
+	margin: 0 10rpx;
 }
 
 .card-list .food-info {
-  flex: 1;
-  line-height: 1.6;
+	flex: 1;
+	line-height: 1.6;
 }
-.food-infos{
-  display: flex;
+
+.food-infos {
+	display: flex;
 }
+
 .food-info .details {
-  line-height: 1.4;
+	line-height: 1.4;
+	word-break: break-all;
+	word-wrap: break-word;
 }
 
 .food-info .type {
-  background: rgba(239, 239, 239, 1);
-  border-radius: 5px;
-  display: inline-block;
-  padding: 0 4px;
-  margin: 5px 0;
+	background: rgba(239, 239, 239, 1);
+	border-radius: 5px;
+	display: inline-block;
+	padding: 0 4px;
+	margin: 5px 0;
 
-  font-size: 10px;
-  font-weight: 400;
-  color: rgba(119, 118, 118, 1);
+	font-size: 10px;
+	font-weight: 400;
+	color: rgba(119, 118, 118, 1);
 }
 
 .food-info .price {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-weight: 600;
-  color: rgba(248, 59, 29, 1);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-weight: 600;
+	color: rgba(248, 59, 29, 1);
 }
 
 .food-info .price .txt {
-  font-size: 16px;
+	font-size: 16px;
 }
 
 .food-info .count {
-  font-size: 14px;
-  font-weight: 400;
-  color: rgba(167, 167, 167, 1);
+	font-size: 14px;
+	font-weight: 400;
+	color: rgba(167, 167, 167, 1);
 }
 
 .food-info .count {
-  text-align: right;
+	text-align: right;
 }
 
 /* 結算 */
 
 .result-wrap {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 112rpx;
-  background: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-left: 10px;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 112rpx;
+	background: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-left: 10px;
 }
 
 .result-wrap .accounts {
-  font-size: 14px;
-  height: 112rpx;
-  line-height: 112rpx;
-  width: 100px;
-  text-align: center;
-  background: #4cb981;
-  color: #fff;
+	font-size: 14px;
+	height: 112rpx;
+	line-height: 112rpx;
+	width: 100px;
+	text-align: center;
+	background: #58B15F;
+	color: #fff;
 }
 
 .totalMoney {
-  color: #f83b1d;
-  font-size: 18px;
+	color: #f83b1d;
+	font-size: 18px;
 }
 
 .hook {
-  color: #999;font-family:PingFangSC-Semibold,PingFang SC;
+	color: #999;
+	font-family: PingFangSC-Semibold, PingFang SC;
 }
 
 .product-list {
-  padding-bottom: 120rpx;
+	padding-bottom: 120rpx;
+}
+
+.ckall {
+	padding-left: 30rpx;
+}
+
+/* .van-button--square {
+	background: #58B15F !important;
+	border-color: #58B15F !important;
+} */
+
+.van-button--small {
+	background: red !important;
+	border-color: red !important;
+	color: #fff !important;
+}
+
+.del-wrap {
+	box-sizing: border-box;
+	position: fixed;
+	left: 0;
+	bottom: 50px;
+	width: 100%;
+	text-align: right;
+	padding: 20rpx;
+	background: #fff;
+	border-top: 1rpx solid #f0f0f0;
+}
+
+.del-wrap .del-btn {
+	display: inline-block;
+	background: #58B15F;
+	text-align: center;
+	width: 160rpx;
+	height: 90rpx;
+	line-height: 90rpx;
+	border-radius: 40rpx;
+	color: #fff;
+	font-weight: bold;
+}
+
+.del-wrap .del-btn.active {
+	background: #58B15F;
+}
+
+
+
+.food-infos {
+	margin-bottom: 20rpx;
+}
+
+.row2 {
+	margin-top: 20rpx;
+	margin-bottom: 10rpx;
+	margin-bottom: 50rpx;
+}
+
+.fiexd-top {
+	/* box-sizing: border-box; */
+	position: fixed;
+	width:92.5%;
+	left: 10rpx;
+	right: 10rpx;
+	top: 0;
+	background: #fff;
+	z-index: 1;
+	/* padding: 20rpx; */
+	border-radius: 0;
+	border-bottom: 1rpx solid #f0f0f0;
+}
+.cart-list{
+	margin-top: 88rpx;
+	border-radius:0 0 10rpx 10rpx;
+}
+.relative{
+	position: relative;
+}
+.stepper{
+	position: absolute;
+	right: 20rpx;
+	bottom: 10rpx;
+	z-index: 99999999;
+}
+
+.food-infos{
+	flex: 1;
+}
+.van-card{
+	width: 100%;
+}
+.van-checkbox__icon-wrap{
+	display: flex;
+	align-items: center;
+}
+.van-checkbox__label{
+	flex: 1;
+}
+
+
+/* 右滑 */
+
+
+.container{
+  width:100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding-bottom:10rpx;
+}
+.touch-item {
+ font-size: 14px;
+ display: flex;
+ /* //均匀排布每个元素 */
+ background: #fff;
+ justify-content: space-between;
+ width: 100%;
+ overflow: hidden;
+}
+.content {
+ width: 100%;
+ padding: 10px;
+ line-height: 22px;
+ margin-right:0;
+ -webkit-transition: all 0.4s;
+ transition: all 0.4s;
+ -webkit-transform: translateX(90px);
+ transform: translateX(90px);
+ margin-left: -90px;
+}
+.del {
+ background-color: #c00;
+ width: 90px;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ color: #fff;
+ -webkit-transform: translateX(90px);
+ transform: translateX(90px);
+ -webkit-transition: all 0.4s;
+ transition: all 0.4s;
+}
+/* .touch-move-active .content, */
+.touch-move-active .del {
+ -webkit-transform: translateX(0);
+ transform: translateX(0);
+}
+.touch-move-active .content{
+  background: rgba(180, 218, 12, 0.3);
 }

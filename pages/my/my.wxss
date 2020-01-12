@@ -15,37 +15,43 @@ page {
 }
 
 .user-info .compare {
-	padding: 4rpx 10rpx;
-	border-radius: 10rpx;
-	border: 1rpx solid green;
-	color: green;
-	margin-top: 10rpx;
+	padding:10rpx;
+	border-radius: 20rpx;
+	border: 1rpx solid #58B15F;
+	color: #58B15F;
+	margin-top: 20rpx;
+	margin-bottom: 10rpx;
 	font-size: 22rpx;
 	text-align: center;
 }
-
+.name{
+	font-weight: bold;
+}
 .head {
 	width: 140rpx;
 	height: 140rpx;
 	border-radius: 100%;
 	margin-right: 10px;
+  overflow: hidden;
 }
 
 .row {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding-bottom: 30rpx;
+	padding:20rpx 0 40rpx;
 	border-bottom: 1rpx solid #f0f0f0;
 }
 
 .row .title {
-	font-weight: bold;
+	/* font-weight: bold; */
 }
 
 .row .right {
 	display: flex;
 	align-items: center;
+	font-size: 26rpx;
+	color: #999;
 }
 
 .type-list {
@@ -58,6 +64,7 @@ page {
 .type-list .item {
 	flex: 1;
 	text-align: center;
+	position: relative;
 }
 
 .type-list .item .icon-type {
@@ -67,12 +74,12 @@ page {
 }
 
 .type-list .item .number {
-	color: #4CB981;
+	color: #58B15F;
 	font-size: 32rpx;
 }
 
 .type-list .item .txt {
-	padding-top: 20rpx;
+  font-size: 26rpx;
 }
 
 /* vip */
@@ -80,16 +87,29 @@ page {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 30rpx;
-	background: linear-gradient(to right, #393939, #000000);
-	color: #CFB079;
-	border-radius: 8rpx;
-	margin-bottom: 20rpx;
+	padding: 20rpx;
+	background: linear-gradient(to right, #FAEAC8, #F1D58B);
+	color: #6D4B10;
+	border-radius: 8rpx 8rpx 0 0;
+	margin: 20rpx 0 0;
 	font-size: 30rpx;
 }
 
 .vip .all {
 	border-radius: 30rpx;
-	padding: 6rpx 20rpx;
+	padding: 14rpx 26rpx;
 	border: 1rpx solid #CFB079;
+}
+.tag{
+	position: absolute;
+	top: -17rpx;
+	right: 44rpx;
+	width: 36rpx;
+	height: 36rpx;
+	line-height: 36rpx;
+	text-align: center;
+	background: #FF4444;
+	color: #fff;
+	border-radius: 50%;
+	font-size: 22rpx;
 }

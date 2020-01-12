@@ -1,29 +1,88 @@
-// pages/addressList/index.js
+const app = getApp()
+import {
+	request
+} from '../../utils/request.js'
 Page({
 
 	/**
 	 * 页面的初始数据
 	 */
 	data: {
-		list: [{
-			name: '小明',
-			tel: '18768871893',
-			type: 1,
-			address: '山东省济南市槐荫区经十路2323'
-		}, {
-			name: '小强',
-			tel: '18768871894',
-			type: 0,
-			address: '河南省郑州市金水区经三路21号'
-		}],
-		activeIndex: 0
+		addressList: [],
+		activeIndex: 0,
+		defaultAddress: ''
 	},
 
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function(options) {
+		// this.getAddresses();
+		let wxAddress = wx.getStorageSync('defaultAddress')
+		if (wxAddress) {
+			this.data.addressList.push(wxAddress)
+			this.setData({
+				wxAddress,
+				addressList: this.data.addressList
+			});
+		}
+	},
+	onShow: function() {
+		let list = wx.getStorageSync('list');
+		this.setData({
+			list
+		});
+		this.getAddresses();
+	},
 
+
+	tap(e) {
+		let item = e.currentTarget.dataset.item
+		let id = e.currentTarget.dataset.id
+		wx.setStorageSync('defaultAddress', item)
+		request({
+			token: app.globalData.token.prefix + app.globalData.token.token,
+			url: `addresses/${id}`,
+			method: 'put',
+			data: {
+				name: item.name,
+				phone: item.phone,
+				province: item.province,
+				city: item.city,
+				area: item.area || 'null',
+				detail_address: item.detail_address,
+				is_default: 1
+			}
+		}).then(res => {
+			if (res.data.code == 200) {
+				wx.navigateBack({
+					delta: 1
+				});
+			}
+		});
+
+		// wx.navigateBack({
+		// 	delta: 1
+		// });
+	},
+	//查询
+	getAddresses() {
+		request({
+			token: app.globalData.token.prefix + app.globalData.token.token,
+			url: 'addresses',
+			data: {}
+		}).then(res => {
+			console.log(res);
+			if (res.data.code == 200) {
+				let result = res.data.data.data;
+				let defaultAddress = result.find(item => item.is_default == 1);
+				wx.setStorageSync('defaultAddress', defaultAddress);
+				this.setData({
+					addressList: result
+				});
+				// 地址栏复制默认地址
+			}
+		});
 	},
 	// 获取当前位置
 	getLocation() {
@@ -54,14 +113,16 @@ Page({
 			}
 		})
 	},
-	tap(e) {
-		this.setData({
-			activeIndex: e.currentTarget.dataset.index
+
+	toEditAddress(e) {
+		let item = JSON.stringify(e.currentTarget.dataset.item);
+		wx.navigateTo({
+			url: `/pages/adressEdit/adressEdit?item=${item}`
 		})
 	},
-	toEditAddress() {
+	toAddAddress() {
 		wx.navigateTo({
-			url: '/pages/adressEdit/adressEdit'
+			url: `/pages/adressEdit/adressEdit`
 		})
 	},
 	/**
@@ -74,12 +135,7 @@ Page({
 	/**
 	 * 生命周期函数--监听页面显示
 	 */
-	onShow: function() {
-		let list = wx.getStorageSync('list');
-		this.setData({
-			list
-		})
-	},
+
 
 	/**
 	 * 生命周期函数--监听页面隐藏
