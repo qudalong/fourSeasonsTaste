@@ -1,5 +1,5 @@
 <view class='page'>
-	<view class='tixian'>提现金额</view>
+	<view class='tixian'>提现金额 (可提现:<text class="money">￥{{seller.balance}}</text>)</view>
 	<view class='qian'>￥</view>
 	<input bindinput='qianqian' class="inpt" type="number" placeholder="请输入提现金额" />
 </view>

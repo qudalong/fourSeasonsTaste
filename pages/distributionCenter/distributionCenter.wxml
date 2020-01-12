@@ -94,7 +94,7 @@
 				<view class='item'>商品售价(元)</view>
 				<view class='item'>商品佣金(元)</view>
 			</view>
-			<view wx:for="{{yjList}}" wx:key="{{index}}" class="l-con flex">
+			<view wx:for="{{yjList}}" wx:key="nuique" class="l-con flex">
 				<view class='item' style='border-left: 1rpx solid #f0f0f0;'>{{item.product_name}}</view>
 				<view class='item'>{{item.product_price}}</view>
 				<view class='item'>{{item.money}}</view>

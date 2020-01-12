@@ -5,11 +5,11 @@
 <!-- 商品列表 -->
 <view class="order-list">
 	<view wx:if="{{index==1}}" class='order'>
-		<view wx:for="{{yjList}}" wx:key="unique" class="commodity">
+		<view wx:if="{{yjList.length}}" wx:for="{{yjList}}" wx:key="unique" class="commodity">
 			<view class="top">
 				<view class='r-info'>
 					<view class='info'>
-						
+
 						<view class='name'>{{item.message}}</view>
 						<view class="time">{{item.created_at}}</view>
 					</view>
@@ -17,19 +17,23 @@
 				</view>
 			</view>
 		</view>
+		<view wx:if="{{!yjList.length}}" class='empty' style="color:#666">暂无收入记录</view>
 	</view>
 	<view wx:if="{{index==0}}" class='order'>
-		<view wx:for="{{list}}" wx:key="unique" class="commodity">
-			<view class="top">
-				<view class='r-info'>
-					<view class='info'>
-						<view class='name'>提现</view>
-						<view class="time">2019-10-10 13:04:3{{index}}</view>
+		<block wx:if="{{yjList.length}}">
+			<view wx:for="{{yjList}}" wx:key="unique" class="commodity">
+				<view class="top">
+					<view class='r-info'>
+						<view class='info'>
+							<view class='name'>提现</view>
+							<view class="time">{{item.created_at}}</view>
+						</view>
+						<view class="count minus">-{{item.money}}</view>
 					</view>
-					<view class="count minus">-1{{index}}.00</view>
 				</view>
 			</view>
-		</view>
+		</block>
+		<view wx:if="{{!yjList.length}}" class='empty' style="color:#666">暂无提现记录</view>
 	</view>
 	<!-- 订单详情e -->
 	<!-- <view class="empty">暂无商品</view> -->

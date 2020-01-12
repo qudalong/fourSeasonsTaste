@@ -13,7 +13,10 @@ Page({
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function(options) {
-
+		let seller = wx.getStorageSync('seller');
+		this.setData({
+			seller
+		});
 	},
 	qianqian(e) {
 		let click = this.data.click
@@ -24,7 +27,7 @@ Page({
 			click
 		})
 	},
-	
+
 	bindTixian() {
 		console.log('提现')
 	},
