@@ -1,6 +1,7 @@
 {
 	"pages": [
 		"pages/home/index",
+		"pages/my/my",
 		"pages/distributionCenter/distributionCenter",
 		"pages/pay/paySuccess/index",
 		"pages/pay/payFail/index",
@@ -12,7 +13,6 @@
 		"pages/wuliu/wuliu",
 		"pages/shopCart/shopCart",
 		"pages/tixian/tixian",
-		"pages/my/my",
 		"pages/vip/vip",
 		"pages/orderStatus/orderStatus",
 		"pages/adressEdit/adressEdit",

@@ -19,7 +19,7 @@ Page({
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
-	onLoad: function(options) {
+	onLoad: function (options) {
 		let seller = wx.getStorageSync('seller');
 		this.setData({
 			seller
@@ -28,6 +28,30 @@ Page({
 		this.brokerages();
 
 	},
+	onGotUserInfo(e) {
+		if (e.detail.userInfo != null) {
+			let userInfo = e.detail.userInfo;
+			console.log('userInfo', e.detail.userInfo)
+			request({
+				token: app.globalData.token.prefix + app.globalData.token.token,
+				url:'users',
+				method:'put',
+				data:{
+					nickname:userInfo.nickName,
+					avatar: userInfo.avatarUrl,
+					gender: userInfo.gender,
+					country: userInfo.country,
+					province: userInfo.province,
+					city: userInfo.city
+			}			
+			}).then(res => {
+				if (res.data.code == 200) {
+					this.toCenter()
+				}
+			});
+		}
+	},
+
 	tab(e) {
 		let index = e.currentTarget.dataset.index;
 		this.setData({
@@ -50,7 +74,7 @@ Page({
 	//订单列表
 	getOrdersList(status) {
 		request({
-token: app.globalData.token.prefix + app.globalData.token.token,
+			token: app.globalData.token.prefix + app.globalData.token.token,
 			url: `orders`,
 			data: {
 				per_page: 10, // 默认10
@@ -85,7 +109,7 @@ token: app.globalData.token.prefix + app.globalData.token.token,
 	//获取佣金明细
 	brokerages() {
 		request({
-token: app.globalData.token.prefix + app.globalData.token.token,
+			token: app.globalData.token.prefix + app.globalData.token.token,
 			url: `users/brokerages`,
 		}).then(res => {
 			if (res.data.code == 200) {
@@ -100,7 +124,7 @@ token: app.globalData.token.prefix + app.globalData.token.token,
 	//获取收益统计
 	income() {
 		request({
-token: app.globalData.token.prefix + app.globalData.token.token,
+			token: app.globalData.token.prefix + app.globalData.token.token,
 			url: `users/income`,
 		}).then(res => {
 			if (res.data.code == 200) {
@@ -130,14 +154,14 @@ token: app.globalData.token.prefix + app.globalData.token.token,
 	/**
 	 * 生命周期函数--监听页面初次渲染完成
 	 */
-	onReady: function() {
+	onReady: function () {
 
 	},
 
 	/**
 	 * 生命周期函数--监听页面显示
 	 */
-	onShow: function() {
+	onShow: function () {
 		this.getOrdersList(1);
 		this.getOrdersList(2);
 		this.getOrdersList(3);
@@ -147,35 +171,35 @@ token: app.globalData.token.prefix + app.globalData.token.token,
 	/**
 	 * 生命周期函数--监听页面隐藏
 	 */
-	onHide: function() {
+	onHide: function () {
 
 	},
 
 	/**
 	 * 生命周期函数--监听页面卸载
 	 */
-	onUnload: function() {
+	onUnload: function () {
 
 	},
 
 	/**
 	 * 页面相关事件处理函数--监听用户下拉动作
 	 */
-	onPullDownRefresh: function() {
+	onPullDownRefresh: function () {
 
 	},
 
 	/**
 	 * 页面上拉触底事件的处理函数
 	 */
-	onReachBottom: function() {
+	onReachBottom: function () {
 
 	},
 
 	/**
 	 * 用户点击右上角分享
 	 */
-	onShareAppMessage: function() {
+	onShareAppMessage: function () {
 
 	}
 })

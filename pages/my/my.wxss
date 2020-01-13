@@ -15,7 +15,7 @@ page {
 }
 
 .user-info .compare {
-	padding:10rpx;
+	padding: 10rpx;
 	border-radius: 20rpx;
 	border: 1rpx solid #58B15F;
 	color: #58B15F;
@@ -24,22 +24,24 @@ page {
 	font-size: 22rpx;
 	text-align: center;
 }
-.name{
+
+.name {
 	font-weight: bold;
 }
+
 .head {
 	width: 140rpx;
 	height: 140rpx;
 	border-radius: 100%;
 	margin-right: 10px;
-  overflow: hidden;
+	overflow: hidden;
 }
 
 .row {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding:20rpx 0 40rpx;
+	padding: 20rpx 0 40rpx;
 	border-bottom: 1rpx solid #f0f0f0;
 }
 
@@ -79,7 +81,7 @@ page {
 }
 
 .type-list .item .txt {
-  font-size: 26rpx;
+	font-size: 26rpx;
 }
 
 /* vip */
@@ -100,7 +102,8 @@ page {
 	padding: 14rpx 26rpx;
 	border: 1rpx solid #CFB079;
 }
-.tag{
+
+.tag {
 	position: absolute;
 	top: -17rpx;
 	right: 44rpx;
@@ -112,4 +115,40 @@ page {
 	color: #fff;
 	border-radius: 50%;
 	font-size: 22rpx;
+}
+
+button {
+	position: relative;
+	display: block;
+	margin-left: 0;
+	margin-right: 0;
+	padding-left: 0;
+	padding-right: 0;
+	box-sizing: border-box;
+	font-size: 12px;
+	text-align: center;
+	text-decoration: none;
+	line-height: 1;
+	border-radius: 0;
+	-webkit-tap-highlight-color: transparent;
+	overflow: hidden;
+	color: #000;
+	background-color: #fff;
+	border: none;
+}
+
+button::after {
+	content:" ";
+	width:200%;
+	height:100%;
+	position:absolute;
+	top:0;
+	left:0;
+	border:none;
+	-webkit-transform:scale(1);
+	transform:scale(1);
+	-webkit-transform-origin:0 0;
+	transform-origin:	0 0;
+	box-sizing:	border-box;
+	border-radius:0px;
 }
