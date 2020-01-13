@@ -16,6 +16,7 @@ Page({
 		uuid: '',
 		totalMoney: 0,
 		checked: true,
+		disable:false,
 		cartList: [] //
 	},
 
@@ -116,6 +117,9 @@ Page({
 			});
 			return
 		}
+		this.setData({
+			disable:true
+		});
 		let parm = [];
 		if (this.data.cartList.length) {
 			this.data.cartList.forEach(item => {
@@ -144,6 +148,9 @@ Page({
 				address_id: that.data.id
 			}
 		}).then(res => {
+			this.setData({
+				disable:false
+			});
 			if (res.data.code == 200) {
 				let pay = res.data.data.pay;
 				wx.requestPayment({

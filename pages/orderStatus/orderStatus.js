@@ -20,7 +20,8 @@ Page({
 		pageSize: 10,
 		showTk: false,
 		message: '',
-		no: ''
+		no: '',
+		disable:false
 	},
 
 	/**
@@ -110,6 +111,9 @@ Page({
 
 	//支付指定订单
 	payTargetOrder(e) {
+		this.setData({
+			disable:true
+		});
 		let id = e.currentTarget.dataset.id;
 		request({
 			token: app.globalData.token.prefix + app.globalData.token.token,
@@ -117,6 +121,9 @@ Page({
 			method: 'put',
 			data: {}
 		}).then(res => {
+			this.setData({
+				disable:false
+			});
 			let temp = res;
 			if (res.data.code == 200) {
 				let pay = res.data.data;

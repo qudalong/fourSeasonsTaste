@@ -115,9 +115,11 @@
 				<image src="../../images/icon/weixin.png"></image>
 				<view>微信支付</view>
 			</view>
-			<van-checkbox value="{{ checked }}" checked-color="#58B15F" ></van-checkbox>
+			<van-checkbox value="{{ checked }}" checked-color="#58B15F"></van-checkbox>
 		</view>
 	</view>
-	<van-submit-bar wx:if="{{cartList.length}}" price="{{ totalMoney }}" button-text="确认支付" bind:submit="orders" />
-	<van-submit-bar wx:if="{{!cartList.length}}" price="{{ productsDesc.price*count*100 }}" button-text="确认支付" bind:submit="orders" />
+	<van-submit-bar wx:if="{{cartList.length&&disable}}" price="{{ totalMoney }}" button-text="确认支付"  />
+	<van-submit-bar wx:if="{{cartList.length&&!disable}}" price="{{ totalMoney }}" button-text="确认支付" bind:submit="orders" />
+	<van-submit-bar wx:if="{{!cartList.length&&disable}}" price="{{ productsDesc.price*count*100 }}" button-text="确认支付" />
+	<van-submit-bar wx:if="{{!cartList.length&&!disable}}" price="{{ productsDesc.price*count*100 }}" button-text="确认支付" bind:submit="orders" />
 </view>

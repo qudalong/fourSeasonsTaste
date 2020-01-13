@@ -10,7 +10,8 @@
 							<view class='mt' slot="footer">
 								<van-button wx:if="{{active==1||active==3}}" data-id='{{item.no}}' catchtap='delOrder' color="#fff" type="danger" size="small">取消订单</van-button>
 								<!-- <van-button data-id='{{item.no}}' catchtap='wuliu' color="#fff" type="danger" size="small">查看物流</van-button> -->
-								<van-button wx:if="{{item.paid_at==null}}" data-id='{{item.no}}' catchtap='payTargetOrder' color="#F83B1D"  size="small"
+								<van-button wx:if="{{item.paid_at==null&&disable}}" color="#F83B1D"  size="small" style='margin-left:10px;'>去支付</van-button>
+								<van-button wx:if="{{item.paid_at==null&&!disable}}" data-id='{{item.no}}' catchtap='payTargetOrder' color="#F83B1D"  size="small"
 								 style='margin-left:10px;'>去支付</van-button>
 							</view>
 						</van-card>
