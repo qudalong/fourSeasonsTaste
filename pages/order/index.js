@@ -20,13 +20,7 @@ Page({
 		cartList: [], //
 		maxcount: 0
 	},
-	hook(e) {
-		let maxcount = e.currentTarget.dataset.maxcount;
-		console.log('maxcount', maxcount)
-		this.setData({
-			maxcount
-		})
-	},
+
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
@@ -189,14 +183,26 @@ Page({
 			}
 		});
 	},
+	hook(e) {
+		let maxcount = e.currentTarget.dataset.maxcount;
+		console.log('maxcount_hook', maxcount)
+		this.setData({
+			maxcount
+		})
+	},
+	onChange(event) {
+		this.setData({
+			count: event.detail
+		});
+	},
 	changeCount(e) {
 		let id = e.currentTarget.dataset.id;
 		let maxcount = e.currentTarget.dataset.maxcount;
-		console.log('id', id)
 		console.log('maxcount', maxcount)
 		this.data.cartList.forEach(item => {
 			if (item.id == id) {
 				item.number = this.data.count
+				item.maxcount =maxcount
 				this.setData({
 					cartList: this.data.cartList
 				});
@@ -221,11 +227,6 @@ Page({
 	},
 
 
-	onChange(event) {
-		this.setData({
-			count: event.detail
-		});
-	},
 	// 获取当前位置
 	getLocation() {
 		wx.chooseAddress({

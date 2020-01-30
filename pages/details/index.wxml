@@ -138,7 +138,7 @@
 		<view class="count-wrap">
 			<view class="label">购买数量</view>
 			<view>
-				<van-stepper value="{{number}}" integer disable-input bind:change="onChange" />
+				<van-stepper value="{{number}}" integer max='{{productsDesc.count-productsDesc.sale_count}}' disable-input bind:change="onChange" />
 			</view>
 		</view>
 	</view>

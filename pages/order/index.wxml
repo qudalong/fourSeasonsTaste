@@ -24,7 +24,7 @@
 	</view>
 	<!-- 加入购物车购买 -->
 	<view wx:if="{{cartList.length}}" class="commodity">
-		<view wx:for="{{cartList}}" wx:key="*this" class='cart-item'>
+		<view wx:for="{{cartList}}" wx:key="unique" class='cart-item'>
 			<view class="top">
 				<view>
 					<image class="cover-food" src="{{item.product.thumb}}"></image>
@@ -36,14 +36,14 @@
 							¥
 							<view class='priceNum'>{{item.product.price}}</view>
 						</view>
-						<view wx:if="{{maxcount}}" class="kucun">库存：{{maxcount}}</view>
+						<view wx:if="{{item.maxcount}}" class="kucun">库存：{{item.maxcount}}</view>
 					</view>
 				</view>
 			</view>
 			<view class='line'>
 				<view>购买数量</view>
 				<view class='num' bindtap='changeCount' data-maxcount="{{item.product.count-item.product.sale_count}}" data-id='{{item.id}}'>
-					<van-stepper value="{{item.number}}"  max="{{maxcount}}" integer disable-input bind:change="onChange" />
+					<van-stepper value="{{item.number}}"  max="{{item.maxcount}}" integer disable-input bind:change="onChange" />
 				</view>
 			</view>
 		</view>
