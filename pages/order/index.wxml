@@ -36,7 +36,7 @@
 							¥
 							<view class='priceNum'>{{item.product.price}}</view>
 						</view>
-						<view wx:if="{{item.maxcount}}" class="kucun">库存：{{item.maxcount}}</view>
+						<view class="kucun" wx:if="{{item.maxcount}}" class="kucun">库存：{{item.maxcount}}</view>
 					</view>
 				</view>
 			</view>
@@ -70,7 +70,7 @@
 						¥
 						<view class='priceNum'>{{productsDesc.price}}</view>
 					</view>
-					<view  wx:if="{{maxcount}}" class="kucun">库存：{{maxcount}}</view>
+					<view  class="kucun"  wx:if="{{maxcount}}" class="kucun">库存：{{maxcount}}</view>
 				</view>
 			</view>
 		</view>

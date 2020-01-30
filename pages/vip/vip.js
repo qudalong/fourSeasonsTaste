@@ -17,7 +17,8 @@ Page({
 		c: 0,
 		click: false,
 		up: false,
-		hhr: false
+		hhr: false,
+		aa:'普通用户'
 	},
 
 	/**

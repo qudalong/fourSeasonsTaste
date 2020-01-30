@@ -8,7 +8,7 @@
 	</view>
 	<!-- 特权 -->
 	<view class="vip">
-		<view class="tip">0元升级享四季滋味团长特权</view>
+		<view class="tip">0元升级享四季滋味<text wx:if="{{seller.level_name=='普通用户'}}">合伙人</text><text wx:if="{{seller.level_name=='合伙人'}}">团长</text>特权</view>
 		<view bindtap="toVip" class="all hover">查看全部</view>
 	</view>
 </view>

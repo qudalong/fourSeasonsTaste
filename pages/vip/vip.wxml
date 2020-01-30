@@ -10,46 +10,86 @@
 <view class="tab">
 	<view bindtap="tap" data-index='1' class="item {{index==1?'act':''}}">当前特权</view>
 	<view wx:if="{{seller.level_name=='普通用户'}}" bindtap="tap" data-index='2' class="item {{index==2?'act':''}}">合伙人特权</view>
-	<view  wx:if="{{seller.level_name=='合伙人'}}" bindtap="tap" data-index='3' class="item {{index==3?'act':''}}">团长特权</view>
+	<view wx:if="{{seller.level_name=='合伙人'}}" bindtap="tap" data-index='2' class="item {{index==2?'act':''}}">团长特权</view>
 </view>
 <view wx:if='{{index==1}}' class="vip-desc">
-	<view>当前无特权，努力升级成合伙人后</view>
-	<view>可以享受诸多特权哦。</view>
+	<view wx:if="{{seller.level_name=='普通用户'}}">
+		<view>当前无特权，努力升级成合伙人后</view>
+		<view>可以享受诸多特权哦。</view>
+	</view>
+	<view  class="vip-desc tuzhang" wx:if="{{seller.level_name=='合伙人'}}">
+		<view class="item">
+			<image class="head" src="/images/icon/icon_4.png"></image>
+			<view class="txt">自购佣金100%佣金奖励</view>
+		</view>
+		<view class="item">
+			<image class="head" src="/images/icon/icon_1.png"></image>
+			<view class="txt">分享佣金100%佣金奖励</view>
+		</view>
+		<view class="item">
+			<image class="head" src="/images/icon/icon_3.png"></image>
+			<view class="txt">直接会员出单20%佣金奖励</view>
+		</view>
+		<view class="item">
+			<image class="head" src="/images/icon/icon_2.png"></image>
+			<view class="txt">间接会员出单10%佣金奖励</view>
+		</view>
+	</view>
+	<view  class="vip-desc tuzhang" wx:if="{{seller.level_name=='团长'}}">
+		<view class="item">
+			<image class="head" src="/images/icon/icon_4.png"></image>
+			<view class="txt">自购佣金150%佣金奖励</view>
+		</view>
+		<view class="item">
+			<image class="head" src="/images/icon/icon_1.png"></image>
+			<view class="txt">分享佣金150%佣金奖励</view>
+		</view>
+		<view class="item">
+			<image class="head" src="/images/icon/icon_3.png"></image>
+			<view class="txt">直接会员出单40%佣金奖励</view>
+		</view>
+		<view class="item">
+			<image class="head" src="/images/icon/icon_2.png"></image>
+			<view class="txt">团队会员出单整个团队20%佣金奖励</view>
+		</view>
+	</view>
 </view>
-<view wx:if='{{index==2}}' class="vip-desc tuzhang">
-	<view class="item">
-		<image class="head" src="/images/icon/icon_4.png"></image>
-		<view class="txt">自购佣金100%佣金奖励</view>
+<view wx:if='{{index==2}}'>
+	<view  class="vip-desc tuzhang" wx:if="{{seller.level_name=='普通用户'}}">
+		<view class="item">
+			<image class="head" src="/images/icon/icon_4.png"></image>
+			<view class="txt">自购佣金100%佣金奖励</view>
+		</view>
+		<view class="item">
+			<image class="head" src="/images/icon/icon_1.png"></image>
+			<view class="txt">分享佣金100%佣金奖励</view>
+		</view>
+		<view class="item">
+			<image class="head" src="/images/icon/icon_3.png"></image>
+			<view class="txt">直接会员出单20%佣金奖励</view>
+		</view>
+		<view class="item">
+			<image class="head" src="/images/icon/icon_2.png"></image>
+			<view class="txt">间接会员出单10%佣金奖励</view>
+		</view>
 	</view>
-	<view class="item">
-		<image class="head" src="/images/icon/icon_1.png"></image>
-		<view class="txt">分享佣金100%佣金奖励</view>
-	</view>
-	<view class="item">
-		<image class="head" src="/images/icon/icon_3.png"></image>
-		<view class="txt">直接会员出单20%佣金奖励</view>
-	</view>
-	<view class="item">
-		<image class="head" src="/images/icon/icon_2.png"></image>
-		<view class="txt">间接会员出单10%佣金奖励</view>
-	</view>
-</view>
-<view wx:if='{{index==3}}' class="vip-desc tuzhang">
-	<view class="item">
-		<image class="head" src="/images/icon/icon_4.png"></image>
-		<view class="txt">自购佣金150%佣金奖励</view>
-	</view>
-	<view class="item">
-		<image class="head" src="/images/icon/icon_1.png"></image>
-		<view class="txt">分享佣金150%佣金奖励</view>
-	</view>
-	<view class="item">
-		<image class="head" src="/images/icon/icon_3.png"></image>
-		<view class="txt">直接会员出单40%佣金奖励</view>
-	</view>
-	<view class="item">
-		<image class="head" src="/images/icon/icon_2.png"></image>
-		<view class="txt">团队会员出单整个团队20%佣金奖励</view>
+	<view  class="vip-desc tuzhang" wx:if="{{seller.level_name=='团长'||seller.level_name=='合伙人'}}">
+		<view class="item">
+			<image class="head" src="/images/icon/icon_4.png"></image>
+			<view class="txt">自购佣金150%佣金奖励</view>
+		</view>
+		<view class="item">
+			<image class="head" src="/images/icon/icon_1.png"></image>
+			<view class="txt">分享佣金150%佣金奖励</view>
+		</view>
+		<view class="item">
+			<image class="head" src="/images/icon/icon_3.png"></image>
+			<view class="txt">直接会员出单40%佣金奖励</view>
+		</view>
+		<view class="item">
+			<image class="head" src="/images/icon/icon_2.png"></image>
+			<view class="txt">团队会员出单整个团队20%佣金奖励</view>
+		</view>
 	</view>
 </view>
 <!-- 升级进度 -->
