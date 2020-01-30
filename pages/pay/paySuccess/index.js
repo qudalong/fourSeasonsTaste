@@ -18,9 +18,9 @@ Page({
 		// 	id
 		// })
 	},
-	seeOrder(id) {
+	seeOrder() {
 		wx.navigateTo({
-			url: '/pages/orderStatus/orderStatus?index=3'
+			url: '/pages/orderStatus/orderStatus?index=3&home=1'
 		})
 	},
 	home() {
@@ -53,7 +53,9 @@ Page({
 	 * 生命周期函数--监听页面卸载
 	 */
 	onUnload: function () {
-
+		wx.navigateTo({
+			url: '/pages/orderStatus/orderStatus?index=3&home=1'
+		})
 	},
 
 	/**

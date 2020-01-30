@@ -138,7 +138,7 @@ token: app.globalData.token.prefix + app.globalData.token.token,
 				icon: 'none'
 			});
 			return
-		} else if (!/^[1][3,4,5,7,8][0-9]{9}$/.test(tel)) {
+		} else if (!/^[1][3,4,5,6,7,8][0-9]{9}$/.test(tel)) {
 			wx.showToast({
 				title: '请输入正确的手机号',
 				icon: 'none'

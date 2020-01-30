@@ -41,7 +41,8 @@
 
 <!-- 我的团队 -->
 <view class="block">
-	<button class="row hover" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">
+	<!-- <button class="row hover" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo"> -->
+	<view class="row hover" bindtap="toCenter">
 		<view class="row hover" style="width:100%;padding:0;border:0">
 			<view class="title">分销中心</view>
 			<view class="right">
@@ -49,7 +50,8 @@
 				<image class="icon-right" src="/images/icon/icon_right.png"></image>
 			</view>
 		</view>
-	</button>
+		</view>
+	<!-- </button> -->
 	<view class="type-list">
 		<view class="item hover">
 			<view class="number">￥{{incomes.day}}</view>

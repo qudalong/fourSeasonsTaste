@@ -21,13 +21,19 @@ Page({
 		showTk: false,
 		message: '',
 		no: '',
-		disable:false
+		disable:false,
+		toHome:false
 	},
 
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
+		if (options.home) {
+			this.setData({
+				toHome: true
+			});
+		}
 		if (options.index) {
 			this.setData({
 				active: options.index - 1
@@ -210,7 +216,11 @@ Page({
 	 * 生命周期函数--监听页面卸载
 	 */
 	onUnload: function () {
-
+		if(this.data.toHome){
+			wx.switchTab({
+				url: '/pages/home/index'
+			})
+		}
 	},
 
 	/**

@@ -95,7 +95,7 @@ page {
 
 /* 进度 */
 .properss {
-	padding: 30rpx 40rpx;
+	padding: 30rpx 50rpx 30rpx 70rpx;
 	border-radius: 8rpx;
 	background: linear-gradient(to right, #FCF1D3, #F9DE8F);
 }

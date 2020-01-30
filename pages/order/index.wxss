@@ -5,7 +5,10 @@
 	height: 100%;
 	font-size: 32rpx;
 }
-
+.fb{
+	justify-content: space-between;
+	flex: 1;
+}
 .address {
 	border-radius: 20rpx;
 	background: #FFF;
@@ -75,6 +78,7 @@
 }
 
 .commodity .top .right {
+	flex: 1;
 	font-size: 32rpx;
 	color: #333;
 	display: flex;

@@ -9,8 +9,8 @@
 <!-- 特权 -->
 <view class="tab">
 	<view bindtap="tap" data-index='1' class="item {{index==1?'act':''}}">当前特权</view>
-	<view bindtap="tap" data-index='2' class="item {{index==2?'act':''}}">合伙人特权</view>
-	<view bindtap="tap" data-index='3' class="item {{index==3?'act':''}}">团长特权</view>
+	<view wx:if="{{seller.level_name=='普通用户'}}" bindtap="tap" data-index='2' class="item {{index==2?'act':''}}">合伙人特权</view>
+	<view  wx:if="{{seller.level_name=='合伙人'}}" bindtap="tap" data-index='3' class="item {{index==3?'act':''}}">团长特权</view>
 </view>
 <view wx:if='{{index==1}}' class="vip-desc">
 	<view>当前无特权，努力升级成合伙人后</view>

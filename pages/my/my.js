@@ -51,7 +51,7 @@ Page({
 			});
 		}
 	},
-
+	
 	tab(e) {
 		let index = e.currentTarget.dataset.index;
 		this.setData({

@@ -30,19 +30,66 @@ Page({
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
-	onLoad: function(options) {
+	onLoad: function (options) {
 		if (!app.globalData.token) {
 			app.checkLoginReadyCallback = res => {
 				this.getCategories(); //获取商品分类信息
 				this.getProducts(); //获取商品分类信息
 				this.getCarousel();
-				
+
 			}
 		} else {
 			this.getCategories(); //获取商品分类信息
 			this.getProducts(); //获取商品分类信息
 			this.getCarousel();
 		}
+
+
+	},
+
+	requestMsg() {
+		wx.requestSubscribeMessage({
+			tmplIds: ["niKn1Vl31P6Fs5682aUo24_qL-KG-niRALAY5nrh_xs"],
+			success: (res) => {
+				wx.showToast({
+					title: '订阅OK！',
+					duration: 1000,
+					success(data) {}
+				})
+			}
+		})
+	},
+
+	requestMsg2() {
+		let token = wx.getStorageSync('token');
+		let wxdata = {
+			"touser": "wxb3312825df8bb955",
+			"template_id": "niKn1Vl31P6Fs5682aUo24_qL-KG-niRALAY5nrh_xs",
+			"page": "index",
+			"data": {
+				"thing1": {
+					"value": "10斤苹果1件"
+				},
+				"thing2": {
+					"value": "某省某市某街道某门牌号"
+				},
+				"phone_number3": {
+					"value": "18888888888"
+				},
+				"date4": {
+					"value": "2019-10-26 10:10:02"
+				}
+			}
+		}
+		// https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=AppId&secret=AppSecret
+		wx.request({
+			url: 'https://api.weixin.qq.com/cgi-bin/message/subscribe/send?access_token=' + token,
+			method: 'POST',
+			data: wxdata,
+			success: res => {
+				console.log(res)
+			}
+		})
 	},
 
 
@@ -68,32 +115,6 @@ Page({
 		})
 	},
 
-	acode() {
-		request({
-			token: app.globalData.token.prefix + app.globalData.token.token,
-			url: `acode`,
-			data: {
-				is_hyaline: false, // 默认false,是否背景透明
-				auto_color: false, // 是否自动设置颜色，默认false
-				line_color: {
-					r: 0,
-					g: 0,
-					b: 0
-				}, // 我这里是默认值，如果自动颜色是false，此此段必传
-				width: 430, // 280-1280,默认430
-				page: "pages/details/index", // 默认主页，从根目录到页面的路径
-				scene: "aGVsbG93b3JsZA==", // 业务参数，默认为空
-			}
-		}).then(res => {
-			this.setData({
-				codeUrl: res.data
-			})
-			// console.log(res)
-			if (res.data.code == 200) {
-
-			}
-		});
-	},
 	// tab切換
 	onChange(event) {
 		let id = event.detail.index + 1;
@@ -153,7 +174,7 @@ Page({
 	/**
 	 * 页面上拉触底事件的处理函数
 	 */
-	onReachBottom: function() {
+	onReachBottom: function () {
 		if (this.data.more) {
 			wx.showLoading({
 				title: '加载更多...'
@@ -206,35 +227,35 @@ Page({
 	/**
 	 * 生命周期函数--监听页面初次渲染完成
 	 */
-	onReady: function() {
+	onReady: function () {
 
 	},
 
 	/**
 	 * 生命周期函数--监听页面显示
 	 */
-	onShow: function() {
+	onShow: function () {
 
 	},
 
 	/**
 	 * 生命周期函数--监听页面隐藏
 	 */
-	onHide: function() {
+	onHide: function () {
 
 	},
 
 	/**
 	 * 生命周期函数--监听页面卸载
 	 */
-	onUnload: function() {
+	onUnload: function () {
 
 	},
 
 	/**
 	 * 页面相关事件处理函数--监听用户下拉动作
 	 */
-	onPullDownRefresh: function() {
+	onPullDownRefresh: function () {
 		wx.showLoading({
 			title: '刷新中...',
 		});
@@ -245,7 +266,7 @@ Page({
 	/**
 	 * 用户点击右上角分享
 	 */
-	onShareAppMessage: function() {
+	onShareAppMessage: function () {
 
 	}
 })

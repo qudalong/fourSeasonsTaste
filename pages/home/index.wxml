@@ -11,8 +11,8 @@
 			</swiper>
 		</view>
 	</view>
-						<!-- <image class="" src="https://shop.dnote.cn/api/v1/acode?is_hyaline=false&auto_color=false&line_color={r: 0,g: 0,b: 0}&width=430&page=pages/home/index&scene=aGVsbG93b3JsZA=="></image> -->
-	<!-- tab -->
+	<!-- <button bindtap="requestMsg"> 11111</button> -->
+	<!-- <button bindtap="requestMsg2"> 222</button> -->
 	<van-tabs active="{{active}}" color="#58B15F" swipeable sticky bind:change="onChange" bind:click="onClick">
 		<van-tab wx:for="{{categoriesList}}" wx:key="unique" title="{{item.title}}">
 			<view wx:if="{{productsList.length}}" class='product-list mb50'>
