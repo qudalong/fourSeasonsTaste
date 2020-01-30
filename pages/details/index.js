@@ -25,7 +25,8 @@ Page({
 		bigImg: '',
 		template: '',
 		number: 1,
-		showType: false
+		showType: false,
+		seller:''
 	},
 
 	/**
@@ -33,7 +34,10 @@ Page({
 	 */
 	onLoad: function(options) {
 
-
+		let seller = wx.getStorageSync('seller');
+		this.setData({
+			seller
+		});
 		// this.acode()
 		if (options.uuid) { //uuid就是id
 			let uuid = options.uuid;

@@ -2,8 +2,7 @@
 	<block wx:if="{{productsDesc.pictures.length}}">
 		<view class="page-body">
 			<view class="page-section page-section-spacing swiper">
-				<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}"
-				 indicator-color="#fff" indicator-active-color="#58B15F" class="swiper">
+				<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="#fff" indicator-active-color="#58B15F" class="swiper">
 					<block wx:for="{{productsDesc.pictures}}" wx:key="unique">
 						<swiper-item>
 							<image class="item-img" src="{{item}}"></image>
@@ -32,7 +31,7 @@
 				<text class="money">{{productsDesc.price}}</text>
 				<text class="old">￥{{productsDesc.original_price}}</text>
 			</view>
-			<view wx:if='{{productsDesc.brokerage>0}}' class="zrj">赚佣金
+			<view wx:if="{{(productsDesc.brokerage>0)&&(seller.level_name=='合伙人'||seller.level_name=='团长')}}" class="zrj">赚佣金
 				<text class="fh">￥{{productsDesc.brokerage}}</text></view>
 		</view>
 	</view>

@@ -10,7 +10,7 @@ export default class ImageExample {
 					url: cover,
 					css: {
 						width: '690rpx',
-						height: '690rpx',
+						height: '660rpx',
 						mode: 'scaleToFill',
 						borderRadius: '16rpx',
 						top: '30rpx',
@@ -21,7 +21,7 @@ export default class ImageExample {
 					type: 'text',
 					text: title,
 					css: {
-						top: '740rpx',
+						top: '720rpx',
 						left: '30rpx',
 						lineHeight: '40rpx',
 						width: '690rpx',
@@ -33,7 +33,7 @@ export default class ImageExample {
 					type: 'text',
 					text: "活动价:￥" + price,
 					css: {
-						top: '810rpx',
+						top: '790rpx',
 						left: '30rpx',
 						width: '690rpx',
 						color: '#F83B1D',
@@ -45,7 +45,7 @@ export default class ImageExample {
 					type: 'text',
 					text: "原价:￥" + oldPrice,
 					css: {
-						top: '820rpx',
+						top: '800rpx',
 						left: '270rpx',
 						width: '690rpx',
 						color: '#666',
@@ -58,7 +58,7 @@ export default class ImageExample {
 					url: 'https://shop.dnote.cn/api/v1/acode?is_hyaline=false&auto_color=false&line_color={r: 0,g: 0,b: 0}&width=430&page=pages/details/index&scene=' +
 						scene,
 					css: {
-						top: '790rpx',
+						top: '755rpx',
 						right: '40rpx',
 						width: '140rpx',
 						height: '140rpx',
@@ -71,7 +71,7 @@ export default class ImageExample {
 						width: '70rpx',
 						height: '70rpx',
 						borderRadius: '35rpx',
-						top: '900rpx',
+						top: '880rpx',
 						left: '30rpx'
 					}
 				},
@@ -79,7 +79,7 @@ export default class ImageExample {
 					type: 'text',
 					text: "四季滋味",
 					css: {
-						top: '900rpx',
+						top: '880rpx',
 						left: '62px',
 						width: '690rpx',
 						color: '#333',
@@ -91,7 +91,7 @@ export default class ImageExample {
 					type: 'text',
 					text: "应季现摘现发，纯天然放心吃",
 					css: {
-						top: '946rpx',
+						top: '926rpx',
 						left: '62px',
 						width: '690rpx',
 						color: '#999',
@@ -101,7 +101,7 @@ export default class ImageExample {
 					type: 'text',
 					text: "长按识别",
 					css: {
-						top: '936rpx',
+						top: '906rpx',
 						right: '66rpx',
 						color: '#999',
 						fontSize: '22rpx'
