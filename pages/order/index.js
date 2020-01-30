@@ -16,14 +16,21 @@ Page({
 		uuid: '',
 		totalMoney: 0,
 		checked: true,
-		disable:false,
-		cartList: [] //
+		disable: false,
+		cartList: [], //
+		maxcount: 0
 	},
-
+	hook(e) {
+		let maxcount = e.currentTarget.dataset.maxcount;
+		console.log('maxcount', maxcount)
+		this.setData({
+			maxcount
+		})
+	},
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
-	onLoad: function(options) {
+	onLoad: function (options) {
 		let uuid = options.uuid;
 		let cart = options.cart; //购物车商品
 		if (cart) {
@@ -98,7 +105,7 @@ Page({
 		});
 	},
 
-	onShow: function() {
+	onShow: function () {
 		let defaultAddress = wx.getStorageSync('defaultAddress');
 		this.setData({
 			defaultAddress
@@ -118,7 +125,7 @@ Page({
 			return
 		}
 		this.setData({
-			disable:true
+			disable: true
 		});
 		let parm = [];
 		if (this.data.cartList.length) {
@@ -149,7 +156,7 @@ Page({
 			}
 		}).then(res => {
 			this.setData({
-				disable:false
+				disable: false
 			});
 			if (res.data.code == 200) {
 				let pay = res.data.data.pay;
@@ -184,16 +191,15 @@ Page({
 	},
 	changeCount(e) {
 		let id = e.currentTarget.dataset.id;
+		let maxcount = e.currentTarget.dataset.maxcount;
 		console.log('id', id)
+		console.log('maxcount', maxcount)
 		this.data.cartList.forEach(item => {
 			if (item.id == id) {
-				console.log('item', item)
 				item.number = this.data.count
-				console.log('count', this.data.count)
 				this.setData({
 					cartList: this.data.cartList
 				});
-				console.log('cartList', this.data.cartList)
 			}
 		})
 		// 计算总金额
@@ -205,14 +211,10 @@ Page({
 			let number = item.number;
 			let itemMoney = price * number;
 			moneyList.push(itemMoney)
-			console.log('price', price)
-			console.log('itemMoney', itemMoney)
 		})
-		console.log('moneyList', moneyList)
 		moneyList.forEach(item => {
 			totalMoney += item
 		})
-		console.log('totalMoney', totalMoney)
 		this.setData({
 			totalMoney: totalMoney * 100
 		})
@@ -266,7 +268,7 @@ Page({
 	/**
 	 * 生命周期函数--监听页面初次渲染完成
 	 */
-	onReady: function() {
+	onReady: function () {
 
 	},
 
@@ -279,35 +281,35 @@ Page({
 	/**
 	 * 生命周期函数--监听页面隐藏
 	 */
-	onHide: function() {
+	onHide: function () {
 
 	},
 
 	/**
 	 * 生命周期函数--监听页面卸载
 	 */
-	onUnload: function() {
+	onUnload: function () {
 
 	},
 
 	/**
 	 * 页面相关事件处理函数--监听用户下拉动作
 	 */
-	onPullDownRefresh: function() {
+	onPullDownRefresh: function () {
 
 	},
 
 	/**
 	 * 页面上拉触底事件的处理函数
 	 */
-	onReachBottom: function() {
+	onReachBottom: function () {
 
 	},
 
 	/**
 	 * 用户点击右上角分享
 	 */
-	onShareAppMessage: function() {
+	onShareAppMessage: function () {
 
 	}
 })

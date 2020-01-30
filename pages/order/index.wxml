@@ -31,16 +31,19 @@
 				</view>
 				<view class='right'>
 					<view class="row2 fnt">{{item.product.title}}</view>
-					<view class='price'>
-						¥
-						<view class='priceNum'>{{item.product.price}}</view>
+					<view class="flex fb">
+						<view class='price'>
+							¥
+							<view class='priceNum'>{{item.product.price}}</view>
+						</view>
+						<view wx:if="{{maxcount}}" class="kucun">库存：{{maxcount}}</view>
 					</view>
 				</view>
 			</view>
 			<view class='line'>
 				<view>购买数量</view>
-				<view class='num' bindtap='changeCount' data-id='{{item.id}}'>
-					<van-stepper value="{{item.number}}" integer disable-input bind:change="onChange" />
+				<view class='num' bindtap='changeCount' data-maxcount="{{item.product.count-item.product.sale_count}}" data-id='{{item.id}}'>
+					<van-stepper value="{{item.number}}"  max="{{maxcount}}" integer disable-input bind:change="onChange" />
 				</view>
 			</view>
 		</view>
@@ -62,16 +65,19 @@
 			</view>
 			<view class='right'>
 				<view class="row2 fnt">{{productsDesc.title}}</view>
-				<view class='price'>
-					¥
-					<view class='priceNum'>{{productsDesc.price}}</view>
+				<view class="flex fb">
+					<view class='price'>
+						¥
+						<view class='priceNum'>{{productsDesc.price}}</view>
+					</view>
+					<view  wx:if="{{maxcount}}" class="kucun">库存：{{maxcount}}</view>
 				</view>
 			</view>
 		</view>
 		<view class='line'>
 			<view>购买数量</view>
-			<view class='num'>
-				<van-stepper value="{{count}}" integer disable-input bind:change="onChange" />
+			<view class='num' bindtap="hook" data-maxcount="{{productsDesc.count-productsDesc.sale_count}}">
+				<van-stepper value="{{count}}" max="{{maxcount}}" integer disable-input bind:change="onChange" />
 			</view>
 		</view>
 		<!-- 	<view class='line'>
@@ -118,7 +124,7 @@
 			<van-checkbox value="{{ checked }}" checked-color="#58B15F"></van-checkbox>
 		</view>
 	</view>
-	<van-submit-bar wx:if="{{cartList.length&&disable}}" price="{{ totalMoney }}" button-text="确认支付"  />
+	<van-submit-bar wx:if="{{cartList.length&&disable}}" price="{{ totalMoney }}" button-text="确认支付" />
 	<van-submit-bar wx:if="{{cartList.length&&!disable}}" price="{{ totalMoney }}" button-text="确认支付" bind:submit="orders" />
 	<van-submit-bar wx:if="{{!cartList.length&&disable}}" price="{{ productsDesc.price*count*100 }}" button-text="确认支付" />
 	<van-submit-bar wx:if="{{!cartList.length&&!disable}}" price="{{ productsDesc.price*count*100 }}" button-text="确认支付" bind:submit="orders" />
