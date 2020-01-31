@@ -43,7 +43,7 @@
 			<view class='line'>
 				<view>购买数量</view>
 				<view class='num' bindtap='changeCount' data-maxcount="{{item.product.count-item.product.sale_count}}" data-id='{{item.id}}'>
-					<van-stepper value="{{item.number}}"  max="{{item.maxcount}}" integer disable-input bind:change="onChange" />
+					<van-stepper value="{{item.number}}"  data-id='{{item.id}}' disable-input bind:change="onChange" />
 				</view>
 			</view>
 		</view>

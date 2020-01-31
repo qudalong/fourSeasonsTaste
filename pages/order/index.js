@@ -18,7 +18,8 @@ Page({
 		checked: true,
 		disable: false,
 		cartList: [], //
-		maxcount: 0
+		maxcount: 0,
+		addFlag:false
 	},
 
 	/**
@@ -50,7 +51,8 @@ Page({
 			})
 			console.log('totalMoney', totalMoney)
 			this.setData({
-				totalMoney: totalMoney * 100
+				totalMoney: totalMoney * 100,
+				cartList:this.data.cartList
 			})
 		}
 		if (uuid) {
@@ -61,6 +63,22 @@ Page({
 			console.log('uuid', this.data.uuid)
 		}
 
+	},
+
+	add(e){
+		// let id = e.currentTarget.dataset.id;
+		// let item=this.data.cartList.find(item=>item.id==id)
+		// let maxcount=this.data.cartList.find(item=>item.id==id).maxcount
+		// let number=this.data.cartList.find(item=>item.id==id).number
+		// if(number>=maxcount){
+		// 	item.number=maxcount
+		// 	this.setData({
+		// 		cartList:this.data.cartList
+		// 	})
+		// }
+		// console.log('item',item)
+		// console.log('number',number)
+		// console.log('maxcount',maxcount)
 	},
 
 	//查询
@@ -198,6 +216,8 @@ Page({
 	changeCount(e) {
 		let id = e.currentTarget.dataset.id;
 		let maxcount = e.currentTarget.dataset.maxcount;
+
+	
 		console.log('maxcount', maxcount)
 		this.data.cartList.forEach(item => {
 			if (item.id == id) {
@@ -208,6 +228,16 @@ Page({
 				});
 			}
 		})
+			// 庫存判斷
+			let item=this.data.cartList.find(item=>item.id==id)
+			let maxcount1=this.data.cartList.find(item=>item.id==id).maxcount
+			let number=this.data.cartList.find(item=>item.id==id).number
+			if(number>=maxcount1){
+				item.number=maxcount1
+				this.setData({
+					cartList:this.data.cartList
+				})
+			}
 		// 计算总金额
 		let itemMoney = 0;
 		let moneyList = []
@@ -224,6 +254,8 @@ Page({
 		this.setData({
 			totalMoney: totalMoney * 100
 		})
+
+	
 	},
 
 
