@@ -2,6 +2,9 @@ const app = getApp()
 import {
 	request
 } from '../../utils/request.js'
+import {
+	formatTime
+} from '../../utils/util.js'
 Page({
 
 	/**
@@ -19,7 +22,7 @@ Page({
 		disable: false,
 		cartList: [], //
 		maxcount: 0,
-		addFlag:false
+		addFlag: false
 	},
 
 	/**
@@ -52,7 +55,7 @@ Page({
 			console.log('totalMoney', totalMoney)
 			this.setData({
 				totalMoney: totalMoney * 100,
-				cartList:this.data.cartList
+				cartList: this.data.cartList
 			})
 		}
 		if (uuid) {
@@ -65,7 +68,7 @@ Page({
 
 	},
 
-	add(e){
+	add(e) {
 		// let id = e.currentTarget.dataset.id;
 		// let item=this.data.cartList.find(item=>item.id==id)
 		// let maxcount=this.data.cartList.find(item=>item.id==id).maxcount
@@ -179,19 +182,12 @@ Page({
 					signType: pay.signType,
 					paySign: pay.paySign,
 					success(res) {
-						// wx.showToast({
-						// 	title: '支付成功'
-						// });
+						that.requestMsg();
 						wx.navigateTo({
 							url: `/pages/pay/paySuccess/index`
 						})
-						console.log(res)
-						console.log('支付成功')
 					},
 					fail(res) {
-						// wx.navigateTo({
-						// 	url: `/pages/pay/paySuccess/index?id=${that.data.productsDesc.id}`
-						// })
 						wx.showToast({
 							title: '支付不成功',
 							icon: 'none'
@@ -201,6 +197,68 @@ Page({
 			}
 		});
 	},
+	requestMsg() {
+		let that = this;
+		wx.requestSubscribeMessage({
+			tmplIds: ["niKn1Vl31P6Fs5682aUo24_qL-KG-niRALAY5nrh_xs"],
+			success: (res) => {
+				if (res['niKn1Vl31P6Fs5682aUo24_qL-KG-niRALAY5nrh_xs'] == 'accept') {
+					that.msgSent()
+				}
+			}
+		})
+	},
+
+	msgSent() {
+		let foodName = ''
+		if (this.data.cartList.length) {
+			this.data.cartList.forEach(item => {
+				foodName += item.product.title + ', '
+			})
+		} else {
+			foodName = this.data.productsDesc.title
+		}
+
+		let defaultAddress = this.data.defaultAddress;
+		let access_token = wx.getStorageSync('access_token');
+		let userOpenid = wx.getStorageSync('userOpenid');
+		let wxdata = {
+			"touser": userOpenid,
+			"template_id": "niKn1Vl31P6Fs5682aUo24_qL-KG-niRALAY5nrh_xs",
+			"page": "pages/orderStatus/orderStatus?index=3&home=1",
+			"data": {
+				"thing1": {
+					"value": foodName
+				},
+				"thing2": {
+					"value": defaultAddress.province + defaultAddress.city + defaultAddress.area
+				},
+				"phone_number3": {
+					"value": defaultAddress.phone
+				},
+				"date4": {
+					"value": formatTime(new Date)
+				}
+			}
+		}
+		wx.request({
+			url: 'https://api.weixin.qq.com/cgi-bin/message/subscribe/send?access_token=' + access_token,
+			method: 'POST',
+			data: wxdata,
+			success: res => {
+				wx.showToast({
+					title: '订阅成功',
+					duration: 1000,
+					success() {}
+				})
+			}
+		})
+	},
+
+
+
+
+
 	hook(e) {
 		let maxcount = e.currentTarget.dataset.maxcount;
 		console.log('maxcount_hook', maxcount)
@@ -217,27 +275,27 @@ Page({
 		let id = e.currentTarget.dataset.id;
 		let maxcount = e.currentTarget.dataset.maxcount;
 
-	
+
 		console.log('maxcount', maxcount)
 		this.data.cartList.forEach(item => {
 			if (item.id == id) {
 				item.number = this.data.count
-				item.maxcount =maxcount
+				item.maxcount = maxcount
 				this.setData({
 					cartList: this.data.cartList
 				});
 			}
 		})
-			// 庫存判斷
-			let item=this.data.cartList.find(item=>item.id==id)
-			let maxcount1=this.data.cartList.find(item=>item.id==id).maxcount
-			let number=this.data.cartList.find(item=>item.id==id).number
-			if(number>=maxcount1){
-				item.number=maxcount1
-				this.setData({
-					cartList:this.data.cartList
-				})
-			}
+		// 庫存判斷
+		let item = this.data.cartList.find(item => item.id == id)
+		let maxcount1 = this.data.cartList.find(item => item.id == id).maxcount
+		let number = this.data.cartList.find(item => item.id == id).number
+		if (number >= maxcount1) {
+			item.number = maxcount1
+			this.setData({
+				cartList: this.data.cartList
+			})
+		}
 		// 计算总金额
 		let itemMoney = 0;
 		let moneyList = []
@@ -255,7 +313,7 @@ Page({
 			totalMoney: totalMoney * 100
 		})
 
-	
+
 	},
 
 

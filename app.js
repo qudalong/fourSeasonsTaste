@@ -17,6 +17,7 @@ App({
 					success: res => {
 						if (res.data.code == 200) {
 							this.globalData.token = res.data.data.token;
+							wx.setStorageSync('userOpenid', res.data.data.token.wechatUser.open_id);
 							wx.setStorageSync('token', res.data.data.token);
 							wx.setStorageSync('seller', res.data.data.token.wechatUser.seller);
 							wx.setStorageSync('user', res.data.data.token.wechatUser.user);

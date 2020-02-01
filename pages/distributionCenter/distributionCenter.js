@@ -2,6 +2,7 @@ const app = getApp()
 import {
 	request
 } from '../../utils/request.js'
+import Dialog from '../../miniprogram_npm/vant-weapp/dialog/dialog';
 Page({
 
 	/**
@@ -13,16 +14,16 @@ Page({
 		seller: '',
 		list: [1, 1, 1, 1],
 		click: false,
-		yjList:[]
+		yjList: []
 	},
 
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
-	onLoad: function(options) {
+	onLoad: function (options) {
 		let seller = wx.getStorageSync('seller');
-		let click=this.data.click;
-		seller.balance >0 ? click = true : click = false
+		let click = this.data.click;
+		seller.balance > 0 ? click = true : click = false
 		this.setData({
 			seller,
 			click
@@ -31,7 +32,7 @@ Page({
 		this.income();
 		this.brokerages(1);
 	},
-	
+
 	brokerages(status) {
 		request({
 			token: app.globalData.token.prefix + app.globalData.token.token,
@@ -45,17 +46,21 @@ Page({
 			}
 		});
 	},
-	
-	
+
+
 	tixian() {
-		wx.navigateTo({
-			url: '/pages/tixian/tixian'
-		})
+		// wx.navigateTo({
+		// 	url: '/pages/tixian/tixian'
+		// });
+		Dialog.confirm({
+			message: '提现功能正在紧锣密鼓地开发,现在可添加客服微信「jiaxing470021508」进行提现申请'
+		}).then(() => {
+		}).catch(() => {});
 	},
 	//获取收益统计
 	income() {
 		request({
-token: app.globalData.token.prefix + app.globalData.token.token,
+			token: app.globalData.token.prefix + app.globalData.token.token,
 			url: `users/income`,
 		}).then(res => {
 			if (res.data.code == 200) {
@@ -69,7 +74,7 @@ token: app.globalData.token.prefix + app.globalData.token.token,
 	//获取我的所有团队成员
 	partnersData() {
 		request({
-token: app.globalData.token.prefix + app.globalData.token.token,
+			token: app.globalData.token.prefix + app.globalData.token.token,
 			url: `users/partnersData`,
 			data: {}
 		}).then(res => {
@@ -103,49 +108,49 @@ token: app.globalData.token.prefix + app.globalData.token.token,
 	/**
 	 * 生命周期函数--监听页面初次渲染完成
 	 */
-	onReady: function() {
+	onReady: function () {
 
 	},
 
 	/**
 	 * 生命周期函数--监听页面显示
 	 */
-	onShow: function() {
+	onShow: function () {
 
 	},
 
 	/**
 	 * 生命周期函数--监听页面隐藏
 	 */
-	onHide: function() {
+	onHide: function () {
 
 	},
 
 	/**
 	 * 生命周期函数--监听页面卸载
 	 */
-	onUnload: function() {
+	onUnload: function () {
 
 	},
 
 	/**
 	 * 页面相关事件处理函数--监听用户下拉动作
 	 */
-	onPullDownRefresh: function() {
+	onPullDownRefresh: function () {
 
 	},
 
 	/**
 	 * 页面上拉触底事件的处理函数
 	 */
-	onReachBottom: function() {
+	onReachBottom: function () {
 
 	},
 
 	/**
 	 * 用户点击右上角分享
 	 */
-	onShareAppMessage: function() {
+	onShareAppMessage: function () {
 
 	}
 })

@@ -11,8 +11,7 @@
 			</swiper>
 		</view>
 	</view>
-	<!-- <button bindtap="requestMsg"> 11111</button> -->
-	<!-- <button bindtap="requestMsg2"> 222</button> -->
+	<!-- <button bindtap="requestMsg"> 1</button> -->
 	<van-tabs active="{{active}}" color="#58B15F" swipeable sticky bind:change="onChange" bind:click="onClick">
 		<van-tab wx:for="{{categoriesList}}" wx:key="unique" title="{{item.title}}">
 			<view wx:if="{{productsList.length}}" class='product-list mb50'>

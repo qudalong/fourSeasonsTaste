@@ -1,3 +1,4 @@
+<van-dialog id="van-dialog" />
 <view class="block" style='background: #58B15F;padding-bottom: 0;'>
 	<view class="block user-info">
 		<open-data class="head" type="userAvatarUrl"></open-data>
@@ -84,7 +85,7 @@
 	</view>
 
 	<!-- 佣金一览表 -->
-	<view class="block">
+	<view wx:if="{{yjList.length}}" class="block">
 		<view class="row hover b1">
 			<view class="title">佣金一览表</view>
 		</view>

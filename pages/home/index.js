@@ -3,6 +3,7 @@ import {
 	request
 } from '../../utils/request.js'
 
+
 Page({
 	/**
 	 * 页面的初始数据
@@ -33,12 +34,14 @@ Page({
 	onLoad: function (options) {
 		if (!app.globalData.token) {
 			app.checkLoginReadyCallback = res => {
+				this.getAccessToken();
 				this.getCategories(); //获取商品分类信息
 				this.getProducts(); //获取商品分类信息
 				this.getCarousel();
 
 			}
 		} else {
+			this.getAccessToken();
 			this.getCategories(); //获取商品分类信息
 			this.getProducts(); //获取商品分类信息
 			this.getCarousel();
@@ -48,24 +51,24 @@ Page({
 	},
 
 	requestMsg() {
+		let that=this;
 		wx.requestSubscribeMessage({
 			tmplIds: ["niKn1Vl31P6Fs5682aUo24_qL-KG-niRALAY5nrh_xs"],
 			success: (res) => {
-				wx.showToast({
-					title: '订阅OK！',
-					duration: 1000,
-					success(data) {}
-				})
+				if (res['niKn1Vl31P6Fs5682aUo24_qL-KG-niRALAY5nrh_xs'] == 'accept') {
+					that.msgSent()
+				}
 			}
 		})
 	},
 
-	requestMsg2() {
-		let token = wx.getStorageSync('token');
+	msgSent() {
+		let access_token = wx.getStorageSync('access_token');
+		let userOpenid = wx.getStorageSync('userOpenid');
 		let wxdata = {
-			"touser": "wxb3312825df8bb955",
+			"touser": userOpenid,
 			"template_id": "niKn1Vl31P6Fs5682aUo24_qL-KG-niRALAY5nrh_xs",
-			"page": "index",
+			"page": "pages/home/index",
 			"data": {
 				"thing1": {
 					"value": "10斤苹果1件"
@@ -81,17 +84,30 @@ Page({
 				}
 			}
 		}
-		// https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=AppId&secret=AppSecret
 		wx.request({
-			url: 'https://api.weixin.qq.com/cgi-bin/message/subscribe/send?access_token=' + token,
+			url: 'https://api.weixin.qq.com/cgi-bin/message/subscribe/send?access_token=' + access_token,
 			method: 'POST',
 			data: wxdata,
 			success: res => {
-				console.log(res)
+				wx.showToast({
+					title: '订阅成功',
+					duration: 1000,
+					success() {
+					}
+				})
 			}
 		})
 	},
 
+  getAccessToken(){
+		wx.request({
+			url: "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wxb3312825df8bb955&secret=66aed5ba277a0c812031a54de5f3a90f",
+			method: 'GET',
+			success: res => {
+				wx.setStorageSync('access_token', res.data.access_token);
+			}
+		})
+	},
 
 	getCarousel() {
 		request({
