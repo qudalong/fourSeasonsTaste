@@ -212,9 +212,15 @@ Page({
 	msgSent() {
 		let foodName = ''
 		if (this.data.cartList.length) {
-			this.data.cartList.forEach(item => {
-				foodName += item.product.title + ', '
-			})
+			if(this.data.cartList.length==1){
+				this.data.cartList.forEach(item => {
+					foodName += item.product.title
+				})
+			}else{
+				this.data.cartList.forEach(item => {
+					foodName += item.product.title + ' | '
+				})
+			}
 		} else {
 			foodName = this.data.productsDesc.title
 		}
