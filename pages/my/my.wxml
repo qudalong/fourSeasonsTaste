@@ -50,7 +50,7 @@
 				<image class="icon-right" src="/images/icon/icon_right.png"></image>
 			</view>
 		</view>
-		</view>
+	</view>
 	<!-- </button> -->
 	<view class="type-list">
 		<view class="item hover">
@@ -67,17 +67,21 @@
 		</view>
 	</view>
 </view>
-<!-- <view class="tab-bar">
-	<view class="item {{act==1?'active':''}} " bindtap='tab' data-index='1'>
-		<image class="icon-tab " src="/images/icon/nav-icon-index{{act==1?'.active':''}}.png"></image>
-		<view class="txt">首页</view>
+<view class="block">
+	<view bindtap='toAddress' class="row hover b0">
+		<view class="title">收货地址</view>
+		<view class="right">
+			<image class="icon-right" src="/images/icon/icon_right.png"></image>
+		</view>
 	</view>
-	<view class="item {{act==2?'active':''}}" bindtap='tab' data-index='2'>
-		<image class="icon-tab" src="/images/icon/nav-icon-cart{{act==2?'.active':''}}.png"></image>
-		<view class="txt">购物车</view>
+</view>
+<button open-type="share">
+	<view class="block">
+		<view bindtap='toOrderList' class="row hover b0">
+			<view class="title" style="font-size:28rpx">分享小程序</view>
+			<view class="right">
+				<image class="icon-right" src="/images/icon/icon_right.png"></image>
+			</view>
+		</view>
 	</view>
-	<view class="item {{act==3?'active':''}}" bindtap='tab' data-index='3'>
-		<image class="icon-tab" src="/images/icon/nav-icon-user{{act==3?'.active':''}}.png"></image>
-		<view class="txt">我的</view>
-	</view>
-</view> -->
+</button>

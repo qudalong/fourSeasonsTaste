@@ -140,6 +140,11 @@ Page({
 
 
 
+	toAddress() {
+		wx.navigateTo({
+			url: `/pages/addressList/index`
+		})
+	},
 	toCenter() {
 		wx.navigateTo({
 			url: `/pages/distributionCenter/distributionCenter`
@@ -199,7 +204,12 @@ Page({
 	/**
 	 * 用户点击右上角分享
 	 */
-	onShareAppMessage: function () {
-
+	onShareAppMessage: function (res) {
+    if (res.from === 'button') {
+		}
+    return {
+      path: '/pages/home/index',
+      success: function(res) {}
+    }
 	}
 })

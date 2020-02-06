@@ -13,7 +13,7 @@
 			</view> -->
 		</view>
 		<view class="commodity">
-			<van-card title-class="" tag="" desc="" num="{{desc.details[0].number}}" price="{{desc.pay_amount}}" title="{{desc.name}}"
+			<van-card  num="{{desc.details[0].number}}" price="{{desc.details[0].price}}" title="{{desc.name}}"
 			 thumb="{{desc.details[0].product.thumb}}">
 			</van-card>
 		</view>
@@ -22,7 +22,7 @@
 				<view>商品金额</view>
 				<view class='right'>
 					<view class='symbol'>¥</view>
-					<view>{{desc.pay_amount}}</view>
+					<view>{{desc.amount}}</view>
 				</view>
 			</view>
 			<view class='line'>
@@ -37,7 +37,7 @@
 				<view>实付款:</view>
 				<view class='orange'>¥</view>
 				<!-- <view class='totalNum orange'>{{desc.pay_amount*desc.ship_status+desc.post_amount}}</view> -->
-				<view class='totalNum orange'>{{desc.pay_amount*desc.ship_status}}</view>
+				<view class='totalNum orange'>{{desc.details[0].total}}</view>
 			</view>
 		</view>
 		<view class='total orderInfo'>

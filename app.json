@@ -1,8 +1,8 @@
 {
 	"pages": [
 		"pages/home/index",
-		"pages/vip/vip",
 		"pages/my/my",
+		"pages/vip/vip",
 		"pages/distributionCenter/distributionCenter",
 		"pages/pay/paySuccess/index",
 		"pages/pay/payFail/index",

@@ -152,3 +152,10 @@ button::after {
 	box-sizing:	border-box;
 	border-radius:0px;
 }
+.b0{
+	border: 0 !important;
+	padding: 20rpx 0;
+}
+button{
+	background-color:#f0f0f0;
+}

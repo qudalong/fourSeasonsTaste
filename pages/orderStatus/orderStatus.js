@@ -21,8 +21,8 @@ Page({
 		showTk: false,
 		message: '',
 		no: '',
-		disable:false,
-		toHome:false
+		disable: false,
+		toHome: false
 	},
 
 	/**
@@ -41,6 +41,61 @@ Page({
 		}
 		this.getOrdersList();
 	},
+
+	requestMsg() {
+		console.log(99)
+		let that = this;
+		wx.requestSubscribeMessage({
+			tmplIds: ["C3O3GN3NHjQvM7WE2vaVBuEOJinpfFWlUC1hvMkI8pw"],
+			success: (res) => {
+				console.log(90)
+				if (res['C3O3GN3NHjQvM7WE2vaVBuEOJinpfFWlUC1hvMkI8pw'] == 'accept') {
+					that.msgSent()
+				}
+			}
+		})
+	},
+
+	msgSent() {
+		let access_token = wx.getStorageSync('access_token');
+		let userOpenid = wx.getStorageSync('userOpenid');
+		let wxdata = {
+			"touser": userOpenid,
+			"template_id": "C3O3GN3NHjQvM7WE2vaVBuEOJinpfFWlUC1hvMkI8pw",
+			"page": "pages/home/index",
+			"data": {
+				"thing1": {
+					"value": "10斤苹果1件"
+				},
+				"name2": {
+					"value": "AA"
+				},
+				"date4": {
+					"value": "2019-10-26 10:10:02"
+				},
+				"phone_number3": {
+					"value": "1876871893"
+				},
+				"thing5": {
+					"value": "2019-10-26 10:10:02"
+				}
+			}
+		}
+		console.log(91)
+		wx.request({
+			url: 'https://api.weixin.qq.com/cgi-bin/message/subscribe/send?access_token=' + access_token,
+			method: 'POST',
+			data: wxdata,
+			success: res => {
+				wx.showToast({
+					title: '订阅成功',
+					duration: 1000,
+					success() {}
+				})
+			}
+		})
+	},
+
 
 	wuliu(e) {
 		let id = e.currentTarget.dataset.id;
@@ -118,7 +173,7 @@ Page({
 	//支付指定订单
 	payTargetOrder(e) {
 		this.setData({
-			disable:true
+			disable: true
 		});
 		let id = e.currentTarget.dataset.id;
 		request({
@@ -128,7 +183,7 @@ Page({
 			data: {}
 		}).then(res => {
 			this.setData({
-				disable:false
+				disable: false
 			});
 			let temp = res;
 			if (res.data.code == 200) {
@@ -216,7 +271,7 @@ Page({
 	 * 生命周期函数--监听页面卸载
 	 */
 	onUnload: function () {
-		if(this.data.toHome){
+		if (this.data.toHome) {
 			wx.switchTab({
 				url: '/pages/home/index'
 			})

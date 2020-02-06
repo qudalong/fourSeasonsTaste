@@ -11,6 +11,9 @@
 .textarea{
 	min-height: 100rpx;
 }
+.ml10{
+	margin-left:10px;
+}
 .tab-group .items {
 	color: #333;
 	padding: 30rpx 20rpx;

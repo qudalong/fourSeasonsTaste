@@ -183,9 +183,7 @@ Page({
 					paySign: pay.paySign,
 					success(res) {
 						that.requestMsg();
-						wx.navigateTo({
-							url: `/pages/pay/paySuccess/index`
-						})
+						
 					},
 					fail(res) {
 						wx.showToast({
@@ -204,6 +202,10 @@ Page({
 			success: (res) => {
 				if (res['niKn1Vl31P6Fs5682aUo24_qL-KG-niRALAY5nrh_xs'] == 'accept') {
 					that.msgSent()
+				}else{
+					wx.navigateTo({
+						url: `/pages/pay/paySuccess/index`
+					})
 				}
 			}
 		})
@@ -255,7 +257,11 @@ Page({
 				wx.showToast({
 					title: '订阅成功',
 					duration: 1000,
-					success() {}
+					success() {
+						wx.navigateTo({
+							url: `/pages/pay/paySuccess/index`
+						})
+					}
 				})
 			}
 		})
