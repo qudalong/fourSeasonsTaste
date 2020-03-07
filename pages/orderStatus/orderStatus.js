@@ -29,7 +29,7 @@ Page({
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
-		this.getExpressByNo()
+	
 		if (options.home) {
 			this.setData({
 				toHome: true
@@ -99,9 +99,9 @@ Page({
 
 
 	wuliu(e) {
-		let id = e.currentTarget.dataset.id;
+		let no = e.currentTarget.dataset.no;
 		wx.navigateTo({
-			url: `/pages/wuliu/wuliu?id=${id}`
+			url: `/pages/wuliu/wuliu?no=${no}`
 		})
 	},
 	toDesc(e) {
@@ -144,19 +144,7 @@ Page({
 	// 	});
 	// },
 
-	//订单列表
-	getExpressByNo() {
-		request({
-			token: app.globalData.token.prefix + app.globalData.token.token,
-			url: `getExpressByNo`,
-			data: {
-				no: '2020020421121708890000000002'
-			}
-		}).then(res => {
-			if (res.data.code == 200) {
-			}
-		});
-	},
+
 
 	//订单列表
 	getOrdersList() {

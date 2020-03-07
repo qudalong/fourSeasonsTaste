@@ -1,4 +1,11 @@
-// pages/wuliu/wuliu.js
+const app = getApp()
+import {
+	request
+} from '../../utils/request.js'
+import {
+	hexMD5
+} from "../../utils/md5.js"
+
 Page({
 
 	/**
@@ -22,16 +29,58 @@ Page({
 				desc: '描述信息'
 			}
 		],
-		active:0
+		active: 0
 	},
 
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function(options) {
-
+		console.log('no', options.no)
+		this.getExpressByNo(options.no)
 	},
 
+	getExpressByNo(no) {
+		let sign =
+			`{
+					"com": "ems",
+					"num": '2020020421121708890000000002',
+					"phone": "18510776402",
+					"from": "",
+					"to": "",
+					"key": "JRCNzuqW4304",
+					"resultv2": "1",
+					"show": "0",
+					"order": "desc"
+				}JRCNzuqW4304B456FD492309662075A901C1CC1BA3E9`
+		console.log('sign', hexMD5(sign))
+		wx.request({
+			token: app.globalData.token.prefix + app.globalData.token.token,
+			url: `https://poll.kuaidi100.com/poll/query.do`,
+			method: 'POST',
+			data: {
+				"customer": "B456FD492309662075A901C1CC1BA3E9",
+				"sign": hexMD5(sign),
+				"param": {
+					"com": "ems",
+					"num": '2020020421121708890000000002',
+					"phone": "18510776402",
+					"from": "",
+					"to": "",
+					"key": "JRCNzuqW4304",
+					"resultv2": "1",
+					"show": "0",
+					"order": "desc"
+				}
+			},
+			header: {
+				'content-type': 'application/json' // 默认值
+			},
+			success(res) {
+				console.log(res.data)
+			}
+		})
+	},
 	/**
 	 * 生命周期函数--监听页面初次渲染完成
 	 */
