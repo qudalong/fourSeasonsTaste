@@ -39,8 +39,21 @@ Page({
 		console.log('no', options.no)
 		this.getExpressByNo(options.no)
 	},
+	//订单列表
+		getExpressByNo() {
+			request({
+				token: app.globalData.token.prefix + app.globalData.token.token,
+				url: `getExpressByNo`,
+				data: {
+					no: '2020020421121708890000000002'
+				}
+			}).then(res => {
+				if (res.data.code == 200) {
+				}
+			});
+		},
 
-	getExpressByNo(no) {
+	getExpressByNo1(no) {
 		let sign =
 			`{
 					"com": "ems",
@@ -59,18 +72,18 @@ Page({
 			url: `https://poll.kuaidi100.com/poll/query.do`,
 			method: 'POST',
 			data: {
-				"customer": "B456FD492309662075A901C1CC1BA3E9",
-				"sign": hexMD5(sign),
+				"customer": "",
+				"sign": "",
 				"param": {
-					"com": "ems",
+					"com": "",
 					"num": '2020020421121708890000000002',
-					"phone": "18510776402",
+					"phone": "",
 					"from": "",
 					"to": "",
-					"key": "JRCNzuqW4304",
-					"resultv2": "1",
-					"show": "0",
-					"order": "desc"
+					"key": "",
+					"resultv2": "",
+					"show": "",
+					"order": ""
 				}
 			},
 			header: {
